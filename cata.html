@@ -33,58 +33,143 @@
 
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Poppins', sans-serif;
             margin: 0;
-            padding: 20px;
-            background-color: #f4f4f4;
+            padding: 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 100px 20px 80px;
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: 3.5em;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        .hero p {
+            font-size: 1.3em;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+        .hero .cta-button {
+            background: #ff6b6b;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .hero .cta-button:hover {
+            background: #ff5252;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(255, 107, 107, 0.3);
         }
         .container {
             max-width: 1200px;
             margin: auto;
+            padding: 0 20px;
         }
-        h1 {
-            text-align: center;
-            color: #333;
+        .filters {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            margin: -40px auto 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .filter-btn {
+            background: #f8f9fa;
+            border: 2px solid #e9ecef;
+            padding: 10px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+        .filter-btn:hover, .filter-btn.active {
+            background: #667eea;
+            color: white;
+            border-color: #667eea;
         }
         .catalogue {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            padding: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            padding: 20px 0;
         }
         .product {
             background: white;
-            padding: 15px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
             text-align: center;
-            transition: transform 0.3s;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .product::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(102, 126, 234, 0.1), transparent);
+            transition: left 0.5s;
+        }
+        .product:hover::before {
+            left: 100%;
         }
         .product:hover {
-            transform: scale(1.05);
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
         }
         .product img {
             max-width: 100%;
-            border-radius: 8px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+        .product h3 {
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+        .product p {
+            color: #666;
+            margin-bottom: 15px;
+            font-size: 0.9em;
         }
         .price {
-            font-size: 1.2em;
-            color: #e44d26;
+            font-size: 1.4em;
+            color: #ff6b6b;
             font-weight: bold;
+            margin-bottom: 15px;
         }
         .button {
             display: inline-block;
-            margin-top: 10px;
-            padding: 10px 15px;
+            margin: 5px;
+            padding: 12px 20px;
             color: white;
             text-decoration: none;
-            border-radius: 5px;
-            transition: background 0.3s;
+            border-radius: 25px;
+            transition: all 0.3s ease;
             cursor: pointer;
             border: none;
+            font-weight: 500;
         }
         .cart-btn {
-            background: #007bff;
+            background: linear-gradient(135deg, #667eea, #764ba2);
         }
         .paypal-btn {
             background: #0070ba;
@@ -93,7 +178,8 @@
             background: #ff9800;
         }
         .cart-btn:hover {
-            background: #0056b3;
+            background: linear-gradient(135deg, #5a67d8, #6b46c1);
+            transform: translateY(-2px);
         }
         .paypal-btn:hover {
             background: #005ea6;
@@ -104,62 +190,132 @@
         .cart-container {
             position: fixed;
             top: 0;
-            right: -300px;
-            width: 300px;
+            right: -350px;
+            width: 350px;
             height: 100%;
             background: white;
-            box-shadow: -4px 0 8px rgba(0, 0, 0, 0.1);
-            transition: right 0.3s;
-            padding: 20px;
+            box-shadow: -4px 0 20px rgba(0,0,0,0.15);
+            transition: right 0.3s ease;
+            padding: 30px;
             overflow-y: auto;
+            z-index: 1001;
         }
         .cart-container.active {
             right: 0;
         }
+        .cart-container h2 {
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 1.5em;
+        }
         .cart-item {
             display: flex;
             align-items: center;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
+            padding: 10px;
+            background: #f8f9fa;
+            border-radius: 10px;
         }
         .cart-item img {
-            width: 50px;
-            height: 50px;
-            margin-right: 10px;
+            width: 60px;
+            height: 60px;
+            margin-right: 15px;
+            border-radius: 8px;
         }
         .cart-item-details {
             flex: 1;
         }
+        .cart-item-details h4 {
+            margin: 0 0 5px 0;
+            color: #333;
+            font-size: 0.9em;
+        }
+        .cart-item-details p {
+            margin: 0;
+            color: #666;
+            font-size: 0.8em;
+        }
         .cart-item-controls {
             display: flex;
             align-items: center;
-            gap: 5px;
+            gap: 8px;
         }
         .cart-item-controls button {
-            background: #007bff;
+            background: #667eea;
             color: white;
             border: none;
             padding: 5px 10px;
-            border-radius: 3px;
+            border-radius: 5px;
             cursor: pointer;
+            font-size: 0.8em;
         }
         .cart-item-controls button:hover {
-            background: #0056b3;
+            background: #5a67d8;
         }
         .remove-btn {
-            background: #ff4d4d !important;
+            background: #ff6b6b !important;
         }
         .remove-btn:hover {
-            background: #cc0000 !important;
+            background: #ff5252 !important;
+        }
+        .cart-total {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 20px 0;
+            text-align: center;
+        }
+        .cart-total h3 {
+            margin: 0;
+            color: #333;
+            font-size: 1.2em;
+        }
+        .checkout-btn {
+            width: 100%;
+            margin-bottom: 10px;
         }
         .cart-count {
             position: absolute;
-            top: -10px;
-            right: -10px;
-            background: #e44d26;
+            top: -8px;
+            right: -8px;
+            background: #ff6b6b;
             color: white;
             border-radius: 50%;
-            padding: 5px 10px;
-            font-size: 12px;
+            padding: 4px 8px;
+            font-size: 0.7em;
+            font-weight: bold;
+        }
+        .trust-badges {
+            background: white;
+            padding: 40px 20px;
+            text-align: center;
+            margin-top: 60px;
+        }
+        .trust-badges h3 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .badges {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .badge {
+            background: #f8f9fa;
+            padding: 15px 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .badge i {
+            color: #667eea;
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+        .badge p {
+            margin: 0;
+            color: #666;
+            font-weight: 500;
         }
     </style>
 
@@ -233,45 +389,78 @@
         // Initialize cart on page load
         updateCart();
         updateCartIcon();
+
+        function filterProducts(category) {
+            const products = document.querySelectorAll('.product');
+            const buttons = document.querySelectorAll('.filter-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            products.forEach(product => {
+                if (category === 'all' || product.classList.contains(category)) {
+                    product.style.display = 'block';
+                } else {
+                    product.style.display = 'none';
+                }
+            });
+        }
     </script>
 </head>
 <body>
     <!-- header -->
-    <header>
+    <header style="position: fixed; top: 0; width: 100%; z-index: 1000; background-color: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
         <!-- header inner -->
         <div class="head-top">
             <div class="container-fluid">
-                <div class="row d_flex">
+                <div class="row d_flex align-items-center">
                     <div class="col-sm-3">
-                        <div class="logo">
-                            <a href="index.html">
-                                <ul><image src="images/glucoicon.png" width="80" height="80"></image>  <big>GLUCO</big></ul>                            
+                        <div class="logo d-flex align-items-center">
+                            <a href="index.html" class="d-flex align-items-center">
+                                <img src="images/glucoicon.png" width="80" height="80" alt="GLUCO Icon">
+                                <big class="ml-2" style="color: #333; font-weight: bold;">GLUCO</big>
                             </a>
                         </div>
                     </div>
-                    <div class="col-sm-5">
-                        <ul class="social_icon text_align_right d_none">
-                            <li> <a href="https://www.facebook.com/profile.php?id=61570785736136&mibextid=ZbWKwL" target= "blank"><i class="fa fa-facebook-f"></i></a></li>
-                            <li> <a href="https://www.instagram.com/gluco.zw" target= "blank"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-                            <li> <a href="https://whatsapp.com/channel/0029VaMxZNzFHWqAgLO8fn2s" target= "blank"><i class="fa fa-whatsapp"></i></a></li>
-                            <li> <a href="https://www.tiktok.com/@gluco.zw" target= "blank"><image src="images/tiktok-icon.png" width="25" height="25"></image></a></li>
-                            <li> <a href="https://x.com/glucozw" target= "blank"><i class="fa fa-twitter"></i></a></li>
-                            <li class="cart-icon" onclick="toggleCart()">
-                                    <image src="../images/cart-icon.png" width="60" height="60"></image></a>
-                                    <span id="cart-count" class="cart-count">0</span>                                
-                            </li>                            
+                    <div class="col-sm-6 text-center">
+                        <ul class="nav justify-content-center" style="list-style: none; padding: 0; margin: 0;">
+                            <li class="nav-item" style="display: inline-block; margin: 0 15px;">
+                                <a class="nav-link" href="index.html" style="color: #333; font-weight: bold; text-decoration: none;">HOME</a>
+                            </li>
+                            <li class="nav-item" style="display: inline-block; margin: 0 15px;">
+                                <a class="nav-link" href="page/services.html" style="color: #333; font-weight: bold; text-decoration: none;">SERVICES</a>
+                            </li>
+                            <li class="nav-item" style="display: inline-block; margin: 0 15px;">
+                                <a class="nav-link" href="page/about.html" style="color: #333; font-weight: bold; text-decoration: none;">ABOUT</a>
+                            </li>
+                            <li class="nav-item" style="display: inline-block; margin: 0 15px;">
+                                <a class="nav-link" href="page/contact.html" style="color: #333; font-weight: bold; text-decoration: none;">CONTACT</a>
+                            </li>
+                            <li class="nav-item" style="display: inline-block; margin: 0 15px;">
+                                <a class="nav-link" href="cata.html" style="color: #333; font-weight: bold; text-decoration: none;">SHOPPING</a>
+                            </li>
                         </ul>
                     </div>
-                    <div class="col-sm-4">
-                        <ul class="email text_align_right">
-                            <li>
-                            
-                                    <a  href="index.html" style="font-size: 15px; color: rgb(219, 198, 8)">Home  </a>
-                                    <a href="page/services.html" style="font-size: 15px; color: rgb(64, 158, 202)">Services  </a>
-                                    <a href="page/about.html" style="font-size: 15px; color: rgb(219, 198, 8)">About  </a>
-                                    <a href="page/contact.html" style="font-size: 15px; color: rgb(38, 158, 214)">Contact</a>
-                                    <a href="cata.html" style="font-size: 15px; color: rgb(219, 198, 8)">Shopping</a>         
-                                
+                    <div class="col-sm-3">
+                        <ul class="social_icon text_align_right d_none" style="list-style: none; padding: 0; margin: 0;">
+                            <li style="display: inline-block; margin: 0 10px;">
+                                <a href="https://www.facebook.com/profile.php?id=61570785736136&mibextid=ZbWKwL" target="_blank"><i class="fa fa-facebook-f" style="color: #333;"></i></a>
+                            </li>
+                            <li style="display: inline-block; margin: 0 10px;">
+                                <a href="https://www.instagram.com/gluco.zw" target="_blank"><i class="fa fa-instagram" style="color: #333;"></i></a>
+                            </li>
+                            <li style="display: inline-block; margin: 0 10px;">
+                                <a href="https://whatsapp.com/channel/0029VaMxZNzFHWqAgLO8fn2s" target="_blank"><i class="fa fa-whatsapp" style="color: #333;"></i></a>
+                            </li>
+                            <li style="display: inline-block; margin: 0 10px;">
+                                <a href="https://www.tiktok.com/@gluco.zw" target="_blank"><img src="images/tiktok-icon.png" width="25" height="25" alt="TikTok"></a>
+                            </li>
+                            <li style="display: inline-block; margin: 0 10px;">
+                                <a href="https://x.com/glucozw" target="_blank"><i class="fa fa-twitter" style="color: #333;"></i></a>
+                            </li>
+                            <li style="display: inline-block; margin: 0 10px; position: relative;">
+                                <a onclick="toggleCart()" style="cursor: pointer;">
+                                    <img src="images/cart-icon.png" width="30" height="30" alt="Cart">
+                                    <span id="cart-count" class="cart-count" style="position: absolute; top: -10px; right: -10px; background: #e44d26; color: white; border-radius: 50%; padding: 5px 10px; font-size: 12px;">0</span>
+                                </a>
                             </li>
                         </ul>
                     </div>
@@ -281,159 +470,152 @@
     </header>
     <!-- end header -->
 
-    <!-- products-->
-    <div class="wallet">
-        <div class="container-fluid">        
-        <div class="row">           
-            <div class="col-lg-3 col-sm-6">
-                <div id="wa_hover" class="product">
-                    <i><img src="../images/15kva.png" alt="#"/></i>    
-                    <p style = "color: rgb(31, 28, 3)">1.5 kVA Solar System</p>
-                    <p class="price">$ 1020.00</p>
-                    <button class="button cart-btn" onclick="addToCart('1.5 kVA Solar System', 1020, '../images/15kva.png')">Add to Cart</button>
-                </div>
-            </div>
-            <div class="col-lg-3 col-sm-6">
-                <div id="wa_hover" class="product">
-                    <i><img src="../images/3kva.png" alt="#"/></i>    
-                    <p style = "color: rgb(31, 28, 3)">3 kVA Solar System</p>
-                    <p class="price">$ 1549.99</p>
-                    <button class="button cart-btn" onclick="addToCart('3 kVA Solar System', 1549.99, '../images/3kVA.png')">Add to Cart</button>
-                </div>
-            </div>
-            <div class="col-lg-3 col-sm-6">
-                <div id="wa_hover" class="product">
-                    <i><img src="../images/Solar.png" alt="#"/></i>    
-                    <p style = "color: rgb(31, 28, 3)">5kVA Solar Systems</p>
-                    <p class="price">$ 2549.99</p>
-                    <button class="button cart-btn" onclick="addToCart('5kVA Solar Systems', 2549.99, '../images/Solar.png')">Add to Cart</button>
-                </div>
-            </div>
-            <div class="col-lg-3 col-sm-6">
-                <div id="wa_hover" class="product">
-                    <i><img src="../images/Expertise.png" alt="#"/></i>    
-                    <p style = "color: rgb(31, 28, 3)">10 kVA Solar System</p>
-                    <p class="price">$ 4399.99</p>
-                    <button class="button cart-btn" onclick="addToCart('10 kVA Solar System', 4399.99, '../images/Expertise.png')">Add to Cart</button>
-                </div>
-            </div>
-            <div class="col-lg-3 col-sm-6">
-                <div id="wa_hover" class="product">
-                    <i><img src="../images/smart agric.png" alt="#"/></i>    
-                    <p style = "color: rgb(31, 28, 3)">Smart Agriculture Solutions</p>
-                    <p class="price">$ 9579.99</p>
-                    <button class="button cart-btn" onclick="addToCart('Smart Agriculture Solutions', 9579.99, '../images/smart agric.png')">Add to Cart</button>
-                </div>
-            </div>
-            <div class="col-lg-3 col-sm-6">
-                <div id="wa_hover" class="product">
-                    <i><img src="../images/analytics.png" alt="#"/></i>    
-                    <p style = "color: rgb(31, 28, 3)">Data Analytics</p>
-                    <p class="price">$ 699.99</p>
-                    <button class="button cart-btn" onclick="addToCart('Data Analytics', 699.99, '../images/analytics.png')">Add to Cart</button>
-                </div>
-            </div>
-            <div class="col-lg-3 col-sm-6">
-                <div id="wa_hover" class="product">
-                    <i><img src="../images/it.png" alt="#"/></i>    
-                    <p style = "color: rgb(31, 28, 3)">Web Hosting</p>
-                    <p class="price">$ 24.99</p>
-                    <button class="button cart-btn" onclick="addToCart('Web Hosting', 24.99, '../images/it.png')">Add to Cart</button>
-                </div>
-
-            </div>
-            <div class="col-lg-3 col-sm-6">
-                <div id="wa_hover" class="product">
-                    <i><img src="../images/mission.png" alt="#"/></i>    
-                    <p style = "color: rgb(31, 28, 3)">Web Designing</p>
-                    <p class="price">$ 119.99</p>
-                    <button class="button cart-btn" onclick="addToCart('Web Designing', 119.99, '../images/mission.png')">Add to Cart</button>
-                </div>
-            </div>
-            <div class="col-lg-3 col-sm-6">
-                <div id="wa_hover" class="product">
-                    <i><img src="../images/maintenance.png" alt="#"/></i>    
-                    <p style = "color: rgb(31, 28, 3)">Industrial IoT Automation</p>
-                    <p class="price">$ 24950.50</p>
-                    <button class="button cart-btn" onclick="addToCart('Industrial IoT Automation', 24950.50, '../images/maintenance.png')">Add to Cart</button>
-                </div>
-            </div>
-            <div class="col-lg-3 col-sm-6">
-                <div id="wa_hover" class="product">
-                    <i><img src="../images/Industrial-auto.png" alt="#"/></i>    
-                    <p style = "color: rgb(31, 28, 3)">Robotics Designing</p>
-                    <p class="price">$ 8799.99</p>
-                    <button class="button cart-btn" onclick="addToCart('Robotics Designing', 8799.99, '../images/Industrial-auto.png')">Add to Cart</button>
-                </div>
-            </div>
-            <div class="col-lg-3 col-sm-6">
-                <div id="wa_hover" class="product">
-                    <i><img src="../images/forex-trading.png" alt="#"/></i>    
-                    <p style = "color: rgb(31, 28, 3)">The Forex Academy</p>
-                    <p class="price">$ 99.99</p>
-                    <button class="button cart-btn" onclick="addToCart('The Forex Academy', 99.99, '../images/forex-trading.png')">Add to Cart</button>
-                </div>
-            </div>
-            <div class="col-lg-3 col-sm-6">
-                <div id="wa_hover" class="product">
-                    <i><img src="../images/vision.png" alt="#"/></i>    
-                    <p style = "color: rgb(31, 28, 3)">Business Planning</p>
-                    <p class="price">$ 350.99</p>
-                    <button class="button cart-btn" onclick="addToCart('Business Planning', 350.99, '../images/vision.png')">Add to Cart</button>
-                </div>
-            </div>
-            <div class="col-lg-3 col-sm-6">
-                <div id="wa_hover" class="product">
-                    <i><img src="../images/arduino.png" alt="#"/></i>    
-                    <p style = "color: rgb(31, 28, 3)">Arduino Uno</p>
-                    <p class="price">$ 15.00</p>
-                    <button class="button cart-btn" onclick="addToCart('Arduino Uno', 15.00, '../images/arduino.png')">Add to Cart</button>
-                </div>
-            </div>
-            <div class="col-lg-3 col-sm-6">
-                <div id="wa_hover" class="product">
-                    <i><img src="../images/raspberry.png" alt="#"/></i>    
-                    <p style = "color: rgb(31, 28, 3)">Raspbery Pi 4</p>
-                    <p class="price">$ 130.00</p>
-                    <button class="button cart-btn" onclick="addToCart('Raspberry Pi 4', 130.00, '../images/raspberry.png')">Add to Cart</button>
-                </div>
-            </div>
-            <div class="col-lg-3 col-sm-6">
-                <div id="wa_hover" class="product">
-                    <i><img src="../images/mega.png" alt="#"/></i>    
-                    <p style = "color: rgb(31, 28, 3)">Arduino Mega</p>
-                    <p class="price">$ 30.00</p>
-                    <button class="button cart-btn" onclick="addToCart('Arduinio Mega', 30.00, '../images/mega.png')">Add to Cart</button>
-                </div>
-            </div>
-            <div class="col-lg-3 col-sm-6">
-                <div id="wa_hover" class="product">
-                    <i><img src="../images/nano.png" alt="#"/></i>    
-                    <p style = "color: rgb(31, 28, 3)">Arduino Nano</p>
-                    <p class="price">$ 10.00</p>
-                    <button class="button cart-btn" onclick="addToCart('Arduino Nano', 10.00, '../images/nano.png')">Add to Cart</button>
-                </div>
-            </div>
-            <div class="col-lg-3 col-sm-6">
-                <div id="wa_hover" class="product">
-                    <i><img src="../images/keystudio.png" alt="#"/></i>    
-                    <p style = "color: rgb(31, 28, 3)">Keystudio Mega</p>
-                    <p class="price">$ 54.00</p>
-                    <button class="button cart-btn" onclick="addToCart('Keystudio Mega', 54.00, '../images/keystudio.png')">Add to Cart</button>
-                </div>
-            </div>
-            <div class="col-lg-3 col-sm-6">
-                <div id="wa_hover" class="product">
-                    <i><img src="../images/ultrasonic.png" alt="#"/></i>    
-                    <p style = "color: rgb(31, 28, 3)">Ultrasonc Sensor</p>
-                    <p class="price">$ 5.00</p>
-                    <button class="button cart-btn" onclick="addToCart('Arduino Nano', 5.00, '../images/keystudio.png')">Add to Cart</button>
-                </div>
-            </div>
-
-        </div>        
+    <!-- hero section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Discover Innovation at GLUCO</h1>
+            <p>Explore our cutting-edge tech solutions, from solar systems to robotics, designed to empower your future.</p>
+            <a href="#catalogue" class="cta-button">Shop Now</a>
         </div>
+    </section>
+
+    <!-- filters -->
+    <div class="filters">
+        <button class="filter-btn active" onclick="filterProducts('all')">All Products</button>
+        <button class="filter-btn" onclick="filterProducts('solar')">Solar Systems</button>
+        <button class="filter-btn" onclick="filterProducts('automation')">Automation</button>
+        <button class="filter-btn" onclick="filterProducts('electronics')">Electronics</button>
+        <button class="filter-btn" onclick="filterProducts('services')">Services</button>
     </div>
+
+    <!-- products-->
+    <div id="catalogue" class="catalogue">
+        <div class="product solar">
+            <img src="../images/15kva.png" alt="1.5 kVA Solar System">
+            <h3>1.5 kVA Solar System</h3>
+            <p>Perfect for small homes, providing reliable power with advanced solar technology.</p>
+            <p class="price">$1020.00</p>
+            <button class="button cart-btn" onclick="addToCart('1.5 kVA Solar System', 1020, '../images/15kva.png')">Add to Cart</button>
+        </div>
+        <div class="product solar">
+            <img src="../images/3kva.png" alt="3 kVA Solar System">
+            <h3>3 kVA Solar System</h3>
+            <p>Ideal for medium-sized households, ensuring energy independence and cost savings.</p>
+            <p class="price">$1549.99</p>
+            <button class="button cart-btn" onclick="addToCart('3 kVA Solar System', 1549.99, '../images/3kVA.png')">Add to Cart</button>
+        </div>
+        <div class="product solar">
+            <img src="../images/Solar.png" alt="5kVA Solar Systems">
+            <h3>5kVA Solar Systems</h3>
+            <p>Powerful solution for larger homes or small businesses, maximizing solar efficiency.</p>
+            <p class="price">$2549.99</p>
+            <button class="button cart-btn" onclick="addToCart('5kVA Solar Systems', 2549.99, '../images/Solar.png')">Add to Cart</button>
+        </div>
+        <div class="product solar">
+            <img src="../images/Expertise.png" alt="10 kVA Solar System">
+            <h3>10 kVA Solar System</h3>
+            <p>High-capacity system for commercial use, delivering robust and sustainable energy.</p>
+            <p class="price">$4399.99</p>
+            <button class="button cart-btn" onclick="addToCart('10 kVA Solar System', 4399.99, '../images/Expertise.png')">Add to Cart</button>
+        </div>
+        <div class="product automation">
+            <img src="../images/smart agric.png" alt="Smart Agriculture Solutions">
+            <h3>Smart Agriculture Solutions</h3>
+            <p>Revolutionary IoT-based farming tech for optimized crop management and yield.</p>
+            <p class="price">$9579.99</p>
+            <button class="button cart-btn" onclick="addToCart('Smart Agriculture Solutions', 9579.99, '../images/smart agric.png')">Add to Cart</button>
+        </div>
+        <div class="product services">
+            <img src="../images/analytics.png" alt="Data Analytics">
+            <h3>Data Analytics</h3>
+            <p>Comprehensive data insights service to drive informed business decisions.</p>
+            <p class="price">$699.99</p>
+            <button class="button cart-btn" onclick="addToCart('Data Analytics', 699.99, '../images/analytics.png')">Add to Cart</button>
+        </div>
+        <div class="product services">
+            <img src="../images/it.png" alt="Web Hosting">
+            <h3>Web Hosting</h3>
+            <p>Reliable and secure hosting solutions for your online presence.</p>
+            <p class="price">$24.99</p>
+            <button class="button cart-btn" onclick="addToCart('Web Hosting', 24.99, '../images/it.png')">Add to Cart</button>
+        </div>
+        <div class="product services">
+            <img src="../images/mission.png" alt="Web Designing">
+            <h3>Web Designing</h3>
+            <p>Stunning, responsive websites tailored to your brand and goals.</p>
+            <p class="price">$119.99</p>
+            <button class="button cart-btn" onclick="addToCart('Web Designing', 119.99, '../images/mission.png')">Add to Cart</button>
+        </div>
+        <div class="product automation">
+            <img src="../images/maintenance.png" alt="Industrial IoT Automation">
+            <h3>Industrial IoT Automation</h3>
+            <p>Advanced automation systems for enhanced industrial efficiency and productivity.</p>
+            <p class="price">$24950.50</p>
+            <button class="button cart-btn" onclick="addToCart('Industrial IoT Automation', 24950.50, '../images/maintenance.png')">Add to Cart</button>
+        </div>
+        <div class="product automation">
+            <img src="../images/Industrial-auto.png" alt="Robotics Designing">
+            <h3>Robotics Designing</h3>
+            <p>Custom robotics solutions for automation and innovative applications.</p>
+            <p class="price">$8799.99</p>
+            <button class="button cart-btn" onclick="addToCart('Robotics Designing', 8799.99, '../images/Industrial-auto.png')">Add to Cart</button>
+        </div>
+        <div class="product services">
+            <img src="../images/forex-trading.png" alt="The Forex Academy">
+            <h3>The Forex Academy</h3>
+            <p>Expert-led training program for mastering forex trading strategies.</p>
+            <p class="price">$99.99</p>
+            <button class="button cart-btn" onclick="addToCart('The Forex Academy', 99.99, '../images/forex-trading.png')">Add to Cart</button>
+        </div>
+        <div class="product services">
+            <img src="../images/vision.png" alt="Business Planning">
+            <h3>Business Planning</h3>
+            <p>Strategic business planning services to accelerate your entrepreneurial journey.</p>
+            <p class="price">$350.99</p>
+            <button class="button cart-btn" onclick="addToCart('Business Planning', 350.99, '../images/vision.png')">Add to Cart</button>
+        </div>
+        <div class="product electronics">
+            <img src="../images/arduino.png" alt="Arduino Uno">
+            <h3>Arduino Uno</h3>
+            <p>Versatile microcontroller board for prototyping and electronics projects.</p>
+            <p class="price">$15.00</p>
+            <button class="button cart-btn" onclick="addToCart('Arduino Uno', 15.00, '../images/arduino.png')">Add to Cart</button>
+        </div>
+        <div class="product electronics">
+            <img src="../images/raspberry.png" alt="Raspberry Pi 4">
+            <h3>Raspberry Pi 4</h3>
+            <p>Powerful single-board computer for DIY projects and learning computing.</p>
+            <p class="price">$130.00</p>
+            <button class="button cart-btn" onclick="addToCart('Raspberry Pi 4', 130.00, '../images/raspberry.png')">Add to Cart</button>
+        </div>
+        <div class="product electronics">
+            <img src="../images/mega.png" alt="Arduino Mega">
+            <h3>Arduino Mega</h3>
+            <p>Advanced microcontroller with more pins for complex electronics applications.</p>
+            <p class="price">$30.00</p>
+            <button class="button cart-btn" onclick="addToCart('Arduino Mega', 30.00, '../images/mega.png')">Add to Cart</button>
+        </div>
+        <div class="product electronics">
+            <img src="../images/nano.png" alt="Arduino Nano">
+            <h3>Arduino Nano</h3>
+            <p>Compact microcontroller perfect for space-constrained projects.</p>
+            <p class="price">$10.00</p>
+            <button class="button cart-btn" onclick="addToCart('Arduino Nano', 10.00, '../images/nano.png')">Add to Cart</button>
+        </div>
+        <div class="product electronics">
+            <img src="../images/keystudio.png" alt="Keystudio Mega">
+            <h3>Keystudio Mega</h3>
+            <p>Enhanced Arduino-compatible board with additional features for advanced users.</p>
+            <p class="price">$54.00</p>
+            <button class="button cart-btn" onclick="addToCart('Keystudio Mega', 54.00, '../images/keystudio.png')">Add to Cart</button>
+        </div>
+        <div class="product electronics">
+            <img src="../images/ultrasonic.png" alt="Ultrasonic Sensor">
+            <h3>Ultrasonic Sensor</h3>
+            <p>Precise distance measurement sensor for robotics and automation projects.</p>
+            <p class="price">$5.00</p>
+            <button class="button cart-btn" onclick="addToCart('Ultrasonic Sensor', 5.00, '../images/ultrasonic.png')">Add to Cart</button>
+        </div>
     </div>
     <!-- end products-->
 
@@ -445,5 +627,7 @@
         <button class="email-btn" onclick="window.location.href='mailto:info@gluco.co.za'">Enquiries</button>
         <button onclick="toggleCart()">Close</button>
     </div>
+
+
 </body>
 </html>
