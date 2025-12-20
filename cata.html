@@ -36,7 +36,7 @@
             font-family: 'Poppins', sans-serif;
             margin: 0;
             padding: 0;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: #fff;
             min-height: 100vh;
         }
         .hero {
@@ -405,7 +405,7 @@
         }
     </script>
 </head>
-<body>
+<body class="main-layout" style="padding-top: 100px;">
     <!-- header -->
     <header style="position: fixed; top: 0; width: 100%; z-index: 1000; background-color: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
         <!-- header inner -->
@@ -628,6 +628,28 @@
         <button onclick="toggleCart()">Close</button>
     </div>
 
+    <!-- footer -->
+    <footer>
+        <div class="footer">
+            <div class="container">
+                <div class="copyright text_align_center">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <p>
+                                    © <span id="year"></span>
+                                    <a><script src="js/yr.js"></script></a>
+                                    - All Rights Reserved. Designed by
+                                    <a href="index.html">GLUCO</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- end footer -->
 
 </body>
 </html>
