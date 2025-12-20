@@ -34,42 +34,56 @@
     </head>
 
     <!-- body -->
-    <body class="main-layout">
+    <body class="main-layout" style="padding-top: 100px;">
     <!-- header -->
-    <header>
+    <header style="position: fixed; top: 0; width: 100%; z-index: 1000; background-color: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
         <!-- header inner -->
         <div class="head-top">
             <div class="container-fluid">
-                <div class="row d_flex">
+                <div class="row d_flex align-items-center">
                     <div class="col-sm-3">
-                        <div class="logo">
-                            <a href="../index.html">
-                                <ul><image src="../images/glucoicon.png" width="80" height="80"></image>  <big>GLUCO</big></ul>                            
+                        <div class="logo d-flex align-items-center">
+                            <a href="../index.html" class="d-flex align-items-center">
+                                <img src="../images/glucoicon.png" width="80" height="80" alt="GLUCO Icon">
+                                <big class="ml-2" style="color: #333; font-weight: bold;">GLUCO</big>
                             </a>
                         </div>
                     </div>
-                    <div class="col-sm-5">
-                        <ul class="social_icon text_align_right d_none">
-                            <li> <a href="https://www.facebook.com/profile.php?id=61570785736136&mibextid=ZbWKwL" target= "blank"><i class="fa fa-facebook-f"></i></a></li>
-                            <li> <a href="https://www.instagram.com/gluco.zw" target= "blank"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-                            <li> <a href="https://whatsapp.com/channel/0029VaMxZNzFHWqAgLO8fn2s" target= "blank"><i class="fa fa-whatsapp"></i></a></li>
-                            <li> <a href="https://www.tiktok.com/@gluco.zw" target= "blank"><image src="../images/tiktok-icon.png" width="25" height="25"></image><i class="fa-brands fa-tiktok"></i></a></li>
-                            <li> <a href="https://x.com/glucozw" target= "blank"><i class="fa fa-twitter"></i></a></li>
-                            <!--li> <a href="https://www.linkedin.com/in/volitionsmthxilo" target= "blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-                            <li> <a href="https://www.youtube.com/@glucozw" target= "blank"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li-->
+                    <div class="col-sm-6 text-center">
+                        <ul class="nav justify-content-center" style="list-style: none; padding: 0; margin: 0;">
+                            <li class="nav-item" style="display: inline-block; margin: 0 15px;">
+                                <a class="nav-link" href="../index.html" style="color: #333; font-weight: bold; text-decoration: none;">HOME</a>
+                            </li>
+                            <li class="nav-item" style="display: inline-block; margin: 0 15px;">
+                                <a class="nav-link" href="services.html" style="color: #333; font-weight: bold; text-decoration: none;">SERVICES</a>
+                            </li>
+                            <li class="nav-item" style="display: inline-block; margin: 0 15px;">
+                                <a class="nav-link active" href="about.html" style="color: #333; font-weight: bold; text-decoration: none;">ABOUT</a>
+                            </li>
+                            <li class="nav-item" style="display: inline-block; margin: 0 15px;">
+                                <a class="nav-link" href="contact.html" style="color: #333; font-weight: bold; text-decoration: none;">CONTACT</a>
+                            </li>
+                            <li class="nav-item" style="display: inline-block; margin: 0 15px;">
+                                <a class="nav-link" href="../cata.html" style="color: #333; font-weight: bold; text-decoration: none;">SHOPPING</a>
+                            </li>
                         </ul>
                     </div>
-                    <div class="col-sm-4">
-                        <ul class="email text_align_right">
-                            <!--li class="d_none"><a href="Javascript:void(0)"><i class="fa fa-user" aria-hidden="true"></i></a></li>
-                            <li class="d_none"> <a href="Javascript:void(0)"><i class="fa fa-search" style="cursor: pointer;" aria-hidden="true"></i></a> </li-->
-                            <li>
-                            
-                                    <a  href="../index.html" style="font-size: 20px; color: rgb(219, 198, 8);">Home  </a>
-                                    <a href="services.html" style="font-size: 20px; color: rgb(64, 158, 202);;">Services  </a>
-                                    <a href="about.html" style="font-size: 20px; color: rgb(219, 198, 8);;">About  </a>
-                                    <a href="contact.html" style="font-size: 20px; color: rgb(38, 158, 214);;">Contact</a>        
-                                
+                    <div class="col-sm-3">
+                        <ul class="social_icon text_align_right d_none" style="list-style: none; padding: 0; margin: 0;">
+                            <li style="display: inline-block; margin: 0 10px;">
+                                <a href="https://www.facebook.com/profile.php?id=61570785736136&mibextid=ZbWKwL" target="_blank"><i class="fa fa-facebook-f" style="color: #333;"></i></a>
+                            </li>
+                            <li style="display: inline-block; margin: 0 10px;">
+                                <a href="https://www.instagram.com/gluco.zw" target="_blank"><i class="fa fa-instagram" style="color: #333;"></i></a>
+                            </li>
+                            <li style="display: inline-block; margin: 0 10px;">
+                                <a href="https://whatsapp.com/channel/0029VaMxZNzFHWqAgLO8fn2s" target="_blank"><i class="fa fa-whatsapp" style="color: #333;"></i></a>
+                            </li>
+                            <li style="display: inline-block; margin: 0 10px;">
+                                <a href="https://www.tiktok.com/@gluco.zw" target="_blank"><img src="../images/tiktok-icon.png" width="25" height="25" alt="TikTok"></a>
+                            </li>
+                            <li style="display: inline-block; margin: 0 10px;">
+                                <a href="https://x.com/glucozw" target="_blank"><i class="fa fa-twitter" style="color: #333;"></i></a>
                             </li>
                         </ul>
                     </div>
@@ -84,119 +98,97 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <div class="about_border">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="titlepage text_align_left">
-                                    <h2>About Us</h2>
-                                </div>
-                                <div class="about_text">
-                                    <p>Welcome to GLUCO
-
-                                        At GLUCO, we're passionate about harnessing innovation and technology to empower individuals and businesses. Our multidisciplinary team excels in delivering tailored solutions across various sectors, including renewable energy, electrical and electronics, IT consultancy, and automation.</p>
-                                    <a class="read_more" href="services.html">Find Out More</a>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="about_img">
-                                    <figure><img class="img_responsive" src="../images/glucoicon.png" alt="#" /></figure>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="titlepage text_align_center">
+                        <h2>About GLUCO</h2>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-    <!--about end -->
-
-    <!-- vision-->
-    <div id="about" class="about">
-        <div class="container">
+            <!-- About Us Subsection -->
             <div class="row">
                 <div class="col-md-12">
                     <div class="about_border">
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="titlepage text_align_left">
-                                    <h2>Our Vision</h2>
+                                    <h3>About Us</h3>
                                 </div>
                                 <div class="about_text">
-                                    <p>
-                                        Illuminating the path to a sustainable tomorrow through innovative solutions, exceptional service, and lasting relationships.
-                                    </p>
+                                    <p>Welcome to GLUCO. We harness innovation and technology to empower individuals and businesses. Our team delivers tailored solutions in renewable energy, electrical and electronics, IT consultancy, and automation. IT services: web development, hosting, software licensing, digital solutions. Automation, including greenhouse systems, streamlines processes and boosts productivity.</p>
                                     <a class="read_more" href="services.html">Find Out More</a>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="about_img">
-                                    <figure><img class="img_responsive" src="../images/vision.png" alt="#" /></figure>
+                                    <figure><img class="img_responsive" src="../images/glucoicon.png" alt="GLUCO Logo" /></figure>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-    <!-- vision end -->
-
-    <!-- mission-->
-    <div id="about" class="about">
-        <div class="container">
+            <!-- Our Vision Subsection -->
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="about_border">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="about_img">
+                                    <figure><img class="img_responsive" src="../images/vision.png" alt="Our Vision" /></figure>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="titlepage text_align_left">
+                                    <h3>Our Vision</h3>
+                                </div>
+                                <div class="about_text">
+                                    <p>Illuminating the path to a sustainable tomorrow through innovative solutions, exceptional service, and lasting relationships. We aim to pioneer advancements that promote environmental stewardship, economic growth, and enduring partnerships.</p>
+                                    <a class="read_more" href="services.html">Find Out More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Our Mission Subsection -->
             <div class="row">
                 <div class="col-md-12">
                     <div class="about_border">
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="titlepage text_align_left">
-                                    <h2>Our Mission</h2>
+                                    <h3>Our Mission</h3>
                                 </div>
                                 <div class="about_text">
-                                    <p>
-                                        At GLUCO, we're committed to delivering exceptional services, fostering long-term relationships, and contributing to a sustainable future. Explore our website to discover how our expertise can benefit your projects and endeavors.
-                                    </p>
+                                    <p>At GLUCO, we are committed to delivering exceptional services, fostering long-term relationships, and contributing to a sustainable future. Explore our website to discover how our expertise can benefit your projects and endeavors.</p>
                                     <a class="read_more" href="services.html">Find Out More</a>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="about_img">
-                                    <figure><img class="img_responsive" src="../images/mission.png" alt="#" /></figure>
+                                    <figure><img class="img_responsive" src="../images/mission.png" alt="Our Mission" /></figure>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-    <!-- mission end -->
-
-    <!--expertise-->
-    <div id="about" class="about">
-        <div class="container">
+            <!-- Our Expertise Subsection -->
             <div class="row">
                 <div class="col-md-12">
                     <div class="about_border">
                         <div class="row">
                             <div class="col-md-6">
-                                <div class="titlepage text_align_left">
-                                    <h2>Our Expertise</h2>
-                                </div>
-                                <div class="about_text">
-                                    <p>
-                                        - Renewable Energy: We design, install, and maintain solar systems, promoting sustainable energy solutions.<br>
-                                        - Electrical and Electronics: Our team handles various electrical and electronic projects, ensuring efficient and reliable solutions.<br>
-                                        - IT Consultancy: We offer expert guidance on web development, web and email hosting, software licensing, and more.<br>
-                                        - Automation: GLUCO specializes in automation solutions, including automated greenhouse systems, to streamline processes and enhance productivity.<br>
-                                        - Forex Trading Mentorship: Our experienced traders provide personalized mentorship to help you navigate the Forex market.
-                                    </p>
-                                    <a class="read_more" href="services.html">Find Out More</a>
+                                <div class="about_img">
+                                    <figure><img class="img_responsive" src="../images/expertise.png" alt="Our Expertise" /></figure>
                                 </div>
                             </div>
                             <div class="col-md-6">
-                                <div class="about_img">
-                                    <figure><img class="img_responsive" src="../images/expertise.png" alt="#" /></figure>
+                                <div class="titlepage text_align_left">
+                                    <h3>Our Expertise</h3>
+                                </div>
+                                <div class="about_text">
+                                    <p>GLUCO excels in renewable energy solutions, focusing on the design, installation, and maintenance of solar systems to promote sustainable energy practices. Our expertise extends to comprehensive electrical and electronics project management, ensuring efficient and reliable outcomes for diverse applications.</p>
+                                    <a class="read_more" href="services.html">Find Out More</a>
                                 </div>
                             </div>
                         </div>
@@ -205,95 +197,30 @@
             </div>
         </div>
     </div>
-    <!-- expertise end -->
+    <!-- about end -->
 
-        <!-- footer -->
-        <footer>
-            <div class="footer">
-                <div class="container">
-                    <div class="row">
-                        <!--div class="col-md-12">
-                            <a class="logo_bottom" href="index.html">GLUCO</a>
-                        </div-->
-                    <div class="col-md-3 col-sm-6" ">
-                        <div class="Informa conta ">
-                            <h3>Contact Us</h3>
-                                <ul>
-                                <li> 
-                                    <a href="tel:+27627845308"><i class="fa fa-phone " aria-hidden="true "></i> Call Us</a>
-                                </li>
-                                <li> 
-                                    <a href="https://maps.app.goo.gl/HUCoHqSHt5LTUpyW6" target="_blank">
-                                        <i class="fa fa-map-marker " aria-hidden="true "></i> Skycity, Alberton
-                                    </a>
-                                </li>
-                                <li> 
-                                    <a href="mailto:info@gluco.co.za">
-                                        <i class="fa fa-envelope " aria-hidden="true "></i> info@gluco.co.za
-                                    </a>
-                                </li>
-                                </ul>
-                            </div>
-                </div>
-                <div class="col-md-3 col-sm-6 "">
-                            <div class="Informa helpful">
-                                <h3>Other Links</h3>
-                                <ul>
-                                    <li> <a href="../index.html">Home</a></li>
-                                    <li> <a href="services.html">Services</a></li>                            
-                                    <li> <a href="contact.html">Contact Us</a></li>
-                                </ul>
+    <!-- footer -->
+    <footer>
+        <div class="footer">
+            <div class="container">
+                <div class="copyright text_align_center">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <p>
+                                    © <span id="year"></span>
+                                    <a><script src="../js/yr.js"></script></a>
+                                    - All Rights Reserved. Designed by
+                                    <a href="../index.html">GLUCO</a>
+                                </p>
                             </div>
                         </div>
-                    <div class="col-md-3 col-sm-6">
-                            <div class="Informa ">
-                                <h3>Other Info</h3>
-                                <ul>
-                                    <li>We are a Tech Company</li>
-                                    <li>Dedicated to improving lives of the Citizens,</li>
-                                    <li>For the Better</li>
-                                </ul>
-                            </div>
-                </div>
-                <div class="col-md-3 col-sm-6 ">
-                    <div class="Informa ">
-                        <h3>Get in Touch</h3>
-                        <form action="../send_email.php" method="post">
-                            <div class="form-group">
-                                <input class="ente" type="text" id="name" name="name" placeholder="Enter your name" required>
-                            </div>
-                            <div class="form-group">
-                                <input class="ente" type="email" id="email" name="email" placeholder="Enter your email" required>                            
-                            </div>
-                            <div class="form-group">
-                                <textarea style="background-color: rgba(0, 255, 255, 0.116); color: #ccb9b9; width: 265px; height: 80px;" id="message" name="message" placeholder="How can we be service?" required></textarea>
-                            </div>
-                            
-                            <button style="background-color: rgb(11, 212, 28); color: #000;" class="subs_btn" type="submit" value="Send Email">Send</button>
-                        </form>                     
                     </div>
-                </div>
-                </div>
-                <div class="copyright text_align_center ">
-                <div class="container ">
-                    <div class="row ">
-                        <div class="col-md-12 ">
-                            <p>
-                                © <span id="year"></span>
-                                <a><script src="../js/yr.js"></script></a>
-                                - All Rights Reserved. Designed by 
-                                <a href="../index.html">
-                                GLUCO
-                                </a>
-                            </p>
-                        </div>
-                    </div>
-                </div>
                 </div>
             </div>
         </div>
-        </footer>
-        <!-- end footer -->
+    </footer>
+    <!-- end footer -->
   
         <!-- Javascript files-->
         <script src="../js/jquery.min.js "></script>

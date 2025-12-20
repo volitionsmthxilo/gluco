@@ -296,6 +296,23 @@ ul.social_icon li a:hover {
      transition: ease-in all 0.7s;
 }
 
+/* Header navigation hover effects */
+.nav-link:hover {
+     background-color: #face34;
+     color: #fff;
+     padding: 8px 12px;
+     border-radius: 5px;
+     transition: all 0.3s ease;
+}
+
+/* Active page highlight */
+.nav-link.active {
+     background-color: #007bff;
+     color: #fff;
+     padding: 8px 12px;
+     border-radius: 5px;
+}
+
 
 /*--------------------------------------------------------------------- 
 menu section
@@ -374,8 +391,8 @@ ul.email li i {
 /** banner_main **/
 
 .banner_main {
-     padding-bottom: 90px;
-     padding-top: 90px;
+     padding-bottom: 63px;
+     padding-top: 63px;
 }
 
 .carousel-indicators {
@@ -443,39 +460,51 @@ ul.email li i {
      margin-right: 15px;
 }
 
+/* Lively effects for carousel images */
+.con_img img {
+     transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.con_img img:hover {
+     transform: scale(1.05);
+     box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+}
+
 
 /** wallet **/
 
 .wallet {
-     padding: 113px 30px 0 30px;
+     padding: 28px 30px 0 30px;
 }
 
 .wallet_box {
      background: #fff;
-     margin-bottom: 30px;
+     margin-bottom: 10px;
      transition: ease-in all 0.5s;
-     padding: 25px 15px 50px 15px;
+     padding: 8px 10px 10px 10px;
 }
 
 .wallet_box h3 {
      color: #0c0b0b;
-     font-size: 22px;
+     font-size: 20px;
      text-transform: uppercase;
      transition: ease-in all 0.5s;
      font-weight: bold;
-     line-height: 22px;
-     padding: 20px 0 20px 0;
+     line-height: 20px;
+     padding: 7px 0 7px 0;
 }
 
 .wallet_box p {
      color: #191a1a;
-     font-size: 16px;
-     line-height: 28px;
+     font-size: 15px;
+     line-height: 26px;
      transition: ease-in all 0.5s;
 }
 
 #wa_hover:hover.wallet_box {
      background: #face34;
+     transform: scale(1.05);
+     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
      transition: ease-in all 0.5s;
 }
 
@@ -501,12 +530,15 @@ ul.email li i {
 /** about **/
 
 .about {
-     padding: 90px 0 60px 0;
+     padding: 90px 0 0 0;
 }
 
 .about_border {
-     border: #ddd dashed 1px;
-     padding: 80px 80px;
+     background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
+     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+     padding: 60px 60px;
+     margin-bottom: 0;
+     border-radius: 10px;
 }
 
 .about .titlepage {
@@ -537,11 +569,21 @@ ul.email li i {
      margin: 0;
 }
 
+.about_img img {
+     transition: all 0.5s ease;
+}
+
+.about_img img:hover {
+     transform: scale(1.05);
+     box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+     filter: brightness(1.1) saturate(1.2);
+}
+
 
 /** end about **/
 
 .titlepage {
-     padding-bottom: 60px;
+     padding-bottom: 30px;
 }
 
 .titlepage h2 {
@@ -549,6 +591,15 @@ ul.email li i {
      font-weight: 600;
      line-height: 55px;
      color: #fff;
+}
+
+.titlepage h3 {
+     font-size: 28px;
+     font-weight: 500;
+     color: #face34;
+     margin-bottom: 20px;
+     text-transform: uppercase;
+     letter-spacing: 1px;
 }
 
 .read_more {
@@ -678,17 +729,17 @@ ul.email li i {
 /** testimonial **/
 
 .testimonial {
-     margin-top: 90px;
+     margin-top: 0;
 }
 
 .border_testi {
      border: #fff solid 1px;
-     padding: 90px 0 142px 0;
+     padding: 0 0 0 0;
      margin: 0 40px;
 }
 
 .testimonial .titlepage {
-     padding-bottom: 60px;
+     padding-bottom: 0;
 }
 
 .posi_in {
@@ -701,7 +752,7 @@ ul.email li i {
 }
 
 .testomoniam_text h3 {
-     margin-top: 24px;
+     margin-top: 0;
      font-size: 17px;
      padding: 0;
      font-weight: bold;
@@ -712,12 +763,12 @@ ul.email li i {
      display: block;
      color: #face34;
      font-size: 17px;
-     padding: 2px 0 30px 0;
+     padding: 2px 0 0 0;
      line-height: 20px;
 }
 
 .testomoniam_text p {
-     padding-top: 20px;
+     padding-top: 0;
      display: block;
 }
 
@@ -757,7 +808,7 @@ ul.email li i {
 /** works **/
 
 .works {
-     padding: 80px 0 90px 0;
+     padding: 0 0 90px 0;
 }
 
 .works_vedio figure {
@@ -769,6 +820,160 @@ ul.email li i {
 
 
 /** contact section **/
+
+.contact {
+     margin-top: 90px;
+     padding: 90px 0 60px 0;
+     background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
+}
+
+.contact .titlepage h2 {
+     color: #fff;
+     font-size: 45px;
+     font-weight: 600;
+     line-height: 55px;
+}
+
+.contact .titlepage p {
+     color: #fff;
+     font-size: 18px;
+     line-height: 28px;
+     margin-top: 20px;
+}
+
+.contact_info h3 {
+     color: #face34;
+     font-size: 28px;
+     font-weight: 500;
+     margin-bottom: 30px;
+     text-transform: uppercase;
+     letter-spacing: 1px;
+}
+
+.contact_item {
+     display: flex;
+     align-items: center;
+     margin-bottom: 30px;
+     padding: 20px;
+     background: rgba(255,255,255,0.1);
+     border-radius: 10px;
+     transition: all 0.3s ease;
+}
+
+.contact_item:hover {
+     background: rgba(250, 206, 52, 0.2);
+     transform: translateY(-5px);
+     box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.contact_icon {
+     font-size: 40px;
+     color: #face34;
+     margin-right: 20px;
+     transition: all 0.3s ease;
+}
+
+.contact_item:hover .contact_icon {
+     transform: scale(1.2);
+     color: #fff;
+}
+
+.contact_details h4 {
+     color: #fff;
+     font-size: 20px;
+     margin-bottom: 5px;
+}
+
+.contact_details p a {
+     color: #a4a7ae;
+     text-decoration: none;
+     transition: color 0.3s ease;
+}
+
+.contact_details p a:hover {
+     color: #face34;
+}
+
+.social_links h4 {
+     color: #face34;
+     font-size: 20px;
+     margin-bottom: 20px;
+}
+
+.social_links ul {
+     list-style: none;
+     padding: 0;
+     display: flex;
+     gap: 20px;
+}
+
+.social_links li a {
+     color: #a4a7ae;
+     font-size: 30px;
+     transition: all 0.3s ease;
+}
+
+.social_links li a:hover {
+     color: #face34;
+     transform: scale(1.2);
+}
+
+.contact_form h3 {
+     color: #face34;
+     font-size: 28px;
+     font-weight: 500;
+     margin-bottom: 30px;
+     text-transform: uppercase;
+     letter-spacing: 1px;
+}
+
+.form_group {
+     margin-bottom: 20px;
+}
+
+.ente {
+     background: rgba(255,255,255,0.1);
+     color: #fff;
+     border: 1px solid #404b65;
+     padding: 15px;
+     width: 100%;
+     font-size: 16px;
+     border-radius: 5px;
+     transition: all 0.3s ease;
+}
+
+.ente:focus {
+     border-color: #face34;
+     box-shadow: 0 0 5px rgba(250, 206, 52, 0.5);
+     background: rgba(255,255,255,0.2);
+}
+
+.textarea {
+     height: 120px;
+     resize: vertical;
+}
+
+.subs_btn {
+     background: transparent;
+     color: #fff;
+     border: 2px solid #fff;
+     padding: 15px 30px;
+     font-size: 18px;
+     font-weight: 500;
+     text-transform: uppercase;
+     border-radius: 30px;
+     cursor: pointer;
+     transition: all 0.3s ease;
+     display: block;
+     margin: 0 auto;
+}
+
+.subs_btn:hover {
+     background: #face34;
+     border-color: #face34;
+     transform: scale(1.05);
+     box-shadow: 0 5px 15px rgba(250, 206, 52, 0.3);
+}
 
 .main_form .contactus {
      border: #404b65 solid 1px;
@@ -831,7 +1036,18 @@ ul.email li i {
 /** footer **/
 
 .footer {
-     padding-top: 90px
+     padding-top: 0;
+     background: linear-gradient(135deg, #0f132d 0%, #1a1a2e 100%);
+     color: #fff;
+}
+
+.footer .col-md-3 {
+     display: flex;
+     flex-direction: column;
+}
+
+.footer .Informa {
+     flex: 1;
 }
 
 .logo_bottom {
@@ -920,7 +1136,7 @@ ul.email li i {
 }
 
 .copyright {
-     margin-top: 90px;
+     margin-top: 0;
 }
 
 .copyright p {
@@ -940,6 +1156,88 @@ ul.email li i {
 
 /** end footer **/
 
+
+/* Fixed bottom section styles */
+.fixed-bottom-section {
+     width: 100%;
+     background-color: #0f132d;
+     color: #fff;
+     padding: 20px 0;
+}
+
+.fixed-bottom-section .Informa h3 {
+     color: #ffffff;
+     font-size: 25px;
+     font-weight: bold;
+     line-height: 21px;
+     margin-bottom: 20px;
+     margin-top: 26px;
+     text-transform: uppercase;
+}
+
+.fixed-bottom-section .conta ul li a {
+     color: #a4a7ae;
+     transition: color 0.3s ease;
+}
+
+.fixed-bottom-section .conta ul li a:hover {
+     color: #face34;
+}
+
+.fixed-bottom-section .helpful ul li a {
+     color: #a4a7ae;
+     font-size: 15px;
+     line-height: 29px;
+     transition: color 0.3s ease;
+}
+
+.fixed-bottom-section .helpful ul li a:hover {
+     color: #face34;
+}
+
+.fixed-bottom-section .Informa li {
+     font-size: 17px;
+     line-height: 29px;
+     color: #a4a7ae;
+}
+
+.fixed-bottom-section .ente {
+     background: transparent;
+     color: #c9c7c7;
+     border: inherit;
+     padding: 0 18px;
+     height: 51px;
+     width: 100%;
+     font-size: 17px;
+     font-weight: 500;
+     border: #ffffff solid 2px;
+     margin-bottom: 20px;
+     transition: border-color 0.3s ease;
+}
+
+.fixed-bottom-section .ente:hover {
+     border-color: #face34;
+}
+
+.fixed-bottom-section .subs_btn {
+     max-width: 191px;
+     display: inline-block;
+     background: transparent;
+     height: 51px;
+     width: 100%;
+     color: #c9c7c7;
+     font-size: 17px;
+     text-transform: uppercase;
+     font-weight: 500;
+     transition: all 0.3s ease;
+     border: #ffffff solid 2px;
+}
+
+.fixed-bottom-section .subs_btn:hover {
+     background: #face34;
+     border: #face34 solid 2px;
+     color: #fff;
+}
 
 /*- - ener page css--*/
 
