@@ -307,8 +307,8 @@ ul.social_icon li a:hover {
 
 /* Active page highlight */
 .nav-link.active {
-     background-color: #007bff;
-     color: #fff;
+     background-color: #face34 !important;
+     color: #fff !important;
      padding: 8px 12px;
      border-radius: 5px;
 }
@@ -410,6 +410,8 @@ ul.email li i {
      border-radius: 40px;
      border: #9197a6 solid 5px;
      color: #9197a6;
+     z-index: 10;
+     position: relative;
 }
 
 #myCarousel a.carousel-control-prev {

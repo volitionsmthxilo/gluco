@@ -36,14 +36,16 @@
             font-family: 'Poppins', sans-serif;
             margin: 0;
             padding: 0;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: url('images/body_bg.jpg') no-repeat center center fixed;
+            background-size: cover;
             min-height: 100vh;
         }
         .hero {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: rgba(0,0,0,0.4);
             color: white;
             padding: 100px 20px 80px;
             text-align: center;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
         }
         .hero h1 {
             font-size: 3.5em;
@@ -109,7 +111,7 @@
             padding: 20px 0;
         }
         .product {
-            background: white;
+            background: rgba(255,255,255,0.8);
             padding: 25px;
             border-radius: 15px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
@@ -190,64 +192,88 @@
         .cart-container {
             position: fixed;
             top: 0;
-            right: -350px;
-            width: 350px;
+            right: -400px;
+            width: 400px;
             height: 100%;
-            background: white;
-            box-shadow: -4px 0 20px rgba(0,0,0,0.15);
-            transition: right 0.3s ease;
-            padding: 30px;
+            background: #fff;
+            border-left: 2px solid #e9ecef;
+            box-shadow: -5px 0 40px rgba(0,0,0,0.15);
+            transition: right 0.4s ease;
+            padding: 20px;
             overflow-y: auto;
             z-index: 1001;
+            font-family: 'Poppins', sans-serif;
         }
         .cart-container.active {
             right: 0;
         }
-        .cart-container h2 {
+        .cart-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #e9ecef;
+        }
+        .cart-header i {
+            font-size: 1.8em;
+            color: #667eea;
+            margin-right: 10px;
+        }
+        .cart-header h2 {
             color: #333;
-            margin-bottom: 20px;
-            font-size: 1.5em;
+            margin: 0;
+            font-size: 1.4em;
+            font-weight: 600;
         }
         .cart-item {
             display: flex;
             align-items: center;
-            margin-bottom: 15px;
-            padding: 10px;
+            margin-bottom: 20px;
+            padding: 15px;
             background: #f8f9fa;
-            border-radius: 10px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            transition: transform 0.2s ease;
+        }
+        .cart-item:hover {
+            transform: translateY(-2px);
         }
         .cart-item img {
-            width: 60px;
-            height: 60px;
+            width: 70px;
+            height: 70px;
             margin-right: 15px;
-            border-radius: 8px;
+            border-radius: 10px;
+            object-fit: cover;
         }
         .cart-item-details {
             flex: 1;
         }
         .cart-item-details h4 {
-            margin: 0 0 5px 0;
+            margin: 0 0 8px 0;
             color: #333;
-            font-size: 0.9em;
+            font-size: 1em;
+            font-weight: 500;
         }
         .cart-item-details p {
             margin: 0;
             color: #666;
-            font-size: 0.8em;
+            font-size: 0.85em;
         }
         .cart-item-controls {
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 10px;
         }
         .cart-item-controls button {
             background: #667eea;
             color: white;
             border: none;
-            padding: 5px 10px;
-            border-radius: 5px;
+            padding: 6px 12px;
+            border-radius: 6px;
             cursor: pointer;
-            font-size: 0.8em;
+            font-size: 0.9em;
+            font-weight: 500;
+            transition: background 0.3s ease;
         }
         .cart-item-controls button:hover {
             background: #5a67d8;
@@ -260,25 +286,61 @@
         }
         .cart-total {
             background: #f8f9fa;
-            padding: 15px;
-            border-radius: 10px;
-            margin: 20px 0;
+            padding: 20px;
+            border-radius: 12px;
+            margin: 25px 0;
             text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
         }
         .cart-total h3 {
             margin: 0;
             color: #333;
-            font-size: 1.2em;
+            font-size: 1.3em;
+            font-weight: 600;
         }
-        .checkout-btn {
+        .cart-actions {
+            margin-top: 25px;
+        }
+        .cart-actions button {
             width: 100%;
+            padding: 12px;
             margin-bottom: 10px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        .paypal-btn {
+            background: #0070ba;
+            color: white;
+        }
+        .paypal-btn:hover {
+            background: #005ea6;
+            transform: translateY(-1px);
+        }
+        .email-btn {
+            background: #ff9800;
+            color: white;
+        }
+        .email-btn:hover {
+            background: #e68900;
+            transform: translateY(-1px);
+        }
+        .close-btn {
+            background: #6c757d;
+            color: white;
+        }
+        .close-btn:hover {
+            background: #5a6268;
+            transform: translateY(-1px);
         }
         .cart-count {
             position: absolute;
             top: -8px;
             right: -8px;
-            background: #ff6b6b;
+            background: #e44d26;
             color: white;
             border-radius: 50%;
             padding: 4px 8px;
@@ -319,93 +381,9 @@
         }
     </style>
 
-    <script>
-        let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-        function addToCart(product, price, image) {
-            let existingItem = cart.find(item => item.product === product);
-            if (existingItem) {
-                existingItem.quantity++;
-            } else {
-                cart.push({ product, price, quantity: 1, image });
-            }
-            localStorage.setItem("cart", JSON.stringify(cart));
-            updateCart();
-            updateCartIcon();
-        }
-
-        function updateCart() {
-            let cartList = document.getElementById("cart-list");
-            let totalAmount = 0;
-            cartList.innerHTML = "";
-            cart.forEach((item, index) => {
-                let itemTotal = item.price * item.quantity;
-                totalAmount += itemTotal;
-                cartList.innerHTML += `
-                    <div class="cart-item">
-                        <img src="${item.image}" alt="${item.product}">
-                        <div class="cart-item-details">
-                            <span>${item.product}</span>
-                            <span>$${item.price.toFixed(2)} x ${item.quantity}</span>
-                        </div>
-                        <div class="cart-item-controls">
-                            <button onclick="changeQuantity(${index}, -1)">-</button>
-                            <span>${item.quantity}</span>
-                            <button onclick="changeQuantity(${index}, 1)">+</button>
-                            <button class="remove-btn" onclick="removeItem(${index})">Remove</button>
-                        </div>
-                    </div>
-                `;
-            });
-            document.getElementById("total-amount").innerText = `Total: $${totalAmount.toFixed(2)}`;
-        }
-
-        function changeQuantity(index, change) {
-            cart[index].quantity += change;
-            if (cart[index].quantity < 1) {
-                cart[index].quantity = 1; // Prevent quantity from going below 1
-            }
-            localStorage.setItem("cart", JSON.stringify(cart));
-            updateCart();
-            updateCartIcon();
-        }
-
-        function removeItem(index) {
-            cart.splice(index, 1);
-            localStorage.setItem("cart", JSON.stringify(cart));
-            updateCart();
-            updateCartIcon();
-        }
-
-        function toggleCart() {
-            document.getElementById("cart-container").classList.toggle("active");
-        }
-
-        function updateCartIcon() {
-            let totalItems = cart.reduce((total, item) => total + item.quantity, 0);
-            document.getElementById("cart-count").innerText = totalItems;
-        }
-
-        // Initialize cart on page load
-        updateCart();
-        updateCartIcon();
-
-        function filterProducts(category) {
-            const products = document.querySelectorAll('.product');
-            const buttons = document.querySelectorAll('.filter-btn');
-            buttons.forEach(btn => btn.classList.remove('active'));
-            event.target.classList.add('active');
-            products.forEach(product => {
-                if (category === 'all' || product.classList.contains(category)) {
-                    product.style.display = 'block';
-                } else {
-                    product.style.display = 'none';
-                }
-            });
-        }
-    </script>
 </head>
-<body>
+<body class="main-layout" style="padding-top: 100px;">
     <!-- header -->
     <header style="position: fixed; top: 0; width: 100%; z-index: 1000; background-color: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
         <!-- header inner -->
@@ -415,8 +393,8 @@
                     <div class="col-sm-3">
                         <div class="logo d-flex align-items-center">
                             <a href="index.html" class="d-flex align-items-center">
-                                <img src="images/glucoicon.png" width="80" height="80" alt="GLUCO Icon">
-                                <big class="ml-2" style="color: #333; font-weight: bold;">GLUCO</big>
+                                <img src="images/glucoicon.png" width="60" height="60" alt="GLUCO Icon">
+                                <big class="ml-2" style="color: #333; font-weight: bold; font-size: 32px;">GLUCO</big>
                             </a>
                         </div>
                     </div>
@@ -458,8 +436,8 @@
                             </li>
                             <li style="display: inline-block; margin: 0 10px; position: relative;">
                                 <a onclick="toggleCart()" style="cursor: pointer;">
-                                    <img src="images/cart-icon.png" width="30" height="30" alt="Cart">
-                                    <span id="cart-count" class="cart-count" style="position: absolute; top: -10px; right: -10px; background: #e44d26; color: white; border-radius: 50%; padding: 5px 10px; font-size: 12px;">0</span>
+                                    <i class="fa fa-shopping-cart" style="color: #333; font-size: 24px;"></i>
+                                    <span id="cart-count" class="cart-count" style="position: absolute; top: -8px; right: -8px; background: #e44d26; color: white; border-radius: 50%; padding: 2px 5px; font-size: 10px; display: none;">0</span>
                                 </a>
                             </li>
                         </ul>
@@ -473,9 +451,8 @@
     <!-- hero section -->
     <section class="hero">
         <div class="container">
-            <h1>Discover Innovation at GLUCO</h1>
-            <p>Explore our cutting-edge tech solutions, from solar systems to robotics, designed to empower your future.</p>
-            <a href="#catalogue" class="cta-button">Shop Now</a>
+            <h1>Unleash Innovation with GLUCO's IT, Electrical, and Electronic Engineering Solutions!</h1>
+            <p>Transform your world with cutting-edge tech: from advanced IT services and reliable electrical systems to innovative electronic engineering. Empower your future today!</p>
         </div>
     </section>
 
@@ -620,14 +597,161 @@
     <!-- end products-->
 
     <div id="cart-container" class="cart-container">
-        <h2 style="color: #333;">Shopping Bag</h2>
+        <div class="cart-header">
+            <i class="fa fa-shopping-cart"></i>
+            <h2>Shopping Bag</h2>
+        </div>
         <div id="cart-list"></div>
-        <h3 id="total-amount" style="color: #333;">Total: $0.00</h3>
-        <button class="paypal-btn" target="blank" onclick="window.location.href='https://www.paypal.com/paypalme/volixun'">Pay with PayPal</button>
-        <button class="email-btn" onclick="window.location.href='mailto:info@gluco.co.za'">Enquiries</button>
-        <button onclick="toggleCart()">Close</button>
+        <div class="cart-total">
+            <h3 id="total-amount">Total: $0.00</h3>
+        </div>
+        <div class="cart-actions">
+            <p style="text-align: center; color: #666; font-size: 0.9em; margin-bottom: 15px;">Currently, we do not accept online payments. Please use Ecocash, USD Cash, or Bank Transfer to complete your transaction.</p>
+            <button class="email-btn" onclick="window.open('mailto:gluco.zw@gmail.com', '_blank')">Contact via Email</button>
+            <button class="whatsapp-btn" onclick="window.open('https://wa.me/263784245082', '_blank')">Contact via WhatsApp</button>
+            <button class="close-btn" onclick="toggleCart()">Close</button>
+        </div>
     </div>
 
+    <!-- footer -->
+    <footer>
+        <div class="footer">
+            <div class="container">
+                <div class="copyright text_align_center">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <p>
+                                    © <span id="year"></span>
+                                    <a><script src="js/yr.js"></script></a>
+                                    - All Rights Reserved. Designed by
+                                    <a href="index.html">GLUCO</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- end footer -->
 
-</body>
+      <!-- Javascript files-->
+      <script src="js/jquery.min.js "></script>
+      <script src="js/bootstrap.bundle.min.js "></script>
+      <script src="js/jquery-3.0.0.min.js "></script>
+      <script src="js/custom.js "></script>
+
+      <script>
+          let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+          function addToCart(product, price, image) {
+              let existingItem = cart.find(item => item.product === product);
+              if (existingItem) {
+                  existingItem.quantity++;
+              } else {
+                  cart.push({ product, price, quantity: 1, image });
+              }
+              localStorage.setItem("cart", JSON.stringify(cart));
+              updateCart();
+              updateCartIcon();
+          }
+
+          function updateCart() {
+              let cartList = document.getElementById("cart-list");
+              let totalAmount = 0;
+              cartList.innerHTML = "";
+              cart.forEach((item, index) => {
+                  let itemTotal = item.price * item.quantity;
+                  totalAmount += itemTotal;
+                  cartList.innerHTML += `
+                      <div class="cart-item">
+                          <img src="${item.image}" alt="${item.product}">
+                          <div class="cart-item-details">
+                              <span>${item.product}</span>
+                              <span>$${item.price.toFixed(2)} x ${item.quantity}</span>
+                          </div>
+                          <div class="cart-item-controls">
+                              <button onclick="changeQuantity(${index}, -1)">-</button>
+                              <span>${item.quantity}</span>
+                              <button onclick="changeQuantity(${index}, 1)">+</button>
+                              <button class="remove-btn" onclick="removeItem(${index})">Remove</button>
+                          </div>
+                      </div>
+                  `;
+              });
+              document.getElementById("total-amount").innerText = `Total: $${totalAmount.toFixed(2)}`;
+          }
+
+          function changeQuantity(index, change) {
+              cart[index].quantity += change;
+              if (cart[index].quantity < 1) {
+                  cart[index].quantity = 1; // Prevent quantity from going below 1
+              }
+              localStorage.setItem("cart", JSON.stringify(cart));
+              updateCart();
+              updateCartIcon();
+          }
+
+          function removeItem(index) {
+              cart.splice(index, 1);
+              localStorage.setItem("cart", JSON.stringify(cart));
+              updateCart();
+              updateCartIcon();
+          }
+
+          function toggleCart() {
+              document.getElementById("cart-container").classList.toggle("active");
+          }
+
+          function updateCartIcon() {
+              let totalItems = cart.reduce((total, item) => total + item.quantity, 0);
+              let cartCountElement = document.getElementById("cart-count");
+              cartCountElement.innerText = totalItems;
+              if (totalItems > 0) {
+                  cartCountElement.style.display = "inline-block";
+              } else {
+                  cartCountElement.style.display = "none";
+              }
+          }
+
+          // Initialize cart on page load or pageshow
+          function initializeCart() {
+              cart = JSON.parse(localStorage.getItem("cart")) || [];
+              updateCart();
+              updateCartIcon();
+          }
+
+          window.addEventListener('load', initializeCart);
+          window.addEventListener('pageshow', function(event) {
+              if (event.persisted) {
+                  initializeCart();
+              }
+          });
+
+          // Listen for cart changes from other pages
+          window.addEventListener('storage', function(e) {
+              if (e.key === 'cart') {
+                  cart = JSON.parse(localStorage.getItem("cart")) || [];
+                  updateCart();
+                  updateCartIcon();
+              }
+          });
+
+          function filterProducts(category) {
+              const products = document.querySelectorAll('.product');
+              const buttons = document.querySelectorAll('.filter-btn');
+              buttons.forEach(btn => btn.classList.remove('active'));
+              event.target.classList.add('active');
+              products.forEach(product => {
+                  if (category === 'all' || product.classList.contains(category)) {
+                      product.style.display = 'block';
+                  } else {
+                      product.style.display = 'none';
+                  }
+              });
+          }
+      </script>
+   </body>
+
 </html>

