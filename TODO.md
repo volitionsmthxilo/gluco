@@ -1,6 +1,7 @@
-# TODO List for Contact Page Fixes
+# TODO List for Contact Form Email Fix
 
-- [x] Update send_email.php to change email subject to "GLUCO Enquiry"
-- [x] Verify that email link opens in new tab (already implemented)
-- [x] Verify that phone number triggers contact dialer (already implemented)
-- [x] Ensure contact section remains professional (already implemented)
+- [x] Download and include PHPMailer library
+- [x] Update send_email.php to use PHPMailer with Gmail SMTP
+- [x] Configure SMTP settings with Gmail app password
+- [ ] Test the form submission (requires app password setup)
+- [x] Ensure proper error handling and user feedback
