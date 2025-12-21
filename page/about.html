@@ -192,6 +192,7 @@
             font-weight: bold;
         }
     </style>
+
     </head>
 
     <!-- body -->
@@ -219,7 +220,7 @@
                                 <a class="nav-link" href="services.html" style="color: #333; font-weight: bold; text-decoration: none;">SERVICES</a>
                             </li>
                             <li class="nav-item" style="display: inline-block; margin: 0 15px;">
-                                <a class="nav-link active" href="about.html" style="color: #333; font-weight: bold; text-decoration: none;">ABOUT</a>
+                                <a class="nav-link" href="about.html" style="color: #333; font-weight: bold; text-decoration: none;">ABOUT</a>
                             </li>
                             <li class="nav-item" style="display: inline-block; margin: 0 15px;">
                                 <a class="nav-link" href="contact.html" style="color: #333; font-weight: bold; text-decoration: none;">CONTACT</a>
@@ -374,6 +375,24 @@
     </div>
     <!-- about end -->
 
+    <!-- cart container -->
+    <div id="cart-container" class="cart-container">
+        <div class="cart-header">
+            <i class="fa fa-shopping-cart"></i>
+            <h2>Shopping Bag</h2>
+        </div>
+        <div id="cart-list"></div>
+        <div class="cart-total">
+            <h3 id="total-amount">Total: $0.00</h3>
+        </div>
+        <div class="cart-actions">
+            <p style="text-align: center; color: #666; font-size: 0.9em; margin-bottom: 15px;">Currently, we do not accept online payments. Please use Ecocash, USD Cash, or Bank Transfer to complete your transaction.</p>
+            <button class="email-btn" onclick="window.open('mailto:gluco.zw@gmail.com', '_blank')">Contact via Email</button>
+            <button class="whatsapp-btn" onclick="window.open('https://wa.me/263784245082', '_blank')">Contact via WhatsApp</button>
+            <button class="close-btn" onclick="toggleCart()">Close</button>
+        </div>
+    </div>
+
     <!-- footer -->
     <footer>
         <div class="footer">
@@ -404,116 +423,90 @@
         <script src="../js/custom.js "></script>
 
         <script>
-            let cart = [];
+            let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-            function toggleCart() {
-                const cartContainer = document.getElementById('cart-container');
-                cartContainer.classList.toggle('active');
-            }
-
-            function addToCart(name, price, image) {
-                const existingItem = cart.find(item => item.name === name);
+            function addToCart(product, price, image) {
+                let existingItem = cart.find(item => item.product === product);
                 if (existingItem) {
-                    existingItem.quantity += 1;
+                    existingItem.quantity++;
                 } else {
-                    cart.push({ name, price: parseFloat(price), image, quantity: 1 });
+                    cart.push({ product, price, quantity: 1, image });
                 }
+                localStorage.setItem("cart", JSON.stringify(cart));
                 updateCart();
-                saveCartToLocalStorage();
-            }
-
-            function removeFromCart(name) {
-                cart = cart.filter(item => item.name !== name);
-                updateCart();
-                saveCartToLocalStorage();
-            }
-
-            function updateQuantity(name, change) {
-                const item = cart.find(item => item.name === name);
-                if (item) {
-                    item.quantity += change;
-                    if (item.quantity <= 0) {
-                        removeFromCart(name);
-                    } else {
-                        updateCart();
-                        saveCartToLocalStorage();
-                    }
-                }
+                updateCartIcon();
             }
 
             function updateCart() {
-                const cartItems = document.getElementById('cart-items');
-                const cartTotal = document.getElementById('cart-total');
-                const cartCount = document.getElementById('cart-count');
-
-                cartItems.innerHTML = '';
-                let total = 0;
-                let itemCount = 0;
-
-                cart.forEach(item => {
-                    total += item.price * item.quantity;
-                    itemCount += item.quantity;
-
-                    const itemDiv = document.createElement('div');
-                    itemDiv.className = 'cart-item';
-                    itemDiv.innerHTML = `
-                        <img src="${item.image}" alt="${item.name}">
-                        <div class="cart-item-details">
-                            <h4>${item.name}</h4>
-                            <p>$${item.price.toFixed(2)} x ${item.quantity}</p>
-                        </div>
-                        <div class="cart-item-controls">
-                            <button onclick="updateQuantity('${item.name}', -1)">-</button>
-                            <span>${item.quantity}</span>
-                            <button onclick="updateQuantity('${item.name}', 1)">+</button>
-                            <button class="remove-btn" onclick="removeFromCart('${item.name}')">Remove</button>
+                let cartList = document.getElementById("cart-list");
+                let totalAmount = 0;
+                cartList.innerHTML = "";
+                cart.forEach((item, index) => {
+                    let itemTotal = item.price * item.quantity;
+                    totalAmount += itemTotal;
+                    cartList.innerHTML += `
+                        <div class="cart-item">
+                            <img src="${item.image}" alt="${item.product}">
+                            <div class="cart-item-details">
+                                <span>${item.product}</span>
+                                <span>$${item.price.toFixed(2)} x ${item.quantity}</span>
+                            </div>
+                            <div class="cart-item-controls">
+                                <button onclick="changeQuantity(${index}, -1)">-</button>
+                                <span>${item.quantity}</span>
+                                <button onclick="changeQuantity(${index}, 1)">+</button>
+                                <button class="remove-btn" onclick="removeItem(${index})">Remove</button>
+                            </div>
                         </div>
                     `;
-                    cartItems.appendChild(itemDiv);
                 });
-
-                cartTotal.textContent = total.toFixed(2);
-                cartCount.textContent = itemCount;
-                cartCount.style.display = itemCount > 0 ? 'inline-block' : 'none';
+                document.getElementById("total-amount").innerText = `Total: $${totalAmount.toFixed(2)}`;
             }
 
-            function checkoutPayPal() {
-                if (cart.length === 0) {
-                    alert('Your cart is empty!');
-                    return;
+            function changeQuantity(index, change) {
+                cart[index].quantity += change;
+                if (cart[index].quantity < 1) {
+                    cart[index].quantity = 1; // Prevent quantity from going below 1
                 }
-                // Implement PayPal checkout logic here
-                alert('Redirecting to PayPal...');
+                localStorage.setItem("cart", JSON.stringify(cart));
+                updateCart();
+                updateCartIcon();
             }
 
-            function checkoutEmail() {
-                if (cart.length === 0) {
-                    alert('Your cart is empty!');
-                    return;
+            function removeItem(index) {
+                cart.splice(index, 1);
+                localStorage.setItem("cart", JSON.stringify(cart));
+                updateCart();
+                updateCartIcon();
+            }
+
+            function toggleCart() {
+                document.getElementById("cart-container").classList.toggle("active");
+            }
+
+            function updateCartIcon() {
+                let totalItems = cart.reduce((total, item) => total + item.quantity, 0);
+                let cartCountElement = document.getElementById("cart-count");
+                cartCountElement.innerText = totalItems;
+                if (totalItems > 0) {
+                    cartCountElement.style.display = "inline-block";
+                } else {
+                    cartCountElement.style.display = "none";
                 }
-                const subject = 'Order Details';
-                let body = 'Please find my order details below:\n\n';
-                cart.forEach(item => {
-                    body += `${item.name} - $${item.price.toFixed(2)} x ${item.quantity} = $${(item.price * item.quantity).toFixed(2)}\n`;
-                });
-                body += `\nTotal: $${cart.reduce((sum, item) => sum + item.price * item.quantity, 0).toFixed(2)}`;
-                window.location.href = `mailto:info@gluco.co.za?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
             }
 
-            function saveCartToLocalStorage() {
-                localStorage.setItem('cart', JSON.stringify(cart));
-            }
+            // Initialize cart on page load
+            updateCart();
+            updateCartIcon();
 
-            function loadCartFromLocalStorage() {
-                const savedCart = localStorage.getItem('cart');
-                if (savedCart) {
-                    cart = JSON.parse(savedCart);
+            // Listen for cart changes from other pages
+            window.addEventListener('storage', function(e) {
+                if (e.key === 'cart') {
+                    cart = JSON.parse(localStorage.getItem("cart")) || [];
                     updateCart();
+                    updateCartIcon();
                 }
-            }
-
-            // Load cart on page load
-            document.addEventListener('DOMContentLoaded', loadCartFromLocalStorage);
+            });
         </script>
     </body>
 

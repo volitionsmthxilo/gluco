@@ -41,10 +41,11 @@
             min-height: 100vh;
         }
         .hero {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: rgba(0,0,0,0.4);
             color: white;
             padding: 100px 20px 80px;
             text-align: center;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
         }
         .hero h1 {
             font-size: 3.5em;
@@ -110,7 +111,7 @@
             padding: 20px 0;
         }
         .product {
-            background: white;
+            background: rgba(255,255,255,0.8);
             padding: 25px;
             border-radius: 15px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
@@ -380,97 +381,7 @@
         }
     </style>
 
-    <script>
-        let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-        function addToCart(product, price, image) {
-            let existingItem = cart.find(item => item.product === product);
-            if (existingItem) {
-                existingItem.quantity++;
-            } else {
-                cart.push({ product, price, quantity: 1, image });
-            }
-            localStorage.setItem("cart", JSON.stringify(cart));
-            updateCart();
-            updateCartIcon();
-        }
-
-        function updateCart() {
-            let cartList = document.getElementById("cart-list");
-            let totalAmount = 0;
-            cartList.innerHTML = "";
-            cart.forEach((item, index) => {
-                let itemTotal = item.price * item.quantity;
-                totalAmount += itemTotal;
-                cartList.innerHTML += `
-                    <div class="cart-item">
-                        <img src="${item.image}" alt="${item.product}">
-                        <div class="cart-item-details">
-                            <span>${item.product}</span>
-                            <span>$${item.price.toFixed(2)} x ${item.quantity}</span>
-                        </div>
-                        <div class="cart-item-controls">
-                            <button onclick="changeQuantity(${index}, -1)">-</button>
-                            <span>${item.quantity}</span>
-                            <button onclick="changeQuantity(${index}, 1)">+</button>
-                            <button class="remove-btn" onclick="removeItem(${index})">Remove</button>
-                        </div>
-                    </div>
-                `;
-            });
-            document.getElementById("total-amount").innerText = `Total: $${totalAmount.toFixed(2)}`;
-        }
-
-        function changeQuantity(index, change) {
-            cart[index].quantity += change;
-            if (cart[index].quantity < 1) {
-                cart[index].quantity = 1; // Prevent quantity from going below 1
-            }
-            localStorage.setItem("cart", JSON.stringify(cart));
-            updateCart();
-            updateCartIcon();
-        }
-
-        function removeItem(index) {
-            cart.splice(index, 1);
-            localStorage.setItem("cart", JSON.stringify(cart));
-            updateCart();
-            updateCartIcon();
-        }
-
-        function toggleCart() {
-            document.getElementById("cart-container").classList.toggle("active");
-        }
-
-        function updateCartIcon() {
-            let totalItems = cart.reduce((total, item) => total + item.quantity, 0);
-            let cartCountElement = document.getElementById("cart-count");
-            cartCountElement.innerText = totalItems;
-            if (totalItems > 0) {
-                cartCountElement.style.display = "inline-block";
-            } else {
-                cartCountElement.style.display = "none";
-            }
-        }
-
-        // Initialize cart on page load
-        updateCart();
-        updateCartIcon();
-
-        function filterProducts(category) {
-            const products = document.querySelectorAll('.product');
-            const buttons = document.querySelectorAll('.filter-btn');
-            buttons.forEach(btn => btn.classList.remove('active'));
-            event.target.classList.add('active');
-            products.forEach(product => {
-                if (category === 'all' || product.classList.contains(category)) {
-                    product.style.display = 'block';
-                } else {
-                    product.style.display = 'none';
-                }
-            });
-        }
-    </script>
 </head>
 <body class="main-layout" style="padding-top: 100px;">
     <!-- header -->
@@ -540,9 +451,8 @@
     <!-- hero section -->
     <section class="hero">
         <div class="container">
-            <h1>Discover Innovation at GLUCO</h1>
-            <p>Explore our cutting-edge tech solutions, from solar systems to robotics, designed to empower your future.</p>
-            <a href="#catalogue" class="cta-button">Shop Now</a>
+            <h1>Unleash Innovation with GLUCO's IT, Electrical, and Electronic Engineering Solutions!</h1>
+            <p>Transform your world with cutting-edge tech: from advanced IT services and reliable electrical systems to innovative electronic engineering. Empower your future today!</p>
         </div>
     </section>
 
@@ -696,8 +606,9 @@
             <h3 id="total-amount">Total: $0.00</h3>
         </div>
         <div class="cart-actions">
-            <button class="paypal-btn" target="blank" onclick="window.location.href='https://www.paypal.com/paypalme/volixun'">Pay with PayPal</button>
-            <button class="email-btn" onclick="window.location.href='mailto:info@gluco.co.za'">Enquiries</button>
+            <p style="text-align: center; color: #666; font-size: 0.9em; margin-bottom: 15px;">Currently, we do not accept online payments. Please use Ecocash, USD Cash, or Bank Transfer to complete your transaction.</p>
+            <button class="email-btn" onclick="window.open('mailto:gluco.zw@gmail.com', '_blank')">Contact via Email</button>
+            <button class="whatsapp-btn" onclick="window.open('https://wa.me/263784245082', '_blank')">Contact via WhatsApp</button>
             <button class="close-btn" onclick="toggleCart()">Close</button>
         </div>
     </div>
@@ -725,5 +636,122 @@
     </footer>
     <!-- end footer -->
 
-</body>
+      <!-- Javascript files-->
+      <script src="js/jquery.min.js "></script>
+      <script src="js/bootstrap.bundle.min.js "></script>
+      <script src="js/jquery-3.0.0.min.js "></script>
+      <script src="js/custom.js "></script>
+
+      <script>
+          let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+          function addToCart(product, price, image) {
+              let existingItem = cart.find(item => item.product === product);
+              if (existingItem) {
+                  existingItem.quantity++;
+              } else {
+                  cart.push({ product, price, quantity: 1, image });
+              }
+              localStorage.setItem("cart", JSON.stringify(cart));
+              updateCart();
+              updateCartIcon();
+          }
+
+          function updateCart() {
+              let cartList = document.getElementById("cart-list");
+              let totalAmount = 0;
+              cartList.innerHTML = "";
+              cart.forEach((item, index) => {
+                  let itemTotal = item.price * item.quantity;
+                  totalAmount += itemTotal;
+                  cartList.innerHTML += `
+                      <div class="cart-item">
+                          <img src="${item.image}" alt="${item.product}">
+                          <div class="cart-item-details">
+                              <span>${item.product}</span>
+                              <span>$${item.price.toFixed(2)} x ${item.quantity}</span>
+                          </div>
+                          <div class="cart-item-controls">
+                              <button onclick="changeQuantity(${index}, -1)">-</button>
+                              <span>${item.quantity}</span>
+                              <button onclick="changeQuantity(${index}, 1)">+</button>
+                              <button class="remove-btn" onclick="removeItem(${index})">Remove</button>
+                          </div>
+                      </div>
+                  `;
+              });
+              document.getElementById("total-amount").innerText = `Total: $${totalAmount.toFixed(2)}`;
+          }
+
+          function changeQuantity(index, change) {
+              cart[index].quantity += change;
+              if (cart[index].quantity < 1) {
+                  cart[index].quantity = 1; // Prevent quantity from going below 1
+              }
+              localStorage.setItem("cart", JSON.stringify(cart));
+              updateCart();
+              updateCartIcon();
+          }
+
+          function removeItem(index) {
+              cart.splice(index, 1);
+              localStorage.setItem("cart", JSON.stringify(cart));
+              updateCart();
+              updateCartIcon();
+          }
+
+          function toggleCart() {
+              document.getElementById("cart-container").classList.toggle("active");
+          }
+
+          function updateCartIcon() {
+              let totalItems = cart.reduce((total, item) => total + item.quantity, 0);
+              let cartCountElement = document.getElementById("cart-count");
+              cartCountElement.innerText = totalItems;
+              if (totalItems > 0) {
+                  cartCountElement.style.display = "inline-block";
+              } else {
+                  cartCountElement.style.display = "none";
+              }
+          }
+
+          // Initialize cart on page load or pageshow
+          function initializeCart() {
+              cart = JSON.parse(localStorage.getItem("cart")) || [];
+              updateCart();
+              updateCartIcon();
+          }
+
+          window.addEventListener('load', initializeCart);
+          window.addEventListener('pageshow', function(event) {
+              if (event.persisted) {
+                  initializeCart();
+              }
+          });
+
+          // Listen for cart changes from other pages
+          window.addEventListener('storage', function(e) {
+              if (e.key === 'cart') {
+                  cart = JSON.parse(localStorage.getItem("cart")) || [];
+                  updateCart();
+                  updateCartIcon();
+              }
+          });
+
+          function filterProducts(category) {
+              const products = document.querySelectorAll('.product');
+              const buttons = document.querySelectorAll('.filter-btn');
+              buttons.forEach(btn => btn.classList.remove('active'));
+              event.target.classList.add('active');
+              products.forEach(product => {
+                  if (category === 'all' || product.classList.contains(category)) {
+                      product.style.display = 'block';
+                  } else {
+                      product.style.display = 'none';
+                  }
+              });
+          }
+      </script>
+   </body>
+
 </html>

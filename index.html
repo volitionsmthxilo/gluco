@@ -190,6 +190,42 @@
             font-size: 0.7em;
             font-weight: bold;
         }
+
+        /* Custom Carousel Fade Transitions */
+        .carousel-fade .carousel-item {
+            opacity: 0;
+            transition: opacity 2s ease-in-out;
+        }
+        .carousel-fade .carousel-item.active {
+            opacity: 1;
+        }
+        .carousel-fade .carousel-item-next.carousel-item-start,
+        .carousel-fade .carousel-item-prev.carousel-item-end {
+            opacity: 1;
+        }
+        .carousel-fade .carousel-item-next,
+        .carousel-fade .carousel-item-prev {
+            transform: translateX(0);
+        }
+        .carousel-caption {
+            animation: fadeInUp 1.5s ease-out 0.5s both;
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px) scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+        .carousel-item img {
+            transition: transform 2s ease-in-out;
+        }
+        .carousel-item.active img {
+            transform: scale(1.05);
+        }
     </style>
 </head>
    
@@ -212,7 +248,7 @@
                     <div class="col-sm-6 text-center">
                         <ul class="nav justify-content-center" style="list-style: none; padding: 0; margin: 0;">
                             <li class="nav-item" style="display: inline-block; margin: 0 15px;">
-                                <a class="nav-link active" href="index.html" style="color: #333; font-weight: bold; text-decoration: none;">HOME</a>
+                                <a class="nav-link" href="index.html" style="color: #333; font-weight: bold; text-decoration: none;">HOME</a>
                             </li>
                             <li class="nav-item" style="display: inline-block; margin: 0 15px;">
                                 <a class="nav-link" href="page/services.html" style="color: #333; font-weight: bold; text-decoration: none;">SERVICES</a>
@@ -264,11 +300,12 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12">
-                    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                    <div id="myCarousel" class="carousel slide carousel-fade" data-ride="carousel" data-interval="5000">
                         <ol class="carousel-indicators">
                             <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
                             <li data-target="#myCarousel" data-slide-to="1"></li>
                             <li data-target="#myCarousel" data-slide-to="2"></li>
+                            <li data-target="#myCarousel" data-slide-to="3"></li>
                         </ol>
                         <div class="carousel-inner">
                             <div class="carousel-item active">
@@ -284,7 +321,7 @@
                                                 <div class="bluid">
                                                     <h1>Electrical, Electronics and<br>Solar Systems</h1>
                                                     <p>
-                                                        Expert Electrical, Electronics & Smart Solar Systems Engineers. Efficient, Reliable & Sustainable Solutions. Trust GLUCO for Quality Workmanship & Unbeatable Prices
+                                                        Experience reliable electrical solutions and sustainable solar energy systems designed for your home and business. Our expert engineers deliver efficient, eco-friendly installations with unbeatable quality and competitive pricing. Power your future with GLUCO's trusted expertise.
                                                     </p>
                                                     <a class="read_more" href="page/services.html">Find out more </a><a class="read_more" href="page/contact.html">Get A Quote </a>
                                                 </div>
@@ -306,7 +343,7 @@
                                                 <div class="bluid">
                                                     <h1>Gluco<br>Academy</h1>
                                                     <p>
-                                                        Unlock trading success with GLUCO! Expert Forex consultancy, personalized career mentorship, and comprehensive trading classes. Transform your skills and achieve financial freedom with our expert guidance
+                                                        Embark on your trading journey with GLUCO Academy! Gain expert insights through personalized Forex consultancy, career mentorship, and hands-on trading classes. Elevate your skills and secure your financial future with our dedicated guidance.
                                                     </p>
                                                     <a class="read_more" href="page/services.html">Find out more </a><a class="read_more" href="page/contact.html">Get A Quote </a>
                                                 </div>
@@ -328,7 +365,7 @@
                                                 <div class="bluid">
                                                     <h1>IT<br>Consultancy Services</h1>
                                                     <p>
-                                                        Your trusted IT consultancy! We deliver tailored solutions, web development, web hosting and domain registration, software licensing, Windows activation, mobile/desktop application. Expert support for your unique business needs, ensuring seamless operations
+                                                        Empower your business with seamless IT solutions! From custom web development and reliable hosting to software licensing and app creation, we provide expert support tailored to your needs. Experience hassle-free operations and unlock your digital potential with GLUCO's innovative services.
                                                     </p>
                                                     <a class="read_more" href="page/services.html">Find out more </a><a class="read_more" href="page/contact.html">Get A Quote </a>
                                                 </div>
@@ -360,14 +397,6 @@
                                 </div>
                             </div>
                         </div>
-                        <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
-                            <i class="fa fa-angle-left" aria-hidden="true"></i>
-                            <span class="sr-only">Previous</span>
-                        </a>
-                        <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
-                            <i class="fa fa-angle-right" aria-hidden="true"></i>
-                            <span class="sr-only">Next</span>
-                        </a>
                     </div>
                 </div>
             </div>
@@ -382,15 +411,15 @@
                 <div class="col-lg-3 col-sm-6">
                     <div id="wa_hover" class="wallet_box text_align_center">
                         <i><img src="images/solar-sys.png" alt="#"/></i>
-                        <h3>SOLAR, ELECTRICAL AND ELECTRONICS</h3>
-                        <p>Electronic Components, Smart Solar Systems,Maintenance, House Wiring, Electronic Gadgets and many more ....</p>
+                        <h3>ELECTRICAL AND ELECTRONICS</h3>
+                        <p>Electronic Components, Smart Solar Systems,Maintenance,<br>House Wiring,<br>Electronic Gadgets</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-sm-6">
                     <div id="wa_hover" class="wallet_box text_align_center">
                         <i><img src="images/forex.png" alt="#"/></i>
                         <h3>GLUCO ACADEMY</h3>
-                        <p>Forex Trading Classes,<br> Forex Signals Provisioning<br> Career Mentorship <br>and <br>Councelling</p>
+                        <p>Forex Trading Classes,<br> Forex Signals Provisioning<br> Career Mentorship <br>and Counselling</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-sm-6">
@@ -404,7 +433,7 @@
                     <div id="wa_hover" class="wallet_box text_align_center">
                         <i><img src="images/robotics.png" alt="#"/></i>
                         <h3>ROBOTICS AND IOT</h3>
-                        <p>Smart Agricultural<br> Systems, <br>Industrial Automation,<br> Monitoring<br>Systems</p>
+                        <p>Smart Agricultural<br> Systems, <br>Industrial Automation,<br> Monitoring Systems</p>
                     </div>
                 </div>
             </div>
@@ -419,17 +448,18 @@
       <div id="cart-container" class="cart-container">
           <div class="cart-header">
               <i class="fa fa-shopping-cart"></i>
-              <h2>Shopping Cart</h2>
+              <h2>Shopping Bag</h2>
           </div>
-          <div id="cart-items"></div>
+          <div id="cart-list"></div>
           <div class="cart-total">
-              <h3>Total: $<span id="cart-total">0.00</span></h3>
+              <h3 id="total-amount">Total: $0.00</h3>
           </div>
-          <div class="cart-actions">
-              <button class="paypal-btn" onclick="checkoutPayPal()">Pay with PayPal</button>
-              <button class="email-btn" onclick="checkoutEmail()">Send via Email</button>
-              <button class="close-btn" onclick="toggleCart()">Close</button>
-          </div>
+        <div class="cart-actions">
+            <p style="text-align: center; color: #666; font-size: 0.9em; margin-bottom: 15px;">Currently, we do not accept online payments. Please use Ecocash, USD Cash, or Bank Transfer to complete your transaction.</p>
+            <button class="email-btn" onclick="window.open('mailto:gluco.zw@gmail.com', '_blank')">Contact via Email</button>
+            <button class="whatsapp-btn" onclick="window.open('https://wa.me/263784245082', '_blank')">Contact via WhatsApp</button>
+            <button class="close-btn" onclick="toggleCart()">Close</button>
+        </div>
       </div>
 
       <!-- footer -->
@@ -460,6 +490,93 @@
       <script src="js/bootstrap.bundle.min.js "></script>
       <script src="js/jquery-3.0.0.min.js "></script>
       <script src="js/custom.js "></script>
+
+      <script>
+          let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+          function addToCart(product, price, image) {
+              let existingItem = cart.find(item => item.product === product);
+              if (existingItem) {
+                  existingItem.quantity++;
+              } else {
+                  cart.push({ product, price, quantity: 1, image });
+              }
+              localStorage.setItem("cart", JSON.stringify(cart));
+              updateCart();
+              updateCartIcon();
+          }
+
+          function updateCart() {
+              let cartList = document.getElementById("cart-list");
+              let totalAmount = 0;
+              cartList.innerHTML = "";
+              cart.forEach((item, index) => {
+                  let itemTotal = item.price * item.quantity;
+                  totalAmount += itemTotal;
+                  cartList.innerHTML += `
+                      <div class="cart-item">
+                          <img src="${item.image}" alt="${item.product}">
+                          <div class="cart-item-details">
+                              <span>${item.product}</span>
+                              <span>$${item.price.toFixed(2)} x ${item.quantity}</span>
+                          </div>
+                          <div class="cart-item-controls">
+                              <button onclick="changeQuantity(${index}, -1)">-</button>
+                              <span>${item.quantity}</span>
+                              <button onclick="changeQuantity(${index}, 1)">+</button>
+                              <button class="remove-btn" onclick="removeItem(${index})">Remove</button>
+                          </div>
+                      </div>
+                  `;
+              });
+              document.getElementById("total-amount").innerText = `Total: $${totalAmount.toFixed(2)}`;
+          }
+
+          function changeQuantity(index, change) {
+              cart[index].quantity += change;
+              if (cart[index].quantity < 1) {
+                  cart[index].quantity = 1; // Prevent quantity from going below 1
+              }
+              localStorage.setItem("cart", JSON.stringify(cart));
+              updateCart();
+              updateCartIcon();
+          }
+
+          function removeItem(index) {
+              cart.splice(index, 1);
+              localStorage.setItem("cart", JSON.stringify(cart));
+              updateCart();
+              updateCartIcon();
+          }
+
+          function toggleCart() {
+              document.getElementById("cart-container").classList.toggle("active");
+          }
+
+          function updateCartIcon() {
+              let totalItems = cart.reduce((total, item) => total + item.quantity, 0);
+              let cartCountElement = document.getElementById("cart-count");
+              cartCountElement.innerText = totalItems;
+              if (totalItems > 0) {
+                  cartCountElement.style.display = "inline-block";
+              } else {
+                  cartCountElement.style.display = "none";
+              }
+          }
+
+          // Initialize cart on page load
+          updateCart();
+          updateCartIcon();
+
+          // Listen for cart changes from other pages
+          window.addEventListener('storage', function(e) {
+              if (e.key === 'cart') {
+                  cart = JSON.parse(localStorage.getItem("cart")) || [];
+                  updateCart();
+                  updateCartIcon();
+              }
+          });
+      </script>
    </body>
 
 </html>
