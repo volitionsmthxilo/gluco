@@ -31,7 +31,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // If no errors, send email
     if ($error == "") {
         $to_email = "gluco.zw@gmail.com"; // Your email
-        $subject = "New Message from Website";
+        $subject = "GLUCO Enquiry";
         $body = "Name: $name\nEmail: $email\nMessage: $message";
 
         if (mail($to_email, $subject, $body)) {
