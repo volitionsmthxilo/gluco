@@ -313,6 +313,208 @@
                             <div class="form-group">
                                 <input class="ente" type="email" id="email" name="email" placeholder="Enter your email" required>
                             </div>
+                            <div class="form-group" style="display: flex; gap: 10px;">
+                                <select class="ente" id="country_code" name="country_code" required style="flex: 1;" onchange="updatePhonePattern()">
+                                    <option value="">Select Country Code</option>
+                                    <option value="+263">+263 (Zimbabwe)</option>
+                                    <option value="+27">+27 (South Africa)</option>
+                                    <option value="+93">+93 (Afghanistan)</option>
+                                    <option value="+355">+355 (Albania)</option>
+                                    <option value="+213">+213 (Algeria)</option>
+                                    <option value="+376">+376 (Andorra)</option>
+                                    <option value="+244">+244 (Angola)</option>
+                                    <option value="+1-268">+1-268 (Antigua and Barbuda)</option>
+                                    <option value="+54">+54 (Argentina)</option>
+                                    <option value="+374">+374 (Armenia)</option>
+                                    <option value="+61">+61 (Australia)</option>
+                                    <option value="+43">+43 (Austria)</option>
+                                    <option value="+994">+994 (Azerbaijan)</option>
+                                    <option value="+1-242">+1-242 (Bahamas)</option>
+                                    <option value="+973">+973 (Bahrain)</option>
+                                    <option value="+880">+880 (Bangladesh)</option>
+                                    <option value="+1-246">+1-246 (Barbados)</option>
+                                    <option value="+375">+375 (Belarus)</option>
+                                    <option value="+32">+32 (Belgium)</option>
+                                    <option value="+501">+501 (Belize)</option>
+                                    <option value="+229">+229 (Benin)</option>
+                                    <option value="+975">+975 (Bhutan)</option>
+                                    <option value="+591">+591 (Bolivia)</option>
+                                    <option value="+387">+387 (Bosnia and Herzegovina)</option>
+                                    <option value="+267">+267 (Botswana)</option>
+                                    <option value="+55">+55 (Brazil)</option>
+                                    <option value="+673">+673 (Brunei)</option>
+                                    <option value="+359">+359 (Bulgaria)</option>
+                                    <option value="+226">+226 (Burkina Faso)</option>
+                                    <option value="+257">+257 (Burundi)</option>
+                                    <option value="+238">+238 (Cabo Verde)</option>
+                                    <option value="+855">+855 (Cambodia)</option>
+                                    <option value="+237">+237 (Cameroon)</option>
+                                    <option value="+1">+1 (Canada)</option>
+                                    <option value="+236">+236 (Central African Republic)</option>
+                                    <option value="+235">+235 (Chad)</option>
+                                    <option value="+56">+56 (Chile)</option>
+                                    <option value="+86">+86 (China)</option>
+                                    <option value="+57">+57 (Colombia)</option>
+                                    <option value="+269">+269 (Comoros)</option>
+                                    <option value="+242">+242 (Congo)</option>
+                                    <option value="+506">+506 (Costa Rica)</option>
+                                    <option value="+385">+385 (Croatia)</option>
+                                    <option value="+53">+53 (Cuba)</option>
+                                    <option value="+357">+357 (Cyprus)</option>
+                                    <option value="+420">+420 (Czech Republic)</option>
+                                    <option value="+45">+45 (Denmark)</option>
+                                    <option value="+253">+253 (Djibouti)</option>
+                                    <option value="+1-767">+1-767 (Dominica)</option>
+                                    <option value="+1-809">+1-809 (Dominican Republic)</option>
+                                    <option value="+670">+670 (East Timor)</option>
+                                    <option value="+593">+593 (Ecuador)</option>
+                                    <option value="+20">+20 (Egypt)</option>
+                                    <option value="+503">+503 (El Salvador)</option>
+                                    <option value="+240">+240 (Equatorial Guinea)</option>
+                                    <option value="+291">+291 (Eritrea)</option>
+                                    <option value="+372">+372 (Estonia)</option>
+                                    <option value="+268">+268 (Eswatini)</option>
+                                    <option value="+251">+251 (Ethiopia)</option>
+                                    <option value="+679">+679 (Fiji)</option>
+                                    <option value="+358">+358 (Finland)</option>
+                                    <option value="+33">+33 (France)</option>
+                                    <option value="+241">+241 (Gabon)</option>
+                                    <option value="+220">+220 (Gambia)</option>
+                                    <option value="+995">+995 (Georgia)</option>
+                                    <option value="+49">+49 (Germany)</option>
+                                    <option value="+233">+233 (Ghana)</option>
+                                    <option value="+30">+30 (Greece)</option>
+                                    <option value="+1-473">+1-473 (Grenada)</option>
+                                    <option value="+502">+502 (Guatemala)</option>
+                                    <option value="+224">+224 (Guinea)</option>
+                                    <option value="+245">+245 (Guinea-Bissau)</option>
+                                    <option value="+592">+592 (Guyana)</option>
+                                    <option value="+509">+509 (Haiti)</option>
+                                    <option value="+504">+504 (Honduras)</option>
+                                    <option value="+36">+36 (Hungary)</option>
+                                    <option value="+354">+354 (Iceland)</option>
+                                    <option value="+91">+91 (India)</option>
+                                    <option value="+62">+62 (Indonesia)</option>
+                                    <option value="+98">+98 (Iran)</option>
+                                    <option value="+964">+964 (Iraq)</option>
+                                    <option value="+353">+353 (Ireland)</option>
+                                    <option value="+972">+972 (Israel)</option>
+                                    <option value="+39">+39 (Italy)</option>
+                                    <option value="+1-876">+1-876 (Jamaica)</option>
+                                    <option value="+81">+81 (Japan)</option>
+                                    <option value="+962">+962 (Jordan)</option>
+                                    <option value="+7">+7 (Kazakhstan)</option>
+                                    <option value="+254">+254 (Kenya)</option>
+                                    <option value="+686">+686 (Kiribati)</option>
+                                    <option value="+965">+965 (Kuwait)</option>
+                                    <option value="+996">+996 (Kyrgyzstan)</option>
+                                    <option value="+856">+856 (Laos)</option>
+                                    <option value="+371">+371 (Latvia)</option>
+                                    <option value="+961">+961 (Lebanon)</option>
+                                    <option value="+266">+266 (Lesotho)</option>
+                                    <option value="+231">+231 (Liberia)</option>
+                                    <option value="+218">+218 (Libya)</option>
+                                    <option value="+423">+423 (Liechtenstein)</option>
+                                    <option value="+370">+370 (Lithuania)</option>
+                                    <option value="+352">+352 (Luxembourg)</option>
+                                    <option value="+261">+261 (Madagascar)</option>
+                                    <option value="+265">+265 (Malawi)</option>
+                                    <option value="+60">+60 (Malaysia)</option>
+                                    <option value="+960">+960 (Maldives)</option>
+                                    <option value="+223">+223 (Mali)</option>
+                                    <option value="+356">+356 (Malta)</option>
+                                    <option value="+692">+692 (Marshall Islands)</option>
+                                    <option value="+222">+222 (Mauritania)</option>
+                                    <option value="+230">+230 (Mauritius)</option>
+                                    <option value="+52">+52 (Mexico)</option>
+                                    <option value="+691">+691 (Micronesia)</option>
+                                    <option value="+373">+373 (Moldova)</option>
+                                    <option value="+377">+377 (Monaco)</option>
+                                    <option value="+976">+976 (Mongolia)</option>
+                                    <option value="+382">+382 (Montenegro)</option>
+                                    <option value="+212">+212 (Morocco)</option>
+                                    <option value="+258">+258 (Mozambique)</option>
+                                    <option value="+95">+95 (Myanmar)</option>
+                                    <option value="+264">+264 (Namibia)</option>
+                                    <option value="+674">+674 (Nauru)</option>
+                                    <option value="+977">+977 (Nepal)</option>
+                                    <option value="+31">+31 (Netherlands)</option>
+                                    <option value="+64">+64 (New Zealand)</option>
+                                    <option value="+505">+505 (Nicaragua)</option>
+                                    <option value="+227">+227 (Niger)</option>
+                                    <option value="+234">+234 (Nigeria)</option>
+                                    <option value="+850">+850 (North Korea)</option>
+                                    <option value="+389">+389 (North Macedonia)</option>
+                                    <option value="+47">+47 (Norway)</option>
+                                    <option value="+968">+968 (Oman)</option>
+                                    <option value="+92">+92 (Pakistan)</option>
+                                    <option value="+680">+680 (Palau)</option>
+                                    <option value="+507">+507 (Panama)</option>
+                                    <option value="+675">+675 (Papua New Guinea)</option>
+                                    <option value="+595">+595 (Paraguay)</option>
+                                    <option value="+51">+51 (Peru)</option>
+                                    <option value="+63">+63 (Philippines)</option>
+                                    <option value="+48">+48 (Poland)</option>
+                                    <option value="+351">+351 (Portugal)</option>
+                                    <option value="+974">+974 (Qatar)</option>
+                                    <option value="+40">+40 (Romania)</option>
+                                    <option value="+7">+7 (Russia)</option>
+                                    <option value="+250">+250 (Rwanda)</option>
+                                    <option value="+1-869">+1-869 (Saint Kitts and Nevis)</option>
+                                    <option value="+1-758">+1-758 (Saint Lucia)</option>
+                                    <option value="+1-784">+1-784 (Saint Vincent and the Grenadines)</option>
+                                    <option value="+685">+685 (Samoa)</option>
+                                    <option value="+378">+378 (San Marino)</option>
+                                    <option value="+239">+239 (Sao Tome and Principe)</option>
+                                    <option value="+966">+966 (Saudi Arabia)</option>
+                                    <option value="+221">+221 (Senegal)</option>
+                                    <option value="+381">+381 (Serbia)</option>
+                                    <option value="+248">+248 (Seychelles)</option>
+                                    <option value="+232">+232 (Sierra Leone)</option>
+                                    <option value="+65">+65 (Singapore)</option>
+                                    <option value="+421">+421 (Slovakia)</option>
+                                    <option value="+386">+386 (Slovenia)</option>
+                                    <option value="+677">+677 (Solomon Islands)</option>
+                                    <option value="+252">+252 (Somalia)</option>
+                                    <option value="+82">+82 (South Korea)</option>
+                                    <option value="+211">+211 (South Sudan)</option>
+                                    <option value="+34">+34 (Spain)</option>
+                                    <option value="+94">+94 (Sri Lanka)</option>
+                                    <option value="+249">+249 (Sudan)</option>
+                                    <option value="+597">+597 (Suriname)</option>
+                                    <option value="+46">+46 (Sweden)</option>
+                                    <option value="+41">+41 (Switzerland)</option>
+                                    <option value="+963">+963 (Syria)</option>
+                                    <option value="+886">+886 (Taiwan)</option>
+                                    <option value="+992">+992 (Tajikistan)</option>
+                                    <option value="+255">+255 (Tanzania)</option>
+                                    <option value="+66">+66 (Thailand)</option>
+                                    <option value="+228">+228 (Togo)</option>
+                                    <option value="+676">+676 (Tonga)</option>
+                                    <option value="+1-868">+1-868 (Trinidad and Tobago)</option>
+                                    <option value="+216">+216 (Tunisia)</option>
+                                    <option value="+90">+90 (Turkey)</option>
+                                    <option value="+993">+993 (Turkmenistan)</option>
+                                    <option value="+688">+688 (Tuvalu)</option>
+                                    <option value="+256">+256 (Uganda)</option>
+                                    <option value="+380">+380 (Ukraine)</option>
+                                    <option value="+971">+971 (United Arab Emirates)</option>
+                                    <option value="+44">+44 (United Kingdom)</option>
+                                    <option value="+1">+1 (United States)</option>
+                                    <option value="+598">+598 (Uruguay)</option>
+                                    <option value="+998">+998 (Uzbekistan)</option>
+                                    <option value="+678">+678 (Vanuatu)</option>
+                                    <option value="+379">+379 (Vatican City)</option>
+                                    <option value="+58">+58 (Venezuela)</option>
+                                    <option value="+84">+84 (Vietnam)</option>
+                                    <option value="+967">+967 (Yemen)</option>
+                                    <option value="+260">+260 (Zambia)</option>
+                                </select>
+                                <input class="ente" type="tel" id="phone" name="phone" placeholder="Enter your phone number" required pattern="[0-9]{7,15}" style="flex: 2;">
+                            </div>
+                            <div class="form-group">
+                                <small id="phone-example" style="color: #666; font-size: 0.8em;">Select a country code to see example</small>
+                            </div>
                             <div class="form-group">
                                 <textarea class="ente textarea" id="message" name="message" placeholder="How can we be service?" required style="height: 150px;"></textarea>
                             </div>
@@ -457,6 +659,309 @@
                   updateCartIcon();
               }
           });
+      </script>
+      <script>
+          const phonePatterns = {
+              "+263": "[0-9]{9}", // Zimbabwe: 9 digits
+              "+27": "[0-9]{9}", // South Africa: 9 digits
+              "+1": "[0-9]{10}", // USA/Canada: 10 digits
+              "+44": "[0-9]{10,11}", // UK: 10-11 digits
+              "+91": "[0-9]{10}", // India: 10 digits
+              "+86": "[0-9]{11}", // China: 11 digits
+              "+81": "[0-9]{10,11}", // Japan: 10-11 digits
+              "+49": "[0-9]{10,11}", // Germany: 10-11 digits
+              "+33": "[0-9]{9}", // France: 9 digits
+              "+39": "[0-9]{9,10}", // Italy: 9-10 digits
+              "+7": "[0-9]{10}", // Russia/Kazakhstan: 10 digits
+              "+55": "[0-9]{10,11}", // Brazil: 10-11 digits
+              "+52": "[0-9]{10}", // Mexico: 10 digits
+              "+61": "[0-9]{9}", // Australia: 9 digits
+              "+64": "[0-9]{8,10}", // New Zealand: 8-10 digits
+              "+31": "[0-9]{9}", // Netherlands: 9 digits
+              "+46": "[0-9]{7,9}", // Sweden: 7-9 digits
+              "+41": "[0-9]{9}", // Switzerland: 9 digits
+              "+34": "[0-9]{9}", // Spain: 9 digits
+              "+351": "[0-9]{9}", // Portugal: 9 digits
+              "+48": "[0-9]{9}", // Poland: 9 digits
+              "+420": "[0-9]{9}", // Czech Republic: 9 digits
+              "+45": "[0-9]{8}", // Denmark: 8 digits
+              "+47": "[0-9]{8}", // Norway: 8 digits
+              "+358": "[0-9]{7,10}", // Finland: 7-10 digits
+              "+372": "[0-9]{7,8}", // Estonia: 7-8 digits
+              "+371": "[0-9]{8}", // Latvia: 8 digits
+              "+370": "[0-9]{8}", // Lithuania: 8 digits
+              "+36": "[0-9]{8,9}", // Hungary: 8-9 digits
+              "+385": "[0-9]{8,9}", // Croatia: 8-9 digits
+              "+387": "[0-9]{8}", // Bosnia and Herzegovina: 8 digits
+              "+382": "[0-9]{8}", // Montenegro: 8 digits
+              "+381": "[0-9]{8,9}", // Serbia: 8-9 digits
+              "+421": "[0-9]{9}", // Slovakia: 9 digits
+              "+386": "[0-9]{8}", // Slovenia: 8 digits
+              "+43": "[0-9]{10,11}", // Austria: 10-11 digits
+              "+32": "[0-9]{8,9}", // Belgium: 8-9 digits
+              "+30": "[0-9]{10}", // Greece: 10 digits
+              "+357": "[0-9]{8}", // Cyprus: 8 digits
+              "+353": "[0-9]{9}", // Ireland: 9 digits
+              "+356": "[0-9]{8}", // Malta: 8 digits
+              "+352": "[0-9]{9}", // Luxembourg: 9 digits
+              "+423": "[0-9]{7}", // Liechtenstein: 7 digits
+              "+377": "[0-9]{8}", // Monaco: 8 digits
+              "+379": "[0-9]{6,10}", // Vatican City: 6-10 digits
+              "+378": "[0-9]{6,10}", // San Marino: 6-10 digits
+              "+354": "[0-9]{7}", // Iceland: 7 digits
+              "+298": "[0-9]{6}", // Faroe Islands: 6 digits
+              "+299": "[0-9]{6}", // Greenland: 6 digits
+              "+350": "[0-9]{8}", // Gibraltar: 8 digits
+              "+500": "[0-9]{5}", // Falkland Islands: 5 digits
+              "+501": "[0-9]{7}", // Belize: 7 digits
+              "+502": "[0-9]{8}", // Guatemala: 8 digits
+              "+503": "[0-9]{8}", // El Salvador: 8 digits
+              "+504": "[0-9]{8}", // Honduras: 8 digits
+              "+505": "[0-9]{8}", // Nicaragua: 8 digits
+              "+506": "[0-9]{8}", // Costa Rica: 8 digits
+              "+507": "[0-9]{7,8}", // Panama: 7-8 digits
+              "+508": "[0-9]{6}", // Saint Pierre and Miquelon: 6 digits
+              "+509": "[0-9]{8}", // Haiti: 8 digits
+              "+51": "[0-9]{9}", // Peru: 9 digits
+              "+53": "[0-9]{8}", // Cuba: 8 digits
+              "+54": "[0-9]{10}", // Argentina: 10 digits
+              "+56": "[0-9]{9}", // Chile: 9 digits
+              "+57": "[0-9]{10}", // Colombia: 10 digits
+              "+58": "[0-9]{10}", // Venezuela: 10 digits
+              "+59": "[0-9]{8}", // French Guiana: 8 digits
+              "+590": "[0-9]{9}", // Guadeloupe: 9 digits
+              "+591": "[0-9]{8}", // Bolivia: 8 digits
+              "+592": "[0-9]{7}", // Guyana: 7 digits
+              "+593": "[0-9]{9}", // Ecuador: 9 digits
+              "+594": "[0-9]{9}", // French Guiana: 9 digits
+              "+595": "[0-9]{9}", // Paraguay: 9 digits
+              "+596": "[0-9]{9}", // Martinique: 9 digits
+              "+597": "[0-9]{7}", // Suriname: 7 digits
+              "+598": "[0-9]{8}", // Uruguay: 8 digits
+              "+599": "[0-9]{7}", // Curaçao: 7 digits
+              "+60": "[0-9]{9,10}", // Malaysia: 9-10 digits
+              "+62": "[0-9]{10,11}", // Indonesia: 10-11 digits
+              "+63": "[0-9]{10}", // Philippines: 10 digits
+              "+65": "[0-9]{8}", // Singapore: 8 digits
+              "+66": "[0-9]{9}", // Thailand: 9 digits
+              "+670": "[0-9]{8}", // East Timor: 8 digits
+              "+673": "[0-9]{7}", // Brunei: 7 digits
+              "+674": "[0-9]{7}", // Nauru: 7 digits
+              "+675": "[0-9]{8}", // Papua New Guinea: 8 digits
+              "+676": "[0-9]{5,7}", // Tonga: 5-7 digits
+              "+677": "[0-9]{5,7}", // Solomon Islands: 5-7 digits
+              "+678": "[0-9]{5,7}", // Vanuatu: 5-7 digits
+              "+679": "[0-9]{7}", // Fiji: 7 digits
+              "+680": "[0-9]{7}", // Palau: 7 digits
+              "+681": "[0-9]{6}", // Wallis and Futuna: 6 digits
+              "+682": "[0-9]{5}", // Cook Islands: 5 digits
+              "+683": "[0-9]{4}", // Niue: 4 digits
+              "+684": "[0-9]{7}", // American Samoa: 7 digits
+              "+685": "[0-9]{5,7}", // Samoa: 5-7 digits
+              "+686": "[0-9]{8}", // Kiribati: 8 digits
+              "+687": "[0-9]{6}", // New Caledonia: 6 digits
+              "+688": "[0-9]{5}", // Tuvalu: 5 digits
+              "+689": "[0-9]{6}", // French Polynesia: 6 digits
+              "+690": "[0-9]{4}", // Tokelau: 4 digits
+              "+691": "[0-9]{7}", // Micronesia: 7 digits
+              "+692": "[0-9]{7}", // Marshall Islands: 7 digits
+              "+82": "[0-9]{8,9}", // South Korea: 8-9 digits
+              "+84": "[0-9]{9,10}", // Vietnam: 9-10 digits
+              "+850": "[0-9]{8,9}", // North Korea: 8-9 digits
+              "+852": "[0-9]{8}", // Hong Kong: 8 digits
+              "+853": "[0-9]{8}", // Macau: 8 digits
+              "+855": "[0-9]{8,9}", // Cambodia: 8-9 digits
+              "+856": "[0-9]{8}", // Laos: 8 digits
+              "+880": "[0-9]{10}", // Bangladesh: 10 digits
+              "+886": "[0-9]{9}", // Taiwan: 9 digits
+              "+90": "[0-9]{10}", // Turkey: 10 digits
+              "+92": "[0-9]{10}", // Pakistan: 10 digits
+              "+93": "[0-9]{9}", // Afghanistan: 9 digits
+              "+94": "[0-9]{9}", // Sri Lanka: 9 digits
+              "+95": "[0-9]{8,9}", // Myanmar: 8-9 digits
+              "+960": "[0-9]{7}", // Maldives: 7 digits
+              "+961": "[0-9]{7,8}", // Lebanon: 7-8 digits
+              "+962": "[0-9]{9}", // Jordan: 9 digits
+              "+963": "[0-9]{9}", // Syria: 9 digits
+              "+964": "[0-9]{10}", // Iraq: 10 digits
+              "+965": "[0-9]{8}", // Kuwait: 8 digits
+              "+966": "[0-9]{9}", // Saudi Arabia: 9 digits
+              "+967": "[0-9]{9}", // Yemen: 9 digits
+              "+968": "[0-9]{8}", // Oman: 8 digits
+              "+970": "[0-9]{9}", // Palestine: 9 digits
+              "+971": "[0-9]{9}", // United Arab Emirates: 9 digits
+              "+972": "[0-9]{9}", // Israel: 9 digits
+              "+973": "[0-9]{8}", // Bahrain: 8 digits
+              "+974": "[0-9]{8}", // Qatar: 8 digits
+              "+975": "[0-9]{8}", // Bhutan: 8 digits
+              "+976": "[0-9]{8}", // Mongolia: 8 digits
+              "+977": "[0-9]{10}", // Nepal: 10 digits
+              "+98": "[0-9]{10}", // Iran: 10 digits
+              "+992": "[0-9]{9}", // Tajikistan: 9 digits
+              "+993": "[0-9]{8}", // Turkmenistan: 8 digits
+              "+994": "[0-9]{9}", // Azerbaijan: 9 digits
+              "+995": "[0-9]{9}", // Georgia: 9 digits
+              "+996": "[0-9]{9}", // Kyrgyzstan: 9 digits
+              "+998": "[0-9]{9}", // Uzbekistan: 9 digits
+          };
+
+          const phoneExamples = {
+              "+263": "784245082", // Zimbabwe
+              "+27": "627845308", // South Africa
+              "+1": "1234567890", // USA/Canada
+              "+44": "07123456789", // UK
+              "+91": "9876543210", // India
+              "+86": "13800138000", // China
+              "+81": "09012345678", // Japan
+              "+49": "015123456789", // Germany
+              "+33": "0612345678", // France
+              "+39": "3123456789", // Italy
+              "+7": "9123456789", // Russia/Kazakhstan
+              "+55": "11987654321", // Brazil
+              "+52": "5512345678", // Mexico
+              "+61": "412345678", // Australia
+              "+64": "021234567", // New Zealand
+              "+31": "0612345678", // Netherlands
+              "+46": "0701234567", // Sweden
+              "+41": "0791234567", // Switzerland
+              "+34": "612345678", // Spain
+              "+351": "912345678", // Portugal
+              "+48": "512345678", // Poland
+              "+420": "601234567", // Czech Republic
+              "+45": "12345678", // Denmark
+              "+47": "41234567", // Norway
+              "+358": "0412345678", // Finland
+              "+372": "51234567", // Estonia
+              "+371": "21234567", // Latvia
+              "+370": "61234567", // Lithuania
+              "+36": "0612345678", // Hungary
+              "+385": "0912345678", // Croatia
+              "+387": "061234567", // Bosnia and Herzegovina
+              "+382": "067123456", // Montenegro
+              "+381": "0612345678", // Serbia
+              "+421": "0912345678", // Slovakia
+              "+386": "031234567", // Slovenia
+              "+43": "06641234567", // Austria
+              "+32": "0471234567", // Belgium
+              "+30": "6912345678", // Greece
+              "+357": "96123456", // Cyprus
+              "+353": "0851234567", // Ireland
+              "+356": "77123456", // Malta
+              "+352": "621234567", // Luxembourg
+              "+423": "6612345", // Liechtenstein
+              "+377": "061234567", // Monaco
+              "+379": "066981234", // Vatican City
+              "+378": "054912345", // San Marino
+              "+354": "6111234", // Iceland
+              "+298": "211234", // Faroe Islands
+              "+299": "221234", // Greenland
+              "+350": "54123456", // Gibraltar
+              "+500": "51234", // Falkland Islands
+              "+501": "6123456", // Belize
+              "+502": "51234567", // Guatemala
+              "+503": "71234567", // El Salvador
+              "+504": "91234567", // Honduras
+              "+505": "81234567", // Nicaragua
+              "+506": "61234567", // Costa Rica
+              "+507": "61234567", // Panama
+              "+508": "412345", // Saint Pierre and Miquelon
+              "+509": "34123456", // Haiti
+              "+51": "912345678", // Peru
+              "+53": "51234567", // Cuba
+              "+54": "1123456789", // Argentina
+              "+56": "912345678", // Chile
+              "+57": "3123456789", // Colombia
+              "+58": "4123456789", // Venezuela
+              "+59": "594123456", // French Guiana
+              "+590": "690123456", // Guadeloupe
+              "+591": "71234567", // Bolivia
+              "+592": "6123456", // Guyana
+              "+593": "0912345678", // Ecuador
+              "+594": "694123456", // French Guiana
+              "+595": "091234567", // Paraguay
+              "+596": "696123456", // Martinique
+              "+597": "7412345", // Suriname
+              "+598": "091234567", // Uruguay
+              "+599": "3181234", // Curaçao
+              "+60": "0123456789", // Malaysia
+              "+62": "081234567890", // Indonesia
+              "+63": "09123456789", // Philippines
+              "+65": "81234567", // Singapore
+              "+66": "0812345678", // Thailand
+              "+670": "74123456", // East Timor
+              "+673": "7123456", // Brunei
+              "+674": "5512345", // Nauru
+              "+675": "70123456", // Papua New Guinea
+              "+676": "7712345", // Tonga
+              "+677": "7412345", // Solomon Islands
+              "+678": "5912345", // Vanuatu
+              "+679": "7012345", // Fiji
+              "+680": "4881234", // Palau
+              "+681": "501234", // Wallis and Futuna
+              "+682": "51234", // Cook Islands
+              "+683": "1234", // Niue
+              "+684": "6841234", // American Samoa
+              "+685": "7212345", // Samoa
+              "+686": "31123456", // Kiribati
+              "+687": "751234", // New Caledonia
+              "+688": "901234", // Tuvalu
+              "+689": "871234", // French Polynesia
+              "+690": "1234", // Tokelau
+              "+691": "3501234", // Micronesia
+              "+692": "2351234", // Marshall Islands
+              "+82": "01012345678", // South Korea
+              "+84": "0912345678", // Vietnam
+              "+850": "01912345678", // North Korea
+              "+852": "51234567", // Hong Kong
+              "+853": "66123456", // Macau
+              "+855": "012345678", // Cambodia
+              "+856": "02012345678", // Laos
+              "+880": "01712345678", // Bangladesh
+              "+886": "0912345678", // Taiwan
+              "+90": "05321234567", // Turkey
+              "+92": "03001234567", // Pakistan
+              "+93": "0701234567", // Afghanistan
+              "+94": "0712345678", // Sri Lanka
+              "+95": "0912345678", // Myanmar
+              "+960": "7712345", // Maldives
+              "+961": "03123456", // Lebanon
+              "+962": "0771234567", // Jordan
+              "+963": "0941234567", // Syria
+              "+964": "07501234567", // Iraq
+              "+965": "51234567", // Kuwait
+              "+966": "0512345678", // Saudi Arabia
+              "+967": "0712345678", // Yemen
+              "+968": "91234567", // Oman
+              "+970": "0591234567", // Palestine
+              "+971": "0501234567", // United Arab Emirates
+              "+972": "0501234567", // Israel
+              "+973": "36123456", // Bahrain
+              "+974": "33123456", // Qatar
+              "+975": "17123456", // Bhutan
+              "+976": "88123456", // Mongolia
+              "+977": "9841234567", // Nepal
+              "+98": "09123456789", // Iran
+              "+992": "917123456", // Tajikistan
+              "+993": "66123456", // Turkmenistan
+              "+994": "0501234567", // Azerbaijan
+              "+995": "555123456", // Georgia
+              "+996": "0555123456", // Kyrgyzstan
+              "+998": "901234567", // Uzbekistan
+          };
+
+          function updatePhonePattern() {
+              const countryCodeSelect = document.getElementById("country_code");
+              const phoneInput = document.getElementById("phone");
+              const phoneExampleElement = document.getElementById("phone-example");
+              const selectedCode = countryCodeSelect.value;
+              const pattern = phonePatterns[selectedCode] || "[0-9]{7,15}";
+              const example = phoneExamples[selectedCode] || "123456789";
+              phoneInput.setAttribute("pattern", pattern);
+              phoneExampleElement.innerText = `Example: ${example}`;
+          }
+
+          // Initialize on page load
+          updatePhonePattern();
       </script>
    </body>
 
