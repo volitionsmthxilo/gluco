@@ -1,13 +1,16 @@
-# TODO: Update Shopping Catalog and Cart Pricing
+# Mobile Navigation Implementation
 
 ## Tasks
-- [ ] Update 1.5 kVA Solar System price to $850 in HTML and onclick
-- [ ] Update 3 kVA Solar System price to $1,250 in HTML and onclick
-- [ ] Update 5kVA Solar Systems price to $1,900 in HTML and onclick
-- [ ] Update 10 kVA Solar System price to $3,850 in HTML and onclick
-- [ ] Remove "The Forex Academy" product div from catalog
-- [ ] Remove "Business Planning" product div from catalog
-- [ ] Add getCurrentPrice function to JavaScript
-- [ ] Modify addToCart function to use dynamic pricing
-- [ ] Update updateCart function to recalculate prices dynamically
-- [ ] Test cart functionality and verify no errors
+- [ ] Add hamburger button to header in index.html (visible on mobile)
+- [ ] Add mobile nav div to index.html
+- [ ] Add toggleMenu function to index.html script
+- [ ] Add hamburger button to header in page/about.html (visible on mobile)
+- [ ] Add hamburger button to header in page/services.html (visible on mobile)
+- [ ] Add hamburger button to header in page/contact.html (visible on mobile)
+- [ ] Add hamburger button to header in cata.html (visible on mobile)
+
+## Notes
+- Hamburger button should be in the col-md-3 col-4 div, visible on mobile (d-md-none d-block)
+- Mobile nav div should be after header, with id="mobile-nav" class="mobile-nav"
+- toggleMenu function toggles 'active' class on mobile-nav
+- Links in mobile nav should match desktop nav
