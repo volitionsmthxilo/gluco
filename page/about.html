@@ -205,6 +205,15 @@
             background: #333;
             transition: 0.3s;
         }
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(-45deg) translate(-5px, 6px);
+        }
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(45deg) translate(-5px, -6px);
+        }
         .social_icon {
             list-style: none;
             padding: 0;
@@ -588,7 +597,14 @@
             });
 
             function toggleMenu() {
-                document.getElementById('mobile-nav').classList.toggle('active');
+                const mobileNav = document.getElementById("mobile-nav");
+                const hamburger = document.querySelector(".hamburger");
+                if (mobileNav) {
+                    mobileNav.classList.toggle("active");
+                }
+                if (hamburger) {
+                    hamburger.classList.toggle("active");
+                }
             }
         </script>
     </body>
