@@ -18,6 +18,25 @@ import Fonts
 @import url(owl.carousel.min.css);
 
 /*--------------------------------------------------------------------- 
+Color Theme Variables
+---------------------------------------------------------------------*/
+:root {
+     --header-bg: #0f132d;
+     --header-text: #f0f0f0;
+     --header-shadow: 0 2px 8px rgba(0,0,0,0.3);
+     --logo-text-color: #667eea;
+}
+
+@media (prefers-color-scheme: dark) {
+     :root {
+          --header-bg: #0f132d;
+          --header-text: #f0f0f0;
+          --header-shadow: 0 2px 8px rgba(0,0,0,0.3);
+          --logo-text-color: #667eea;
+     }
+}
+
+/*--------------------------------------------------------------------- 
 basic 
 ---------------------------------------------------------------------*/
 
@@ -31,6 +50,12 @@ body {
      background-size: 100% 100%;
      background-position: center;
      background-repeat: no-repeat;
+}
+
+@media (prefers-color-scheme: dark) {
+     body {
+          color: #ccc;
+     }
 }
 
 a {
@@ -259,6 +284,44 @@ header {
      padding: 22px 30px;
      height: 96px;
      z-index: 9;
+}
+
+/* Light/Dark mode support for page headers */
+header[style*="background-color"] {
+     background-color: var(--header-bg) !important;
+     color: var(--header-text);
+     box-shadow: var(--header-shadow) !important;
+}
+
+header[style*="background-color"] .logo a {
+     color: var(--header-text);
+}
+
+header[style*="background-color"] .logo big {
+     color: var(--logo-text-color) !important;
+     font-weight: bold;
+}
+
+header[style*="background-color"] .nav-link {
+     color: var(--header-text) !important;
+}
+
+header[style*="background-color"] .nav-link:hover {
+     background: #667eea;
+     color: #fff !important;
+}
+
+header[style*="background-color"] .nav-link.active {
+     background-color: #667eea !important;
+     color: #fff !important;
+}
+
+header[style*="background-color"] svg {
+     fill: var(--header-text);
+}
+
+header[style*="background-color"] .hamburger span {
+     background: var(--header-text);
 }
 
 .logo a {
@@ -601,7 +664,6 @@ ul.email li i {
 
 .wallet_box i img {
     width: 100%;
-    max-width: 200px;
     height: auto;
     display: block;
     margin: 0 auto;
