@@ -10,11 +10,25 @@
     <meta name="viewport" content="initial-scale=1, maximum-scale=1">
 
     <!-- site metas -->
-    <title>GLUCO</title>
-    <meta name="keywords" content="IT, Electrical, Electronic, Automation, Robotics and Mentorship.">
-    <meta name="description" content="Tech and Innovation Company">
+    <title>Shop - Tech Products & Solutions | GLUCO Online Store Zimbabwe</title>
+    <meta name="keywords" content="buy electronics Zimbabwe, solar products online, tech gadgets, electronic components, smart devices, online tech store Zimbabwe, buy IT products, microcontrollers, sensors, displays, robotics parts">
+    <meta name="description" content="Shop GLUCO's online store for electronics, solar products, IT solutions, smart devices, and technology components in Zimbabwe. Fast delivery, quality products, professional support.">
     <meta name="author" content="GLUCO">
     <link rel="icon" href="images/glucoicon.png">
+    <link rel="canonical" href="https://gluco.co.zw/cata.html">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://gluco.co.zw/cata.html">
+    <meta property="og:title" content="GLUCO Online Store - Tech Products Zimbabwe">
+    <meta property="og:description" content="Browse and shop electronics, solar products, IT solutions, and technology components online in Zimbabwe.">
+    <meta property="og:image" content="https://gluco.co.zw/images/glucoicon.png">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="GLUCO Shop - Tech Products Zimbabwe">
+    <meta property="twitter:description" content="Quality electronics and technology products with fast delivery.">
+    <meta property="twitter:image" content="https://gluco.co.zw/images/glucoicon.png">
 
     <!-- bootstrap css -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -139,6 +153,12 @@
             max-width: 100%;
             border-radius: 10px;
             margin-bottom: 15px;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.15));
+        }
+        .product:hover img {
+            filter: drop-shadow(0 6px 12px rgba(250, 206, 52, 0.4));
+            transform: scale(1.05);
         }
         @media (max-width: 768px) {
             .hero h1 {
@@ -508,7 +528,7 @@
 
 <body class="main-layout" style="padding-top: 100px;">
     <!-- header -->
-    <header style="position: fixed; top: 0; width: 100%; z-index: 1000; background-color: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+    <header style="position: fixed; top: 0; width: 100%; z-index: 1000; background-color: var(--header-bg); color: var(--header-text); box-shadow: var(--header-shadow);">
         <!-- header inner -->
         <div class="head-top">
             <div class="container-fluid">
@@ -517,7 +537,7 @@
                         <div class="logo d-flex align-items-center">
                             <a href="index.html" class="d-flex align-items-center">
                                 <img src="images/glucoicon.png" width="60" height="60" alt="GLUCO Icon">
-                                <big class="ml-2" style="color: #333; font-weight: bold; font-size: 32px;">GLUCO</big>
+                                <big class="ml-2" style="color: #667eea; font-weight: bold; font-size: 32px;">GLUCO</big>
                             </a>
                         </div>
                     </div>

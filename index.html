@@ -10,11 +10,27 @@
     <meta name="viewport" content="initial-scale=1, maximum-scale=1">
 
     <!-- site metas -->
-    <title>GLUCO</title>
-    <meta name="keywords" content="IT, Electrical, Electronic, Automation, Robotics and Mentorship.">
-    <meta name="description" content="Tech and Innovation Company">
+    <title>GLUCO - Solar Systems, IT Solutions, Electrical Services & Robotics | Zimbabwe Tech Company</title>
+    <meta name="keywords" content="solar systems Zimbabwe, IT consultancy, electrical services, network security, fintech solutions, robotics automation, IoT solutions, web hosting, domain registration, Microsoft 365, smart agriculture, industrial automation, CCTV surveillance, forex trading, analytics">
+    <meta name="description" content="GLUCO offers premium solar systems, IT consultancy, electrical installations, network security, fintech solutions, robotics, IoT automation, web hosting, and professional training in Zimbabwe. Transform your business with cutting-edge technology.">
     <meta name="author" content="GLUCO">
     <link rel="icon" href="images/glucoicon.png">
+    <link rel="canonical" href="https://gluco.co.zw/">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://gluco.co.zw/">
+    <meta property="og:title" content="GLUCO - Solar, IT, Electrical & Robotics Solutions in Zimbabwe">
+    <meta property="og:description" content="Leading technology company offering solar systems, IT services, electrical installations, network security, fintech, robotics, and IoT automation in Zimbabwe.">
+    <meta property="og:image" content="https://gluco.co.zw/images/glucoicon.png">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://gluco.co.zw/">
+    <meta property="twitter:title" content="GLUCO - Solar, IT, Electrical & Robotics Solutions">
+    <meta property="twitter:description" content="Transform your business with our solar systems, IT consultancy, electrical services, and cutting-edge automation solutions.">
+    <meta property="twitter:image" content="https://gluco.co.zw/images/glucoicon.png">
+    <meta name="twitter:site" content="@glucozw">
 
     <!-- bootstrap css -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -293,12 +309,95 @@
             color: #667eea;
         }
     </style>
+    
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "GLUCO",
+        "url": "https://gluco.co.zw",
+        "logo": "https://gluco.co.zw/images/glucoicon.png",
+        "description": "Leading technology company in Zimbabwe offering solar systems, IT solutions, electrical services, robotics, and automation.",
+        "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "Zimbabwe"
+        },
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+263-78-424-5082",
+            "contactType": "Customer Service",
+            "email": "gluco.zw@gmail.com"
+        },
+        "sameAs": [
+            "https://www.facebook.com/profile.php?id=61570785736136",
+            "https://www.instagram.com/gluco.zw",
+            "https://whatsapp.com/channel/0029VaMxZNzFHWqAgLO8fn2s",
+            "https://www.tiktok.com/@gluco.zw",
+            "https://x.com/glucozw"
+        ],
+        "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "GLUCO Services",
+            "itemListElement": [
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Smart Solar Systems",
+                        "description": "Scalable solar solutions from 3kVA upward for homes and businesses"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Network Security",
+                        "description": "Enterprise firewalls, endpoint protection, and penetration testing"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "IT Consultancy",
+                        "description": "Web development, hosting, and digital services"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Robotics and IoT",
+                        "description": "Intelligent automation and IoT integration solutions"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Electrical Services",
+                        "description": "Professional electrical installations, maintenance, and safety inspections"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Fintech Solutions",
+                        "description": "Secure fintech platforms with analytics and financial reporting"
+                    }
+                }
+            ]
+        }
+    }
+    </script>
 </head>
    
 
 <body class="main-layout" style="padding-top: 100px;">
     <!-- header -->
-    <header style="position: fixed; top: 0; width: 100%; z-index: 1000; background-color: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+    <header style="position: fixed; top: 0; width: 100%; z-index: 1000; background-color: var(--header-bg); color: var(--header-text); box-shadow: var(--header-shadow);">
         <!-- header inner -->
         <div class="head-top">
             <div class="container-fluid">
@@ -307,7 +406,7 @@
                         <div class="logo d-flex align-items-center">
                             <a href="index.html" class="d-flex align-items-center">
                                 <img src="images/glucoicon.png" width="60" height="60" alt="GLUCO Icon">
-                                <big class="ml-2" style="color: #333; font-weight: bold; font-size: 32px;">GLUCO</big>
+                                <big class="ml-2" style="color: #667eea; font-weight: bold; font-size: 32px;">GLUCO</big>
                             </a>
                         </div>
                     </div>
@@ -379,7 +478,7 @@
                                         <div class="row d_flex">
                                             <div class="col-md-6">
                                                 <div class="con_img">
-                                                    <figure><img class="img_responsive" src="images/powersystems.png" alt="#" /></figure>
+                                                    <figure><img class="img_responsive" src="images/powersystems.png" alt="Premium Solar Power Systems and Electrical Solutions" width="800" height="600" /></figure>
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
@@ -401,7 +500,7 @@
                                         <div class="row d_flex">
                                             <div class="col-md-6">
                                                 <div class="con_img">
-                                                    <figure><img class="img_responsive" src="images/academy.png" alt="#" /></figure>
+                                                    <figure><img class="img_responsive" src="images/academy.png" alt="GTECH Academy Professional Training Programs" width="800" height="600" loading="lazy" /></figure>
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
@@ -423,7 +522,7 @@
                                         <div class="row d_flex">
                                             <div class="col-md-6">
                                                 <div class="con_img">
-                                                    <figure><img class="img_responsive" src="images/mission.png" alt="#" /></figure>
+                                                    <figure><img class="img_responsive" src="images/mission.png" alt="Our Mission Technology Innovation" width="800" height="600" loading="lazy" /></figure>
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
@@ -445,7 +544,7 @@
                                         <div class="row d_flex">
                                             <div class="col-md-6">
                                                 <div class="con_img">
-                                                    <figure><img class="img_responsive" src="images/vision.png" alt="#" /></figure>
+                                                    <figure><img class="img_responsive" src="images/vision.png" alt="Our Vision Leading Technology Solutions" width="800" height="600" loading="lazy" /></figure>
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
@@ -475,28 +574,28 @@
             <div class="row">
                 <div class="col-lg-3 col-sm-6">
                     <div id="wa_hover" class="wallet_box text_align_center">
-                        <i><img src="images/electricalelectronics.png" alt="Engineering Hub - Electronics and Solar Solutions"/></i>
+                        <i><img src="images/electricalelectronics.png" alt="Engineering Hub - Electronics and Solar Solutions" width="300" height="300" loading="lazy"/></i>
                         <h3>ENGINEERING HUB</h3>
                         <p>Premium solar systems, electrical installations, and electronic components. From house wiring to smart gadgets—expert solutions for your home and business needs.</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-sm-6">
                     <div id="wa_hover" class="wallet_box text_align_center">
-                        <i><img src="images/gtech.png" alt="GTECH Academy - Professional Training and Development"/></i>
+                        <i><img src="images/gtech.png" alt="GTECH Academy - Professional Training and Development" width="300" height="300" loading="lazy"/></i>
                         <h3>GTECH ACADEMY</h3>
                         <p>Advance your career with fintech training, expert mentorship, and professional development. Build the skills you need for success in today's digital economy.</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-sm-6">
                     <div id="wa_hover" class="wallet_box text_align_center">
-                        <i><img src="images/itconsultancy.png" alt="IT Consultancy - Web and Digital Services"/></i>
+                        <i><img src="images/itconsultancy.png" alt="IT Consultancy - Web and Digital Services" width="300" height="300" loading="lazy"/></i>
                         <h3>IT CONSULTANCY</h3>
                         <p>Custom web development, reliable hosting, and professional email solutions. Transform your digital presence with our comprehensive IT expertise and support.</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-sm-6">
                     <div id="wa_hover" class="wallet_box text_align_center">
-                        <i><img src="images/robotics.png" alt="Robotics and IoT - Automation Solutions"/></i>
+                        <i><img src="images/robotics.png" alt="Robotics and IoT - Automation Solutions" width="300" height="300" loading="lazy"/></i>
                         <h3>ROBOTICS AND IOT</h3>
                         <p>Intelligent automation for agriculture, industry, and beyond. Harness smart systems and monitoring technology to optimize operations and increase efficiency.</p>
                     </div>
