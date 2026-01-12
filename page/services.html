@@ -274,6 +274,34 @@
                 display: none !important;
             }
         }
+
+        /* Ensure all service boxes are evenly sized on this page */
+        .wallet .row > [class*="col-"] {
+            display: flex;
+        }
+        .wallet .wallet_box {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            width: 100%;
+        }
+        .wallet .wallet_box i {
+            display: block;
+        }
+        .wallet .wallet_box h3 {
+            margin-top: 12px;
+        }
+        .wallet .wallet_box p {
+            margin-top: 10px;
+        }
+
+        /* Restore clear vertical separation between rows */
+        @supports (gap: 1rem) {
+            .wallet .row { row-gap: 24px; }
+        }
+        @supports not (gap: 1rem) {
+            .wallet .row > [class*="col-"] { margin-bottom: 24px; }
+        }
     </style>
 </head>
 
@@ -361,112 +389,112 @@
                     <div id="wa_hover" class="wallet_box text_align_center">
                         <i><img src="../images/smartsolarsystems.png" alt="#"/></i>
                         <h3>SMART SOLAR SYSTEMS</h3>
-                        <p>Scalable solar solutions starting from 3kVA systems, designed for homes, businesses, reliability, efficiency, and growth.</p>
+                        <p>Scalable solar from 3kVA upward—engineered for homes and businesses. Reliable, efficient systems that grow with your energy needs.</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-sm-6">
                     <div id="wa_hover" class="wallet_box text_align_center">
                         <i><img src="../images/firewall.png" alt="#"/></i>
                         <h3>NETWORK SECURITY</h3>
-                        <p>We provide comprehensive network security solutions to protect your business from cyber threats. Enterprise firewalls, anti-viruses, penetration testing.
-                        </p>
+                        <p>End-to-end protection against cyber threats: enterprise firewalls, advanced endpoint protection, vulnerability assessments, and penetration testing to secure your business.</p>
                         </div>
                 </div>
                 <div class="col-lg-3 col-sm-6">
                     <div id="wa_hover" class="wallet_box text_align_center">
                         <i><img src="../images/networksupport.png" alt="#"/></i>
                         <h3>NETWORK SUPPORT</h3>
-                        <p>Reliable and scalable network infrastructure services to keep your business productive. LAN, WAN, and WLAN deployment</p>
+                        <p>Reliable, scalable network infrastructure—design, deployment, and optimization for LAN, WAN, and Wi‑Fi to keep your teams connected.</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-sm-6">
                     <div id="wa_hover" class="wallet_box text_align_center">
                         <i><img src="../images/microsoft.png" alt="#"/></i>
                         <h3>MICROSOFT SUPPORT</h3>
-                        <p>Maximize productivity with reliable Microsoft services. Deployment, licensing, and management including Teams, Outlook, SharePoint, and OneDrive.</p>
+                        <p>Expert Microsoft 365 deployment, licensing, and management—including Teams, Outlook, SharePoint, and OneDrive—to boost productivity with confidence.</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-sm-6">
                     <div id="wa_hover" class="wallet_box text_align_center">
                         <i><img src="../images/fintech.png" alt="#"/></i>
                         <h3>FINTECH SOLUTIONS</h3>
-                        <p>Advanced fintech software enabling secure transactions, analytics, business intelligence, financial reporting, predictive insights, risk management, and integration with other financial systems.</p>
+                        <p>Secure, compliant fintech platforms with real-time analytics, BI dashboards, financial reporting, predictive insights, risk management, and seamless integrations.</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-sm-6">
                     <div id="wa_hover" class="wallet_box text_align_center">
                         <i><img src="../images/electricals.png" alt="#"/></i>
                         <h3>ELECTRICAL SERVICES</h3>
-                        <p>Installations and Wiring<br>Maintenance and Repair<br>Lighting Design<br>Safety Inspections and Testing Services</p>
+                        <p>Installations &amp; wiring<br>Preventive maintenance &amp; repairs<br>Lighting design &amp; optimization<br>Safety inspections and testing</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-sm-6">
                     <div id="wa_hover" class="wallet_box text_align_center">
                         <i><img src="../images/components.png" alt="#"/></i>
                         <h3>ELECTRONIC COMPONENTS</h3>
-                        <p>Microcontrollers<br>Voltage/Current Regulators<br>Sensors<br>Displays and many more</p>
+                        <p>Microcontrollers<br>Power regulators<br>Sensors &amp; transducers<br>Displays and more</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-sm-6">
                     <div id="wa_hover" class="wallet_box text_align_center">
                         <i><img src="../images/maintenance.png" alt="#"/></i>
-                        <h3>MAINTENACE SERVICES</h3>
-                        <p>Solar Panel Inspection<br>Inverter Maintenance<br>Monitoring and Testing<br>Replacements</div>
+                        <h3>MAINTENANCE SERVICES</h3>
+                        <p>Solar panel inspections<br>Inverter maintenance<br>Monitoring &amp; performance testing<br>Component replacements</p>
+                    </div>
                 </div>
                 <div class="col-lg-3 col-sm-6">
                     <div id="wa_hover" class="wallet_box text_align_center">
                         <i><img src="../images/webhosting.png" alt="#"/></i>
                         <h3>HOSTING SOLUTIONS</h3>
-                        <p>Shared Hosting<br>Virtual Servers<br>Dedicated Servers<br>Cloud Hosting</p>
+                        <p>Shared hosting<br>Virtual private servers (VPS)<br>Dedicated servers<br>Managed cloud hosting</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-sm-6">
                     <div id="wa_hover" class="wallet_box text_align_center">
                         <i><img src="../images/domainreg.png" alt="#"/></i>
                         <h3>OWN YOUR DOMAIN</h3>
-                        <p>Domain Registration<br>Domain Transfer<br>Domain Renewal<br>SSL Cerificates</p>
+                        <p>Domain registration<br>Domain transfer<br>Domain renewal<br>SSL certificates</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-sm-6">
                     <div id="wa_hover" class="wallet_box text_align_center">
                         <i><img src="../images/itsupport.png" alt="#"/></i>
                         <h3>IT SUPPORT</h3>
-                        <p>Web Development<br>Windows Technical Support<br>Remote Desktop Support<br>Network Security</p>
+                        <p>Web development<br>Windows technical support<br>Remote desktop assistance<br>Network security</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-sm-6">
                     <div id="wa_hover" class="wallet_box text_align_center">
                         <i><img src="../images/forextrading.png" alt="#"/></i>
                         <h3>FOREIGN EXCHANGE TRADING</h3>
-                        <p>Professional Trading Signals<br>In-Depth Market Analysis<br>Personalized Trading Coaching<br>Structured Trading Classes</p>
+                        <p>Professional trading signals<br>In-depth market analysis<br>Personalized coaching<br>Structured trading classes</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-sm-6">
                     <div id="wa_hover" class="wallet_box text_align_center">
                         <i><img src="../images/agritech.png" alt="#"/></i>
                         <h3>SMART AGRICULTURE</h3>
-                        <p>Automated Irrigation Systems<br>Climate Control and Monitoring<br>Farming Analytics<br>Nutrient Management</p>
+                        <p>Automated irrigation<br>Climate monitoring &amp; control<br>Farm analytics<br>Nutrient management</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-sm-6">
                     <div id="wa_hover" class="wallet_box text_align_center">
                         <i><img src="../images/industrialautomation.png" alt="#"/></i>
                         <h3>INDUSTRIAL AUTOMATION</h3>
-                        <p>PLC Programming<br>Industrial Networking<br>IoT Solutions<br>Control Panel Design</p>
+                        <p>PLC programming<br>Industrial networking<br>IoT integration<br>Control panel design</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-sm-6">
                     <div id="wa_hover" class="wallet_box text_align_center">
                         <i><img src="../images/monitoring.png" alt="#"/></i>
                         <h3>MONITORING SYSTEMS</h3>
-                        <p>CCTV Surveillance<br>Alarm Systems<br>Environmental Monitoring<br>Video Monitoring Services</p>
+                        <p>CCTV surveillance<br>Alarm systems<br>Environmental monitoring<br>Managed video services</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-sm-6">
                     <div id="wa_hover" class="wallet_box text_align_center">
                         <i><img src="../images/analytics.png" alt="#"/></i>
                         <h3>ANALYTICS HUB</h3>
-                        <p>AI-Powered Insights<br>Data Visualization Services<br>Data Mining<br>Predictive Analytics Modeling</p>
+                        <p>AI-powered insights<br>Interactive data visualization<br>Data mining<br>Predictive modeling</p>
                     </div>
                 </div>                
             </div>
