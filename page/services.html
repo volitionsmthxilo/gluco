@@ -208,16 +208,29 @@
             border: none;
             cursor: pointer;
             display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            position: relative;
+            z-index: 1050;
+            padding: 10px;
+            margin: -10px;
+        }
+        .hamburger {
             flex-direction: column;
-            justify-content: space-around;
-            width: 30px;
-            height: 30px;
         }
         .hamburger span {
-            width: 100%;
+            width: 25px;
             height: 3px;
             background: #333;
+            margin: 3px 0;
             transition: 0.3s;
+            border-radius: 2px;
+            pointer-events: none;
+        }
+        .hamburger span:hover {
+            background: #667eea;
         }
         .hamburger.active span:nth-child(1) {
             transform: rotate(-45deg) translate(-5px, 6px);
@@ -227,9 +240,6 @@
         }
         .hamburger.active span:nth-child(3) {
             transform: rotate(45deg) translate(-5px, -6px);
-        }
-        .hamburger span:hover {
-            background: #667eea;
         }
         .social_icon {
             list-style: none;

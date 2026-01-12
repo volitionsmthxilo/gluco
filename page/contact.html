@@ -212,6 +212,10 @@
             justify-content: center;
             width: 32px;
             height: 32px;
+            position: relative;
+            z-index: 1050;
+            padding: 10px;
+            margin: -10px;
         }
         .hamburger {
             flex-direction: column;
@@ -224,6 +228,9 @@
             transition: 0.3s;
             border-radius: 2px;
             pointer-events: none;
+        }
+        .hamburger span:hover {
+            background: #667eea;
         }
         .hamburger.active span:nth-child(1) {
             transform: rotate(-45deg) translate(-5px, 6px);
@@ -370,7 +377,7 @@
                 <div class="col-md-12">
                     <div class="titlepage text_align_center">
                         <h2>Contact Us</h2>
-                        <p>Get in touch with GLUCO for innovative solutions in technology and automation.</p>
+                        <p>Get in touch with GLUCO for solar systems, IT solutions, electrical services, network security, robotics, and automation.</p>
                     </div>
                 </div>
             </div>
@@ -381,8 +388,12 @@
                         <div class="contact_item">
                             <i class="fa fa-phone contact_icon"></i>
                             <div class="contact_details">
-                                <h4>Phone</h4>
                                 <p><a href="tel:+263784245082">+263 784 245 082</a></p>
+                            </div>
+                        </div>
+                        <div class="contact_item">
+                            <i class="fa fa-phone contact_icon"></i>
+                            <div class="contact_details">
                                 <p><a href="tel:+27627845308">+27 62 784 5308</a></p>
                             </div>
                         </div>

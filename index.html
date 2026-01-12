@@ -250,6 +250,10 @@
             justify-content: center;
             width: 32px;
             height: 32px;
+            position: relative;
+            z-index: 1050;
+            padding: 10px;
+            margin: -10px;
         }
         .hamburger {
             flex-direction: column;
@@ -261,6 +265,7 @@
             margin: 3px 0;
             transition: 0.3s;
             border-radius: 2px;
+            pointer-events: none;
         }
         .hamburger span:hover {
             background: #667eea;
