@@ -721,6 +721,19 @@ ul.email li i {
     }
 }
 
+/* Touch/Bounce animation for contact icons */
+@keyframes touchBounce {
+    0% {
+        transform: scale(1.2) rotate(10deg) translateY(0);
+    }
+    50% {
+        transform: scale(1.3) rotate(10deg) translateY(-8px);
+    }
+    100% {
+        transform: scale(1.2) rotate(10deg) translateY(0);
+    }
+}
+
 .wallet_box {
     animation: fadeInUp 0.6s ease-out forwards;
     opacity: 0;
@@ -754,8 +767,9 @@ ul.email li i {
     }
     
     .wallet_box i img {
-        max-width: 150px;
-        padding: 20px;
+        width: 100%;
+        padding: 0;
+        max-width: none;
     }
     
     .wallet_box {
@@ -770,8 +784,9 @@ ul.email li i {
     }
     
     .wallet_box i img {
-        max-width: 120px;
-        padding: 15px;
+        width: 100%;
+        padding: 0;
+        max-width: none;
     }
 }
 
@@ -1121,28 +1136,49 @@ ul.email li i {
      font-size: 40px;
      color: #face34;
      margin-right: 20px;
-     transition: all 0.3s ease;
+     transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
 .contact_item:hover .contact_icon {
-     transform: scale(1.2);
+     transform: scale(1.2) rotate(10deg);
      color: #fff;
+     animation: touchBounce 0.6s ease;
 }
 
 .contact_details h4 {
      color: #fff;
      font-size: 20px;
      margin-bottom: 5px;
+     transition: all 0.3s ease;
+}
+
+.contact_item:hover .contact_details h4 {
+     color: #face34;
+     transform: translateX(5px);
+}
+
+.contact_details p {
+     transition: all 0.3s ease;
 }
 
 .contact_details p a {
      color: #a4a7ae;
      text-decoration: none;
-     transition: color 0.3s ease;
+     font-size: 18px;
+     font-weight: 500;
+     transition: all 0.3s ease;
+     position: relative;
+     display: inline-block;
 }
 
 .contact_details p a:hover {
      color: #face34;
+     transform: translateX(5px);
+     text-shadow: 0 0 10px rgba(250, 206, 52, 0.5);
+}
+
+.contact_item:hover .contact_details p a {
+     color: #fff;
 }
 
 .social_links h4 {
