@@ -15,7 +15,8 @@ File Name: responsive.css
         padding-bottom: 24px;
     }
     .banner_main .bluid .read_more {
-        max-width: 198px;
+        max-width: none;
+        width: auto;
     }
     #myCarousel a.carousel-control-prev {
         left: 40.3%;
@@ -53,7 +54,8 @@ File Name: responsive.css
         padding-bottom: 16px;
     }
     .banner_main .bluid .read_more {
-        max-width: 160px;
+        max-width: none;
+        width: auto;
         margin-right: 9px;
     }
     #myCarousel a.carousel-control-prev {
@@ -302,11 +304,12 @@ File Name: responsive.css
         line-height: 24px;
     }
     .banner_main .bluid .read_more {
-        margin-right: 5px;
-        max-width: 124px;
-        height: 48px;
-        line-height: 48px;
-        font-size: 16px;
+        margin: 5px;
+        max-width: 100%;
+        height: auto;
+        line-height: normal;
+        font-size: 14px;
+        padding: 10px 15px;
     }
     #myCarousel a.carousel-control-prev {
         left: 24.3%;
@@ -460,35 +463,19 @@ File Name: responsive.css
         color: #667eea;
     }
 
-    /* Enhanced Footer Social Icons */
+    .banner_main {
+        padding-top: 15px;
+        padding-bottom: 20px;
+    }
+
+    .con_img {
+        max-width: 280px; 
+        margin: 0 auto 20px auto; 
+    }
+
+    /* Footer Social Icons - Inherit from style.css */
     .social_icons_footer {
-        display: flex !important;
-        justify-content: center !important;
-        align-items: center !important;
-        flex-wrap: wrap !important;
-        gap: 15px !important;
         margin: 20px 0 !important;
-    }
-    .social_icons_footer a {
-        display: flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-        width: 50px !important;
-        height: 50px !important;
-        border-radius: 50% !important;
-        background: rgba(255,255,255,0.1) !important;
-        color: #fff !important;
-        text-decoration: none !important;
-        transition: all 0.3s ease !important;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.1) !important;
-    }
-    .social_icons_footer a:hover {
-        background: #face34 !important;
-        transform: scale(1.1) !important;
-    }
-    .social_icons_footer svg {
-        width: 24px !important;
-        height: 24px !important;
     }
 
     /* Ensure cart and shopping are visible */

@@ -158,164 +158,8 @@
     </script>
 
     <style>
-        .cart-container {
-            position: fixed;
-            top: 0;
-            right: -400px;
-            width: 400px;
-            height: 100%;
-            background: #fff;
-            border-left: 2px solid #e9ecef;
-            box-shadow: -5px 0 40px rgba(0,0,0,0.15);
-            transition: right 0.4s ease;
-            padding: 20px;
-            overflow-y: auto;
-            z-index: 1001;
-            font-family: 'Poppins', sans-serif;
-        }
-        .cart-container.active {
-            right: 0;
-        }
-        .cart-header {
-            display: flex;
-            align-items: center;
-            margin-bottom: 25px;
-            padding-bottom: 15px;
-            border-bottom: 1px solid #e9ecef;
-        }
-        .cart-header i {
-            font-size: 1.8em;
-            color: #667eea;
-            margin-right: 10px;
-        }
-        .cart-header h2 {
-            color: #333;
-            margin: 0;
-            font-size: 1.4em;
-            font-weight: 600;
-        }
-        .cart-item {
-            display: flex;
-            align-items: center;
-            margin-bottom: 20px;
-            padding: 15px;
-            background: #f8f9fa;
-            border-radius: 12px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-            transition: transform 0.2s ease;
-        }
-        .cart-item:hover {
-            transform: translateY(-2px);
-        }
-        .cart-item img {
-            width: 70px;
-            height: 70px;
-            margin-right: 15px;
-            border-radius: 10px;
-            object-fit: cover;
-        }
-        .cart-item-details {
-            flex: 1;
-        }
-        .cart-item-details h4 {
-            margin: 0 0 8px 0;
-            color: #333;
-            font-size: 1em;
-            font-weight: 500;
-        }
-        .cart-item-details p {
-            margin: 0;
-            color: #666;
-            font-size: 0.85em;
-        }
-        .cart-item-controls {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        .cart-item-controls button {
-            background: #667eea;
-            color: white;
-            border: none;
-            padding: 6px 12px;
-            border-radius: 6px;
-            cursor: pointer;
-            font-size: 0.9em;
-            font-weight: 500;
-            transition: background 0.3s ease;
-        }
-        .cart-item-controls button:hover {
-            background: #5a67d8;
-        }
-        .remove-btn {
-            background: #ff6b6b !important;
-        }
-        .remove-btn:hover {
-            background: #ff5252 !important;
-        }
-        .cart-total {
-            background: #f8f9fa;
-            padding: 20px;
-            border-radius: 12px;
-            margin: 25px 0;
-            text-align: center;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-        }
-        .cart-total h3 {
-            margin: 0;
-            color: #333;
-            font-size: 1.3em;
-            font-weight: 600;
-        }
-        .cart-actions {
-            margin-top: 25px;
-        }
-        .cart-actions button {
-            width: 100%;
-            padding: 12px;
-            margin-bottom: 10px;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            font-size: 1em;
-            font-weight: 500;
-            transition: all 0.3s ease;
-        }
-        .paypal-btn {
-            background: #0070ba;
-            color: white;
-        }
-        .paypal-btn:hover {
-            background: #005ea6;
-            transform: translateY(-1px);
-        }
-        .email-btn {
-            background: #ff9800;
-            color: white;
-        }
-        .email-btn:hover {
-            background: #e68900;
-            transform: translateY(-1px);
-        }
-        .close-btn {
-            background: #6c757d;
-            color: white;
-        }
-        .close-btn:hover {
-            background: #5a6268;
-            transform: translateY(-1px);
-        }
-        .cart-count {
-            position: absolute;
-            top: -8px;
-            right: -8px;
-            background: #e44d26;
-            color: white;
-            border-radius: 50%;
-            padding: 4px 8px;
-            font-size: 0.7em;
-            font-weight: bold;
-        }
+        /* Cart Styles moved to css/style.css */
+        
         .hamburger {
             background: none;
             border: none;
@@ -508,7 +352,7 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="about_img">
-                                    <figure><img class="img_responsive" src="../images/aboutgluco.png" alt="GLUCO Logo" width="800" height="600" loading="lazy" decoding="async" style="aspect-ratio: 4/3; object-fit: contain;" /></figure>
+                                    <figure><img class="img_responsive" src="../images/aboutgluco.png" alt="GLUCO Logo" width="600" height="600" loading="lazy" decoding="async" style="aspect-ratio: 1; object-fit: cover; border-radius: 10px;" /></figure>
                                 </div>
                             </div>
                         </div>
@@ -524,7 +368,7 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="about_img">
-                                    <figure><img class="img_responsive" src="../images/aboutus.png" alt="Our Vision" width="800" height="600" loading="lazy" decoding="async" style="aspect-ratio: 4/3; object-fit: contain;" /></figure>
+                                    <figure><img class="img_responsive" src="../images/aboutus.png" alt="Our Vision" width="600" height="600" loading="lazy" decoding="async" style="aspect-ratio: 1; object-fit: cover; border-radius: 10px;" /></figure>
                                 </div>
                             </div>
                             <div class="col-md-6">
@@ -558,7 +402,7 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="about_img">
-                                    <figure><img class="img_responsive" src="../images/aboutmission.png" alt="Our Mission" width="800" height="600" loading="lazy" decoding="async" style="aspect-ratio: 4/3; object-fit: contain;" /></figure>
+                                    <figure><img class="img_responsive" src="../images/aboutmission.png" alt="Our Mission" width="600" height="600" loading="lazy" decoding="async" style="aspect-ratio: 1; object-fit: cover; border-radius: 10px;" /></figure>
                                 </div>
                             </div>
                         </div>
@@ -574,7 +418,7 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="about_img">
-                                    <figure><img class="img_responsive" src="../images/aboutexpertise.png" alt="Our Expertise" width="800" height="600" loading="lazy" decoding="async" style="aspect-ratio: 4/3; object-fit: contain;" /></figure>
+                                    <figure><img class="img_responsive" src="../images/aboutexpertise.png" alt="Our Expertise" width="600" height="600" loading="lazy" decoding="async" style="aspect-ratio: 1; object-fit: cover; border-radius: 10px;" /></figure>
                                 </div>
                             </div>
                             <div class="col-md-6">
@@ -674,10 +518,10 @@
                     totalAmount += itemTotal;
                     cartList.innerHTML += `
                         <div class="cart-item">
-                            <img src="${item.image}" alt="${item.product}">
+                            <img src="../${item.image}" alt="${item.product}" class="loaded">
                             <div class="cart-item-details">
-                                <span>${item.product}</span>
-                                <span>$${item.price.toFixed(2)} x ${item.quantity}</span>
+                              <h4>${item.product}</h4>
+                              <p>$${item.price.toFixed(2)} x ${item.quantity}</p>
                             </div>
                             <div class="cart-item-controls">
                                 <button onclick="changeQuantity(${index}, -1)">-</button>
