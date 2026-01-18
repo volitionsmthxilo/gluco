@@ -176,164 +176,8 @@
     }
     </script>
     <style>
-        .cart-container {
-            position: fixed;
-            top: 0;
-            right: -400px;
-            width: 400px;
-            height: 100%;
-            background: #fff;
-            border-left: 2px solid #e9ecef;
-            box-shadow: -5px 0 40px rgba(0,0,0,0.15);
-            transition: right 0.4s ease;
-            padding: 20px;
-            overflow-y: auto;
-            z-index: 1001;
-            font-family: 'Poppins', sans-serif;
-        }
-        .cart-container.active {
-            right: 0;
-        }
-        .cart-header {
-            display: flex;
-            align-items: center;
-            margin-bottom: 25px;
-            padding-bottom: 15px;
-            border-bottom: 1px solid #e9ecef;
-        }
-        .cart-header i {
-            font-size: 1.8em;
-            color: #667eea;
-            margin-right: 10px;
-        }
-        .cart-header h2 {
-            color: #333;
-            margin: 0;
-            font-size: 1.4em;
-            font-weight: 600;
-        }
-        .cart-item {
-            display: flex;
-            align-items: center;
-            margin-bottom: 20px;
-            padding: 15px;
-            background: #f8f9fa;
-            border-radius: 12px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-            transition: transform 0.2s ease;
-        }
-        .cart-item:hover {
-            transform: translateY(-2px);
-        }
-        .cart-item img {
-            width: 70px;
-            height: 70px;
-            margin-right: 15px;
-            border-radius: 10px;
-            object-fit: cover;
-        }
-        .cart-item-details {
-            flex: 1;
-        }
-        .cart-item-details h4 {
-            margin: 0 0 8px 0;
-            color: #333;
-            font-size: 1em;
-            font-weight: 500;
-        }
-        .cart-item-details p {
-            margin: 0;
-            color: #666;
-            font-size: 0.85em;
-        }
-        .cart-item-controls {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        .cart-item-controls button {
-            background: #667eea;
-            color: white;
-            border: none;
-            padding: 6px 12px;
-            border-radius: 6px;
-            cursor: pointer;
-            font-size: 0.9em;
-            font-weight: 500;
-            transition: background 0.3s ease;
-        }
-        .cart-item-controls button:hover {
-            background: #5a67d8;
-        }
-        .remove-btn {
-            background: #ff6b6b !important;
-        }
-        .remove-btn:hover {
-            background: #ff5252 !important;
-        }
-        .cart-total {
-            background: #f8f9fa;
-            padding: 20px;
-            border-radius: 12px;
-            margin: 25px 0;
-            text-align: center;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-        }
-        .cart-total h3 {
-            margin: 0;
-            color: #333;
-            font-size: 1.3em;
-            font-weight: 600;
-        }
-        .cart-actions {
-            margin-top: 25px;
-        }
-        .cart-actions button {
-            width: 100%;
-            padding: 12px;
-            margin-bottom: 10px;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            font-size: 1em;
-            font-weight: 500;
-            transition: all 0.3s ease;
-        }
-        .paypal-btn {
-            background: #0070ba;
-            color: white;
-        }
-        .paypal-btn:hover {
-            background: #005ea6;
-            transform: translateY(-1px);
-        }
-        .email-btn {
-            background: #ff9800;
-            color: white;
-        }
-        .email-btn:hover {
-            background: #e68900;
-            transform: translateY(-1px);
-        }
-        .close-btn {
-            background: #6c757d;
-            color: white;
-        }
-        .close-btn:hover {
-            background: #5a6268;
-            transform: translateY(-1px);
-        }
-        .cart-count {
-            position: absolute;
-            top: -8px;
-            right: -8px;
-            background: #e44d26;
-            color: white;
-            border-radius: 50%;
-            padding: 4px 8px;
-            font-size: 0.7em;
-            font-weight: bold;
-        }
+        /* Cart Styles moved to css/style.css */
+        
         .hamburger {
             background: none;
             border: none;
@@ -542,112 +386,112 @@
             <div class="row">
                 <div class="col-lg-3 col-sm-6">
                     <div id="wa_hover" class="wallet_box text_align_center">
-                        <i><img src="../images/smartsolarsystems.png" alt="Smart Solar Systems - Scalable Power Solutions" width="300" height="300" loading="lazy" decoding="async" style="aspect-ratio: 1; object-fit: contain;"/></i>
+                        <i><img src="../images/smartsolarsystems.png" alt="Smart Solar Systems - Scalable Power Solutions" width="300" height="300" loading="lazy" decoding="async" style="aspect-ratio: 1; object-fit: cover; border-radius: 10px;"/></i>
                         <h3>SMART SOLAR SYSTEMS</h3>
                         <p>Scalable solar from 3kVA upward—engineered for homes and businesses. Reliable, efficient systems that grow with your energy needs.</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-sm-6">
                     <div id="wa_hover" class="wallet_box text_align_center">
-                        <i><img src="../images/firewall.png" alt="Network Security - Enterprise Firewalls" width="300" height="300" loading="lazy" decoding="async" style="aspect-ratio: 1; object-fit: contain;"/></i>
+                        <i><img src="../images/firewall.png" alt="Network Security - Enterprise Firewalls" width="300" height="300" loading="lazy" decoding="async" style="aspect-ratio: 1; object-fit: cover; border-radius: 10px;"/></i>
                         <h3>NETWORK SECURITY</h3>
                         <p>End-to-end protection against cyber threats: enterprise firewalls, advanced endpoint protection, vulnerability assessments, and penetration testing to secure your business.</p>
                         </div>
                 </div>
                 <div class="col-lg-3 col-sm-6">
                     <div id="wa_hover" class="wallet_box text_align_center">
-                        <i><img src="../images/networksupport.png" alt="Network Support - LAN WAN WLAN" width="300" height="300" loading="lazy" decoding="async" style="aspect-ratio: 1; object-fit: contain;"/></i>
+                        <i><img src="../images/networksupport.png" alt="Network Support - LAN WAN WLAN" width="300" height="300" loading="lazy" decoding="async" style="aspect-ratio: 1; object-fit: cover; border-radius: 10px;"/></i>
                         <h3>NETWORK SUPPORT</h3>
                         <p>Reliable, scalable network infrastructure—design, deployment, and optimization for LAN, WAN, and Wi‑Fi to keep your teams connected.</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-sm-6">
                     <div id="wa_hover" class="wallet_box text_align_center">
-                        <i><img src="../images/microsoft.png" alt="Microsoft 365 Support Services" width="300" height="300" loading="lazy" decoding="async" style="aspect-ratio: 1; object-fit: contain;"/></i>
+                        <i><img src="../images/microsoft.png" alt="Microsoft 365 Support Services" width="300" height="300" loading="lazy" decoding="async" style="aspect-ratio: 1; object-fit: cover; border-radius: 10px;"/></i>
                         <h3>MICROSOFT SUPPORT</h3>
                         <p>Expert Microsoft 365 deployment, licensing, and management—including Teams, Outlook, SharePoint, and OneDrive—to boost productivity with confidence.</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-sm-6">
                     <div id="wa_hover" class="wallet_box text_align_center">
-                        <i><img src="../images/fintech.png" alt="Fintech Solutions - Financial Technology" width="300" height="300" loading="lazy" decoding="async" style="aspect-ratio: 1; object-fit: contain;"/></i>
+                        <i><img src="../images/fintech.png" alt="Fintech Solutions - Financial Technology" width="300" height="300" loading="lazy" decoding="async" style="aspect-ratio: 1; object-fit: cover; border-radius: 10px;"/></i>
                         <h3>FINTECH SOLUTIONS</h3>
                         <p>Secure, compliant fintech platforms with real-time analytics, BI dashboards, financial reporting, predictive insights, risk management, and seamless integrations.</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-sm-6">
                     <div id="wa_hover" class="wallet_box text_align_center">
-                        <i><img src="../images/electricals.png" alt="Electrical Services - Installation Maintenance" width="300" height="300" loading="lazy" decoding="async" style="aspect-ratio: 1; object-fit: contain;"/></i>
+                        <i><img src="../images/electricals.png" alt="Electrical Services - Installation Maintenance" width="300" height="300" loading="lazy" decoding="async" style="aspect-ratio: 1; object-fit: cover; border-radius: 10px;"/></i>
                         <h3>ELECTRICAL SERVICES</h3>
                         <p>Installations &amp; wiring<br>Preventive maintenance &amp; repairs<br>Lighting design &amp; optimization<br>Safety inspections and testing</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-sm-6">
                     <div id="wa_hover" class="wallet_box text_align_center">
-                        <i><img src="../images/components.png" alt="Electronic Components - Microcontrollers Sensors" width="300" height="300" loading="lazy" decoding="async" style="aspect-ratio: 1; object-fit: contain;"/></i>
+                        <i><img src="../images/components.png" alt="Electronic Components - Microcontrollers Sensors" width="300" height="300" loading="lazy" decoding="async" style="aspect-ratio: 1; object-fit: cover; border-radius: 10px;"/></i>
                         <h3>ELECTRONIC COMPONENTS</h3>
                         <p>Microcontrollers<br>Power regulators<br>Sensors &amp; transducers<br>Displays and more</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-sm-6">
                     <div id="wa_hover" class="wallet_box text_align_center">
-                        <i><img src="../images/maintenance.png" alt="Maintenance Services - Solar Panel Inspection" width="300" height="300" loading="lazy" decoding="async" style="aspect-ratio: 1; object-fit: contain;"/></i>
+                        <i><img src="../images/maintenance.png" alt="Maintenance Services - Solar Panel Inspection" width="300" height="300" loading="lazy" decoding="async" style="aspect-ratio: 1; object-fit: cover; border-radius: 10px;"/></i>
                         <h3>MAINTENANCE SERVICES</h3>
                         <p>Solar panel inspections<br>Inverter maintenance<br>Monitoring &amp; performance testing<br>Component replacements</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-sm-6">
                     <div id="wa_hover" class="wallet_box text_align_center">
-                        <i><img src="../images/webhosting.png" alt="Hosting Solutions - Cloud VPS Dedicated" width="300" height="300" loading="lazy" decoding="async" style="aspect-ratio: 1; object-fit: contain;"/></i>
+                        <i><img src="../images/webhosting.png" alt="Hosting Solutions - Cloud VPS Dedicated" width="300" height="300" loading="lazy" decoding="async" style="aspect-ratio: 1; object-fit: cover; border-radius: 10px;"/></i>
                         <h3>HOSTING SOLUTIONS</h3>
                         <p>Shared hosting<br>Virtual private servers (VPS)<br>Dedicated servers<br>Managed cloud hosting</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-sm-6">
                     <div id="wa_hover" class="wallet_box text_align_center">
-                        <i><img src="../images/domainreg.png" alt="Domain Registration - SSL Certificates" width="300" height="300" loading="lazy" decoding="async" style="aspect-ratio: 1; object-fit: contain;"/></i>
+                        <i><img src="../images/domainreg.png" alt="Domain Registration - SSL Certificates" width="300" height="300" loading="lazy" decoding="async" style="aspect-ratio: 1; object-fit: cover; border-radius: 10px;"/></i>
                         <h3>OWN YOUR DOMAIN</h3>
                         <p>Domain registration<br>Domain transfer<br>Domain renewal<br>SSL certificates</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-sm-6">
                     <div id="wa_hover" class="wallet_box text_align_center">
-                        <i><img src="../images/itsupport.png" alt="IT Support - Web Development Technical Support" width="300" height="300" loading="lazy" decoding="async" style="aspect-ratio: 1; object-fit: contain;"/></i>
+                        <i><img src="../images/itsupport.png" alt="IT Support - Web Development Technical Support" width="300" height="300" loading="lazy" decoding="async" style="aspect-ratio: 1; object-fit: cover; border-radius: 10px;"/></i>
                         <h3>IT SUPPORT</h3>
                         <p>Web development<br>Windows technical support<br>Remote desktop assistance<br>Network security</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-sm-6">
                     <div id="wa_hover" class="wallet_box text_align_center">
-                        <i><img src="../images/forextrading.png" alt="Forex Trading - Signals Analysis Coaching" width="300" height="300" loading="lazy" decoding="async" style="aspect-ratio: 1; object-fit: contain;"/></i>
+                        <i><img src="../images/forextrading.png" alt="Forex Trading - Signals Analysis Coaching" width="300" height="300" loading="lazy" decoding="async" style="aspect-ratio: 1; object-fit: cover; border-radius: 10px;"/></i>
                         <h3>FOREIGN EXCHANGE TRADING</h3>
                         <p>Professional trading signals<br>In-depth market analysis<br>Personalized coaching<br>Structured trading classes</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-sm-6">
                     <div id="wa_hover" class="wallet_box text_align_center">
-                        <i><img src="../images/agritech.png" alt="Smart Agriculture - Automated Irrigation" width="300" height="300" loading="lazy" decoding="async" style="aspect-ratio: 1; object-fit: contain;"/></i>
+                        <i><img src="../images/agritech.png" alt="Smart Agriculture - Automated Irrigation" width="300" height="300" loading="lazy" decoding="async" style="aspect-ratio: 1; object-fit: cover; border-radius: 10px;"/></i>
                         <h3>SMART AGRICULTURE</h3>
                         <p>Automated irrigation<br>Climate monitoring &amp; control<br>Farm analytics<br>Nutrient management</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-sm-6">
                     <div id="wa_hover" class="wallet_box text_align_center">
-                        <i><img src="../images/industrialautomation.png" alt="Industrial Automation - PLC IoT" width="300" height="300" loading="lazy" decoding="async" style="aspect-ratio: 1; object-fit: contain;"/></i>
+                        <i><img src="../images/industrialautomation.png" alt="Industrial Automation - PLC IoT" width="300" height="300" loading="lazy" decoding="async" style="aspect-ratio: 1; object-fit: cover; border-radius: 10px;"/></i>
                         <h3>INDUSTRIAL AUTOMATION</h3>
                         <p>PLC programming<br>Industrial networking<br>IoT integration<br>Control panel design</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-sm-6">
                     <div id="wa_hover" class="wallet_box text_align_center">
-                        <i><img src="../images/monitoring.png" alt="Monitoring Systems - CCTV Surveillance" width="300" height="300" loading="lazy" decoding="async" style="aspect-ratio: 1; object-fit: contain;"/></i>
+                        <i><img src="../images/monitoring.png" alt="Monitoring Systems - CCTV Surveillance" width="300" height="300" loading="lazy" decoding="async" style="aspect-ratio: 1; object-fit: cover; border-radius: 10px;"/></i>
                         <h3>MONITORING SYSTEMS</h3>
                         <p>CCTV surveillance<br>Alarm systems<br>Environmental monitoring<br>Managed video services</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-sm-6">
                     <div id="wa_hover" class="wallet_box text_align_center">
-                        <i><img src="../images/analytics.png" alt="Analytics Hub - AI Data Visualization" width="300" height="300" loading="lazy" decoding="async" style="aspect-ratio: 1; object-fit: contain;"/></i>
+                        <i><img src="../images/analytics.png" alt="Analytics Hub - AI Data Visualization" width="300" height="300" loading="lazy" decoding="async" style="aspect-ratio: 1; object-fit: cover; border-radius: 10px;"/></i>
                         <h3>ANALYTICS HUB</h3>
                         <p>AI-powered insights<br>Interactive data visualization<br>Data mining<br>Predictive modeling</p>
                     </div>
@@ -738,10 +582,10 @@
                   totalAmount += itemTotal;
                   cartList.innerHTML += `
                       <div class="cart-item">
-                          <img src="${item.image}" alt="${item.product}">
+                          <img src="../${item.image}" alt="${item.product}" class="loaded">
                           <div class="cart-item-details">
-                              <span>${item.product}</span>
-                              <span>$${item.price.toFixed(2)} x ${item.quantity}</span>
+                              <h4>${item.product}</h4>
+                              <p>$${item.price.toFixed(2)} x ${item.quantity}</p>
                           </div>
                           <div class="cart-item-controls">
                               <button onclick="changeQuantity(${index}, -1)">-</button>
