@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Media Meta Tag Validator - GLUCO</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+        .content {
+            padding: 30px;
+        }
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        .section h2 {
+            color: #333;
+            font-size: 20px;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #667eea;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+        }
+
+        .input-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #555;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 14px;
+            transition: all 0.3s;
+        }
+
+        .input-group input:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        .btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 14px 30px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            width: 100%;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+        }
+
+        .btn:active {
+            transform: translateY(0);
+        }
+
+        .results {
+            margin-top: 30px;
+            display: none;
+        }
+
+        .results.show {
+            display: block;
+        }
+
+        .result-card {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-left: 4px solid #667eea;
+        }
+
+        .result-card h3 {
+            color: #333;
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+
+        .result-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .result-item:last-child {
+            border-bottom: none;
+        }
+
+        .result-label {
+            font-weight: 600;
+            color: #555;
+        }
+
+        .result-value {
+            color: #333;
+            max-width: 60%;
+            text-align: right;
+            word-break: break-all;
+        }
+
+        .status {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .status.success {
+            background: #d4edda;
+            color: #155724;
+        }
+
+        .status.error {
+            background: #f8d7da;
+            color: #721c24;
+        }
+
+        .status.warning {
+            background: #fff3cd;
+            color: #856404;
+        }
+
+        .preview {
+            margin-top: 30px;
+            border: 2px solid #e0e0e0;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .preview-header {
+            background: #f8f9fa;
+            padding: 15px;
+            font-weight: 600;
+            color: #333;
+            border-bottom: 2px solid #e0e0e0;
+        }
+
+        .preview-content {
+            padding: 0;
+        }
+
+        .preview-image {
+            width: 100%;
+            display: block;
+            background: #f0f0f0;
+        }
+
+        .preview-text {
+            padding: 20px;
+        }
+
+        .preview-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 10px;
+        }
+
+        .preview-description {
+            font-size: 14px;
+            color: #606770;
+            line-height: 1.6;
+        }
+
+        .preview-url {
+            font-size: 12px;
+            color: #999;
+            margin-top: 10px;
+            text-transform: uppercase;
+        }
+
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .tool-card {
+            background: white;
+            border: 2px solid #e0e0e0;
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .tool-card:hover {
+            border-color: #667eea;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            transform: translateY(-5px);
+        }
+
+        .tool-card h3 {
+            color: #333;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        .tool-card p {
+            font-size: 13px;
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .tool-card .btn-small {
+            display: inline-block;
+            padding: 8px 20px;
+            background: #667eea;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 14px;
+            transition: all 0.3s;
+        }
+
+        .tool-card .btn-small:hover {
+            background: #764ba2;
+        }
+
+        .alert {
+            padding: 15px 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+
+        .alert-info {
+            background: #d1ecf1;
+            color: #0c5460;
+            border-left: 4px solid #17a2b8;
+        }
+
+        .alert-success {
+            background: #d4edda;
+            color: #155724;
+            border-left: 4px solid #28a745;
+        }
+
+        @media (max-width: 768px) {
+            .content {
+                padding: 20px;
+            }
+
+            .result-item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .result-value {
+                max-width: 100%;
+                text-align: left;
+                margin-top: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🔍 Social Media Meta Tag Validator</h1>
+            <p>Validate and preview your website's link sharing appearance</p>
+        </div>
+
+        <div class="content">
+            <div class="alert alert-info">
+                <strong>ℹ️ Instructions:</strong> Enter the full URL of any page from your website to validate its social media meta tags and preview how it will appear when shared.
+            </div>
+
+            <div class="section">
+                <h2>📝 Enter Page URL</h2>
+                <div class="input-group">
+                    <label for="pageUrl">Website URL</label>
+                    <input type="url" id="pageUrl" placeholder="https://gluco.co.zw/" value="https://gluco.co.zw/">
+                </div>
+                <button class="btn" onclick="validatePage()">🚀 Validate & Preview</button>
+            </div>
+
+            <div class="results" id="results">
+                <div class="section">
+                    <h2>✅ Validation Results</h2>
+                    <div id="validationResults"></div>
+                </div>
+
+                <div class="section">
+                    <h2>👁️ Social Media Preview</h2>
+                    <div class="preview">
+                        <div class="preview-header">Facebook / WhatsApp / LinkedIn Preview</div>
+                        <div class="preview-content">
+                            <img id="previewImage" class="preview-image" src="" alt="Preview">
+                            <div class="preview-text">
+                                <div class="preview-url" id="previewUrl">gluco.co.zw</div>
+                                <div class="preview-title" id="previewTitle">Loading...</div>
+                                <div class="preview-description" id="previewDescription">Loading...</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>🛠️ External Validation Tools</h2>
+                <div class="tools-grid">
+                    <div class="tool-card" onclick="openTool('facebook')">
+                        <h3>📘 Facebook Debugger</h3>
+                        <p>Test Open Graph tags and scrape latest version</p>
+                        <a href="#" class="btn-small">Open Tool</a>
+                    </div>
+                    <div class="tool-card" onclick="openTool('twitter')">
+                        <h3>🐦 Twitter Card Validator</h3>
+                        <p>Preview Twitter/X card appearance</p>
+                        <a href="#" class="btn-small">Open Tool</a>
+                    </div>
+                    <div class="tool-card" onclick="openTool('linkedin')">
+                        <h3>💼 LinkedIn Inspector</h3>
+                        <p>Test LinkedIn post preview</p>
+                        <a href="#" class="btn-small">Open Tool</a>
+                    </div>
+                    <div class="tool-card" onclick="openTool('metatags')">
+                        <h3>🏷️ Meta Tags Editor</h3>
+                        <p>Preview across multiple platforms</p>
+                        <a href="#" class="btn-small">Open Tool</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>📚 Quick Reference</h2>
+                <div class="result-card">
+                    <h3>Required Meta Tags Checklist</h3>
+                    <div class="result-item">
+                        <span class="result-label">og:title</span>
+                        <span class="status success">Required</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">og:description</span>
+                        <span class="status success">Required</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">og:image</span>
+                        <span class="status success">Required</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">og:url</span>
+                        <span class="status success">Required</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">twitter:card</span>
+                        <span class="status success">Required</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">Image Size</span>
+                        <span class="status warning">1200x630px min</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        async function validatePage() {
+            const url = document.getElementById('pageUrl').value;
+            const resultsDiv = document.getElementById('results');
+            const validationResults = document.getElementById('validationResults');
+
+            if (!url) {
+                alert('Please enter a URL');
+                return;
+            }
+
+            // Show results section
+            resultsDiv.classList.add('show');
+
+            // Show loading state
+            validationResults.innerHTML = '<div class="result-card"><p>🔄 Fetching and analyzing page...</p></div>';
+
+            try {
+                // Fetch the page
+                const response = await fetch(url);
+                const html = await response.text();
+                
+                // Parse HTML
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(html, 'text/html');
+
+                // Extract meta tags
+                const metaTags = {
+                    title: doc.querySelector('title')?.textContent || 'Not found',
+                    description: doc.querySelector('meta[name="description"]')?.content || 'Not found',
+                    ogTitle: doc.querySelector('meta[property="og:title"]')?.content || 'Not found',
+                    ogDescription: doc.querySelector('meta[property="og:description"]')?.content || 'Not found',
+                    ogImage: doc.querySelector('meta[property="og:image"]')?.content || 'Not found',
+                    ogUrl: doc.querySelector('meta[property="og:url"]')?.content || 'Not found',
+                    ogType: doc.querySelector('meta[property="og:type"]')?.content || 'Not found',
+                    twitterCard: doc.querySelector('meta[name="twitter:card"]')?.content || doc.querySelector('meta[property="twitter:card"]')?.content || 'Not found',
+                    twitterTitle: doc.querySelector('meta[property="twitter:title"]')?.content || 'Not found',
+                    twitterDescription: doc.querySelector('meta[property="twitter:description"]')?.content || 'Not found',
+                    twitterImage: doc.querySelector('meta[property="twitter:image"]')?.content || 'Not found',
+                    canonical: doc.querySelector('link[rel="canonical"]')?.href || 'Not found'
+                };
+
+                // Display results
+                displayResults(metaTags, url);
+                
+                // Update preview
+                updatePreview(metaTags, url);
+
+            } catch (error) {
+                validationResults.innerHTML = `
+                    <div class="result-card">
+                        <p style="color: red;">❌ Error: ${error.message}</p>
+                        <p style="margin-top: 10px; color: #666;">
+                            Note: Due to CORS restrictions, this tool works best when run from the same domain as your website.
+                            For external URLs, use the professional validation tools below.
+                        </p>
+                    </div>
+                `;
+            }
+        }
+
+        function displayResults(metaTags, url) {
+            const validationResults = document.getElementById('validationResults');
+            
+            let html = '<div class="result-card"><h3>🏷️ Meta Tags Found</h3>';
+            
+            // Check each required tag
+            const checks = [
+                { label: 'Page Title', value: metaTags.title, required: true },
+                { label: 'Meta Description', value: metaTags.description, required: true },
+                { label: 'Canonical URL', value: metaTags.canonical, required: true },
+                { label: 'OG Title', value: metaTags.ogTitle, required: true },
+                { label: 'OG Description', value: metaTags.ogDescription, required: true },
+                { label: 'OG Image', value: metaTags.ogImage, required: true },
+                { label: 'OG URL', value: metaTags.ogUrl, required: true },
+                { label: 'OG Type', value: metaTags.ogType, required: false },
+                { label: 'Twitter Card', value: metaTags.twitterCard, required: true },
+                { label: 'Twitter Title', value: metaTags.twitterTitle, required: true },
+                { label: 'Twitter Description', value: metaTags.twitterDescription, required: true },
+                { label: 'Twitter Image', value: metaTags.twitterImage, required: true }
+            ];
+
+            checks.forEach(check => {
+                const found = check.value !== 'Not found';
+                const status = found ? 'success' : (check.required ? 'error' : 'warning');
+                const statusText = found ? '✓ Found' : '✗ Missing';
+                
+                html += `
+                    <div class="result-item">
+                        <span class="result-label">${check.label}</span>
+                        <span class="result-value">
+                            <span class="status ${status}">${statusText}</span>
+                        </span>
+                    </div>
+                `;
+            });
+
+            html += '</div>';
+
+            // Add detailed values
+            html += '<div class="result-card"><h3>📄 Extracted Values</h3>';
+            
+            Object.entries(metaTags).forEach(([key, value]) => {
+                const displayKey = key.replace(/([A-Z])/g, ' $1').replace(/^./, str => str.toUpperCase());
+                const displayValue = value.length > 100 ? value.substring(0, 100) + '...' : value;
+                
+                html += `
+                    <div class="result-item">
+                        <span class="result-label">${displayKey}</span>
+                        <span class="result-value" title="${value}">${displayValue}</span>
+                    </div>
+                `;
+            });
+
+            html += '</div>';
+
+            validationResults.innerHTML = html;
+        }
+
+        function updatePreview(metaTags, url) {
+            const previewImage = document.getElementById('previewImage');
+            const previewUrl = document.getElementById('previewUrl');
+            const previewTitle = document.getElementById('previewTitle');
+            const previewDescription = document.getElementById('previewDescription');
+
+            // Update preview elements
+            if (metaTags.ogImage !== 'Not found') {
+                previewImage.src = metaTags.ogImage;
+                previewImage.onerror = function() {
+                    this.src = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="1200" height="630"%3E%3Crect fill="%23f0f0f0" width="1200" height="630"/%3E%3Ctext fill="%23999" font-family="Arial" font-size="40" x="50%25" y="50%25" text-anchor="middle" dominant-baseline="middle"%3EImage not found%3C/text%3E%3C/svg%3E';
+                };
+            } else {
+                previewImage.src = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="1200" height="630"%3E%3Crect fill="%23f0f0f0" width="1200" height="630"/%3E%3Ctext fill="%23999" font-family="Arial" font-size="40" x="50%25" y="50%25" text-anchor="middle" dominant-baseline="middle"%3ENo image specified%3C/text%3E%3C/svg%3E';
+            }
+
+            try {
+                const urlObj = new URL(url);
+                previewUrl.textContent = urlObj.hostname.toUpperCase();
+            } catch (e) {
+                previewUrl.textContent = url;
+            }
+
+            previewTitle.textContent = metaTags.ogTitle !== 'Not found' ? metaTags.ogTitle : 'No title specified';
+            previewDescription.textContent = metaTags.ogDescription !== 'Not found' ? metaTags.ogDescription : 'No description specified';
+        }
+
+        function openTool(tool) {
+            event.preventDefault();
+            const url = document.getElementById('pageUrl').value || 'https://gluco.co.zw/';
+            const encodedUrl = encodeURIComponent(url);
+            
+            const tools = {
+                facebook: `https://developers.facebook.com/tools/debug/?q=${encodedUrl}`,
+                twitter: `https://cards-dev.twitter.com/validator`,
+                linkedin: `https://www.linkedin.com/post-inspector/inspect/${encodedUrl}`,
+                metatags: `https://metatags.io/?url=${encodedUrl}`
+            };
+
+            if (tools[tool]) {
+                window.open(tools[tool], '_blank');
+            }
+        }
+
+        // Auto-validate on page load if URL is present
+        window.addEventListener('load', function() {
+            const urlInput = document.getElementById('pageUrl');
+            if (urlInput.value) {
+                // Uncomment to auto-validate
+                // validatePage();
+            }
+        });
+    </script>
+</body>
+</html>
