@@ -1,0 +1,54 @@
+# GLUCO Website - Robots.txt
+# https://gluco.co.zw/robots.txt
+
+User-agent: *
+Allow: /
+Allow: /page/
+Allow: /images/
+Allow: /css/
+Allow: /js/
+
+# Disallow admin or private directories (if any)
+Disallow: /phpmailer/
+Disallow: /PHPMailer-master/
+
+# Allow all crawlers to access sitemap
+Sitemap: https://gluco.co.zw/sitemap.xml
+
+# Crawl-delay for polite crawlers
+Crawl-delay: 1
+
+# Specific rules for major search engines
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 0
+
+User-agent: Slurp
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+Crawl-delay: 2
+
+# Block bad bots
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
