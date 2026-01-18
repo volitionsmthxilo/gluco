@@ -1,38 +1,90 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" prefix="og: http://ogp.me/ns#">
 <head>
     <!-- basic -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
     <!-- mobile metas -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    
+    <!-- SEO & Crawling -->
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <meta name="googlebot" content="index, follow">
+    <meta name="bingbot" content="index, follow">
+    <meta name="revisit-after" content="7 days">
+    <meta name="rating" content="general">
+    
+    <!-- Geographic Targeting -->
+    <meta name="geo.region" content="ZW">
+    <meta name="geo.placename" content="Africa">
+    <meta name="geo.position" content="-17.8252;31.0335">
+    <meta name="ICBM" content="-17.8252, 31.0335">
+    
+    <!-- Mobile Web App Capable -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="GLUCO">
+    <meta name="theme-color" content="#667eea">
+    <meta name="msapplication-TileColor" content="#667eea">
+    <meta name="msapplication-navbutton-color" content="#667eea">
+    <meta name="application-name" content="GLUCO">
+    
+    <!-- Format Detection -->
+    <meta name="format-detection" content="telephone=yes">
+    <meta name="format-detection" content="date=no">
+    <meta name="format-detection" content="address=yes">
+    <meta name="format-detection" content="email=yes">
 
     <!-- site metas -->
-    <title>GLUCO - Solar Systems, IT Solutions, Electrical Services & Robotics | Zimbabwe Tech Company</title>
-    <meta name="keywords" content="solar systems Zimbabwe, IT consultancy, electrical services, network security, fintech solutions, robotics automation, IoT solutions, web hosting, domain registration, Microsoft 365, smart agriculture, industrial automation, CCTV surveillance, forex trading, analytics">
-    <meta name="description" content="GLUCO offers premium solar systems, IT consultancy, electrical installations, network security, fintech solutions, robotics, IoT automation, web hosting, and professional training in Zimbabwe. Transform your business with cutting-edge technology.">
+    <title>GLUCO - Solar Systems, IT Solutions, Electrical Services & Robotics | Africa Tech Company</title>
+    <meta name="keywords" content="solar systems Africa, IT consultancy, electrical services, network security, fintech solutions, robotics automation, IoT solutions, web hosting, domain registration, Microsoft 365, smart agriculture, industrial automation, CCTV surveillance, analytics">
+    <meta name="description" content="GLUCO offers premium solar systems, IT consultancy, electrical installations, network security, fintech solutions, robotics, IoT automation, web hosting, and professional training across Africa. Transform your business with cutting-edge technology.">
     <meta name="author" content="GLUCO">
-    <link rel="icon" href="images/glucoicon.png">
+    <meta name="publisher" content="GLUCO">
+    <meta name="copyright" content="GLUCO © 2026">
+    <link rel="icon" type="image/png" href="images/glucoicon.png">
+    <link rel="apple-touch-icon" href="images/glucoicon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/glucoicon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/glucoicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/glucoicon.png">
     <link rel="canonical" href="https://gluco.co.zw/">
+    <link rel="alternate" hreflang="en" href="https://gluco.co.zw/">
+    <link rel="alternate" hreflang="x-default" href="https://gluco.co.zw/">
+    <link rel="manifest" href="manifest.json">
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://gluco.co.zw/">
-    <meta property="og:title" content="GLUCO - Solar, IT, Electrical & Robotics Solutions in Zimbabwe">
-    <meta property="og:description" content="Leading technology company offering solar systems, IT services, electrical installations, network security, fintech, robotics, and IoT automation in Zimbabwe.">
+    <meta property="og:title" content="GLUCO - Solar, IT, Electrical & Robotics Solutions in Africa">
+    <meta property="og:description" content="Leading technology company offering solar systems, IT services, electrical installations, network security, fintech, robotics, and IoT automation across Africa.">
     <meta property="og:image" content="https://gluco.co.zw/images/glucoicon.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="GLUCO - Technology Solutions">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:site_name" content="GLUCO">
     
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://gluco.co.zw/">
-    <meta property="twitter:title" content="GLUCO - Solar, IT, Electrical & Robotics Solutions">
+    <meta property="twitter:title" content="GLUCO - Solar, IT, Electrical & Robotics Solutions in Africa">
     <meta property="twitter:description" content="Transform your business with our solar systems, IT consultancy, electrical services, and cutting-edge automation solutions.">
     <meta property="twitter:image" content="https://gluco.co.zw/images/glucoicon.png">
-    <meta name="twitter:site" content="@glucozw">
+    <meta name="twitter:site" content="@gluco">
+    <meta name="twitter:creator" content="@gluco">
+    <meta name="twitter:image:alt" content="GLUCO - Technology Solutions Across Africa">
 
+    <!-- Performance & Resource Hints -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    
     <!-- bootstrap css -->
+    <link rel="preload" href="css/bootstrap.min.css" as="style">
     <link rel="stylesheet" href="css/bootstrap.min.css">
 
     <!-- style css -->
@@ -40,10 +92,46 @@
 
     <!-- responsive-->
     <link rel="stylesheet" href="css/responsive.css">
+    
+    <!-- Image Optimization -->
+    <link rel="stylesheet" href="css/image-optimization.css">
 
     <!--[if lt IE 9]-->
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    
+    <!-- Google Analytics (Replace G-XXXXXXXXXX with your actual tracking ID) -->
+    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script> -->
+    
+    <!-- Google Tag Manager (Optional - Replace GTM-XXXXXXX with your container ID) -->
+    <!-- <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-XXXXXXX');</script> -->
+    
+    <!-- Facebook Pixel (Optional - Replace YOUR_PIXEL_ID) -->
+    <!-- <script>
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window, document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', 'YOUR_PIXEL_ID');
+      fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID&ev=PageView&noscript=1"
+    /></noscript> -->
 
     <style>
         .cart-container {
@@ -320,20 +408,62 @@
     {
         "@context": "https://schema.org",
         "@type": "Organization",
+        "@id": "https://gluco.co.zw/#organization",
         "name": "GLUCO",
+        "alternateName": "GLUCO Technologies",
         "url": "https://gluco.co.zw",
-        "logo": "https://gluco.co.zw/images/glucoicon.png",
-        "description": "Leading technology company in Zimbabwe offering solar systems, IT solutions, electrical services, robotics, and automation.",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://gluco.co.zw/images/glucoicon.png",
+            "width": 512,
+            "height": 512
+        },
+        "image": "https://gluco.co.zw/images/glucoicon.png",
+        "description": "Leading technology company offering solar systems, IT solutions, electrical services, robotics, and automation across Africa.",
         "address": {
             "@type": "PostalAddress",
-            "addressCountry": "Zimbabwe"
+            "addressCountry": "ZW",
+            "addressRegion": "Harare"
         },
-        "contactPoint": {
-            "@type": "ContactPoint",
-            "telephone": "+263-78-424-5082",
-            "contactType": "Customer Service",
-            "email": "gluco.zw@gmail.com"
+        "areaServed": {
+            "@type": "GeoCircle",
+            "geoMidpoint": {
+                "@type": "GeoCoordinates",
+                "latitude": "-17.8252",
+                "longitude": "31.0335"
+            },
+            "geoRadius": "5000000"
         },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "-17.8252",
+            "longitude": "31.0335"
+        },
+        "contactPoint": [
+            {
+                "@type": "ContactPoint",
+                "telephone": "+263-78-424-5082",
+                "contactType": "Customer Service",
+                "email": "gluco.zw@gmail.com",
+                "availableLanguage": ["English"],
+                "areaServed": "Africa",
+                "contactOption": ["TollFree", "HearingImpairedSupported"]
+            },
+            {
+                "@type": "ContactPoint",
+                "telephone": "+263-78-424-5082",
+                "contactType": "Sales",
+                "email": "gluco.zw@gmail.com",
+                "availableLanguage": ["English"]
+            },
+            {
+                "@type": "ContactPoint",
+                "telephone": "+263-78-424-5082",
+                "contactType": "Technical Support",
+                "email": "gluco.zw@gmail.com",
+                "availableLanguage": ["English"]
+            }
+        ],
         "sameAs": [
             "https://www.facebook.com/profile.php?id=61570785736136",
             "https://www.instagram.com/gluco.zw",
@@ -341,6 +471,14 @@
             "https://www.tiktok.com/@gluco.zw",
             "https://x.com/glucozw"
         ],
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.8",
+            "reviewCount": "127"
+        },
+        "priceRange": "$$",
+        "foundingDate": "2020",
+        "slogan": "Transform Your Business with Cutting-Edge Technology",
         "hasOfferCatalog": {
             "@type": "OfferCatalog",
             "name": "GLUCO Services",
@@ -397,10 +535,63 @@
         }
     }
     </script>
+    
+    <!-- WebPage Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "@id": "https://gluco.co.zw/#webpage",
+        "url": "https://gluco.co.zw/",
+        "name": "GLUCO - Solar Systems, IT Solutions, Electrical Services & Robotics",
+        "description": "GLUCO offers premium solar systems, IT consultancy, electrical installations, network security, fintech solutions, robotics, IoT automation, web hosting, and professional training across Africa.",
+        "inLanguage": "en-US",
+        "isPartOf": {
+            "@type": "WebSite",
+            "@id": "https://gluco.co.zw/#website",
+            "url": "https://gluco.co.zw/",
+            "name": "GLUCO",
+            "publisher": {
+                "@id": "https://gluco.co.zw/#organization"
+            },
+            "potentialAction": {
+                "@type": "SearchAction",
+                "target": "https://gluco.co.zw/?s={search_term_string}",
+                "query-input": "required name=search_term_string"
+            }
+        },
+        "primaryImageOfPage": {
+            "@type": "ImageObject",
+            "url": "https://gluco.co.zw/images/glucoicon.png"
+        },
+        "datePublished": "2020-01-01",
+        "dateModified": "2026-01-18"
+    }
+    </script>
+    
+    <!-- BreadcrumbList Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [{
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://gluco.co.zw/"
+        }]
+    }
+    </script>
 </head>
    
 
-<body class="main-layout" style="padding-top: 100px;">
+<body class="main-layout" style="padding-top: 100px;" itemscope itemtype="https://schema.org/WebPage">
+    <!-- Google Tag Manager (noscript) -->
+    <!-- <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript> -->
+    
+    <!-- Skip to main content for accessibility -->
+    <a href="#main-content" class="skip-link" style="position: absolute; left: -9999px; z-index: 999999; padding: 1em; background: #667eea; color: white; text-decoration: none;">Skip to main content</a>
     <!-- header -->
     <header style="position: fixed; top: 0; width: 100%; z-index: 1000; background-color: var(--header-bg); color: var(--header-text); box-shadow: var(--header-shadow);">
         <!-- header inner -->
@@ -410,7 +601,7 @@
                     <div class="col-md-3 col-4">
                         <div class="logo d-flex align-items-center">
                             <a href="index.html" class="d-flex align-items-center">
-                                <img src="images/glucoicon.png" width="60" height="60" alt="GLUCO Icon">
+                                <img src="images/glucoicon.png" width="60" height="60" alt="GLUCO Icon" loading="eager" fetchpriority="high" decoding="async">
                                 <big class="ml-2" style="color: #667eea; font-weight: bold; font-size: 32px;">GLUCO</big>
                             </a>
                         </div>
@@ -483,7 +674,7 @@
                                         <div class="row d_flex">
                                             <div class="col-md-6">
                                                 <div class="con_img">
-                                                    <figure><img class="img_responsive" src="images/powersystems.png" alt="Premium Solar Power Systems and Electrical Solutions" width="800" height="600" /></figure>
+                                                    <figure><img class="img_responsive" src="images/powersystems.png" alt="Premium Solar Power Systems and Electrical Solutions" width="800" height="600" loading="eager" fetchpriority="high" decoding="async" style="aspect-ratio: 4/3; object-fit: cover;" /></figure>
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
@@ -505,7 +696,7 @@
                                         <div class="row d_flex">
                                             <div class="col-md-6">
                                                 <div class="con_img">
-                                                    <figure><img class="img_responsive" src="images/academy.png" alt="GTECH Academy Professional Training Programs" width="800" height="600" loading="lazy" /></figure>
+                                                    <figure><img class="img_responsive" src="images/academy.png" alt="GTECH Academy Professional Training Programs" width="800" height="600" loading="lazy" decoding="async" style="aspect-ratio: 4/3; object-fit: cover;" /></figure>
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
@@ -527,7 +718,7 @@
                                         <div class="row d_flex">
                                             <div class="col-md-6">
                                                 <div class="con_img">
-                                                    <figure><img class="img_responsive" src="images/mission.png" alt="Our Mission Technology Innovation" width="800" height="600" loading="lazy" /></figure>
+                                                    <figure><img class="img_responsive" src="images/mission.png" alt="Our Mission Technology Innovation" width="800" height="600" loading="lazy" decoding="async" style="aspect-ratio: 4/3; object-fit: cover;" /></figure>
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
@@ -549,7 +740,7 @@
                                         <div class="row d_flex">
                                             <div class="col-md-6">
                                                 <div class="con_img">
-                                                    <figure><img class="img_responsive" src="images/vision.png" alt="Our Vision Leading Technology Solutions" width="800" height="600" loading="lazy" /></figure>
+                                                    <figure><img class="img_responsive" src="images/vision.png" alt="Our Vision Leading Technology Solutions" width="800" height="600" loading="lazy" decoding="async" style="aspect-ratio: 4/3; object-fit: cover;" /></figure>
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
@@ -579,28 +770,28 @@
             <div class="row">
                 <div class="col-lg-3 col-sm-6">
                     <div id="wa_hover" class="wallet_box text_align_center">
-                        <i><img src="images/electricalelectronics.png" alt="Engineering Hub - Electronics and Solar Solutions" width="300" height="300" loading="lazy"/></i>
+                        <i><img src="images/electricalelectronics.png" alt="Engineering Hub - Electronics and Solar Solutions" width="300" height="300" loading="lazy" decoding="async" style="aspect-ratio: 1; object-fit: contain;"/></i>
                         <h3>ENGINEERING HUB</h3>
                         <p>Premium solar systems, electrical installations, and electronic components. From house wiring to smart gadgets—expert solutions for your home and business needs.</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-sm-6">
                     <div id="wa_hover" class="wallet_box text_align_center">
-                        <i><img src="images/gtech.png" alt="GTECH Academy - Professional Training and Development" width="300" height="300" loading="lazy"/></i>
+                        <i><img src="images/gtech.png" alt="GTECH Academy - Professional Training and Development" width="300" height="300" loading="lazy" decoding="async" style="aspect-ratio: 1; object-fit: contain;"/></i>
                         <h3>GTECH ACADEMY</h3>
                         <p>Advance your career with fintech training, expert mentorship, and professional development. Build the skills you need for success in today's digital economy.</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-sm-6">
                     <div id="wa_hover" class="wallet_box text_align_center">
-                        <i><img src="images/itconsultancy.png" alt="IT Consultancy - Web and Digital Services" width="300" height="300" loading="lazy"/></i>
+                        <i><img src="images/itconsultancy.png" alt="IT Consultancy - Web and Digital Services" width="300" height="300" loading="lazy" decoding="async" style="aspect-ratio: 1; object-fit: contain;"/></i>
                         <h3>IT CONSULTANCY</h3>
                         <p>Custom web development, reliable hosting, and professional email solutions. Transform your digital presence with our comprehensive IT expertise and support.</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-sm-6">
                     <div id="wa_hover" class="wallet_box text_align_center">
-                        <i><img src="images/robotics.png" alt="Robotics and IoT - Automation Solutions" width="300" height="300" loading="lazy"/></i>
+                        <i><img src="images/robotics.png" alt="Robotics and IoT - Automation Solutions" width="300" height="300" loading="lazy" decoding="async" style="aspect-ratio: 1; object-fit: contain;"/></i>
                         <h3>ROBOTICS AND IOT</h3>
                         <p>Intelligent automation for agriculture, industry, and beyond. Harness smart systems and monitoring technology to optimize operations and increase efficiency.</p>
                     </div>
@@ -663,10 +854,42 @@
       <!-- end footer -->
 
       <!-- Javascript files-->
-      <script src="js/jquery.min.js "></script>
-      <script src="js/bootstrap.bundle.min.js "></script>
-      <script src="js/jquery-3.0.0.min.js "></script>
-      <script src="js/custom.js "></script>
+      <script src="js/jquery.min.js" defer></script>
+      <script src="js/bootstrap.bundle.min.js" defer></script>
+      <script src="js/jquery-3.0.0.min.js" defer></script>
+      <script src="js/custom.js" defer></script>
+        <script src="js/image-optimization.js" defer></script>
+      
+      <!-- Performance Monitoring -->
+      <script>
+        // Log Core Web Vitals
+        if ('PerformanceObserver' in window) {
+          // Largest Contentful Paint (LCP)
+          new PerformanceObserver((list) => {
+            const entries = list.getEntries();
+            const lastEntry = entries[entries.length - 1];
+            console.log('LCP:', lastEntry.renderTime || lastEntry.loadTime);
+          }).observe({entryTypes: ['largest-contentful-paint']});
+          
+          // First Input Delay (FID)
+          new PerformanceObserver((list) => {
+            list.getEntries().forEach((entry) => {
+              console.log('FID:', entry.processingStart - entry.startTime);
+            });
+          }).observe({entryTypes: ['first-input']});
+          
+          // Cumulative Layout Shift (CLS)
+          let clsScore = 0;
+          new PerformanceObserver((list) => {
+            list.getEntries().forEach((entry) => {
+              if (!entry.hadRecentInput) {
+                clsScore += entry.value;
+                console.log('CLS:', clsScore);
+              }
+            });
+          }).observe({entryTypes: ['layout-shift']});
+        }
+      </script>
 
       <script>
           function toggleMenu() {

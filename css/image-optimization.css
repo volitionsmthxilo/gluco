@@ -1,0 +1,273 @@
+/* ===============================================
+   GLUCO Website - Image Optimization CSS
+   Enhanced responsive images and lazy loading
+   =============================================== */
+
+/* Responsive Image Base Styles */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.img_responsive {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+/* Prevent Layout Shift - Reserve space for images */
+img[width][height] {
+    height: auto;
+}
+
+/* Image Container for Better Control */
+.image-container {
+    position: relative;
+    overflow: hidden;
+    background-color: #f0f0f0;
+}
+
+/* Loading Skeleton for Images */
+img[loading="lazy"] {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: loading 1.5s ease-in-out infinite;
+}
+
+@keyframes loading {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+}
+
+/* Fade-in effect when image loads */
+img {
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+img.loaded,
+img[loading="eager"] {
+    opacity: 1;
+}
+
+/* Product Grid Images - Catalog Page */
+.product-card img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover img {
+    transform: scale(1.05);
+}
+
+/* Service Icons - Maintain Aspect Ratio */
+.service-icon img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    object-fit: contain;
+    margin: 0 auto;
+}
+
+/* Hero/Banner Images */
+.hero-image img,
+.banner-image img {
+    width: 100%;
+    height: auto;
+    min-height: 400px;
+    object-fit: cover;
+}
+
+/* Logo Optimization */
+.logo img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    will-change: transform;
+}
+
+/* Cart Item Images */
+.cart-item img {
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 8px;
+    flex-shrink: 0;
+}
+
+/* Figure Elements */
+figure {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    overflow: hidden;
+}
+
+figure img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+/* ===============================================
+   Mobile Optimization (< 768px)
+   =============================================== */
+@media screen and (max-width: 767px) {
+    /* Reduce hero image height on mobile */
+    .hero-image img,
+    .banner-image img {
+        min-height: 250px;
+        max-height: 400px;
+    }
+    
+    /* Stack images vertically on mobile */
+    .img_responsive {
+        margin-bottom: 1rem;
+    }
+    
+    /* Smaller service icons on mobile */
+    .service-icon img {
+        max-width: 200px;
+    }
+    
+    /* Product grid adjustments */
+    .product-card img {
+        height: 250px;
+    }
+}
+
+/* ===============================================
+   Tablet Optimization (768px - 1024px)
+   =============================================== */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .hero-image img,
+    .banner-image img {
+        min-height: 350px;
+        max-height: 500px;
+    }
+    
+    .service-icon img {
+        max-width: 250px;
+    }
+    
+    .product-card img {
+        height: 280px;
+    }
+}
+
+/* ===============================================
+   Desktop Optimization (> 1024px)
+   =============================================== */
+@media screen and (min-width: 1025px) {
+    .hero-image img,
+    .banner-image img {
+        min-height: 400px;
+        max-height: 600px;
+    }
+    
+    .service-icon img {
+        max-width: 300px;
+    }
+    
+    .product-card img {
+        height: 300px;
+    }
+}
+
+/* ===============================================
+   High DPI / Retina Display Support
+   =============================================== */
+@media screen and (-webkit-min-device-pixel-ratio: 2),
+       screen and (min-resolution: 192dpi) {
+    /* Images will look sharper on retina displays */
+    img {
+        image-rendering: -webkit-optimize-contrast;
+        image-rendering: crisp-edges;
+    }
+}
+
+/* ===============================================
+   Print Optimization
+   =============================================== */
+@media print {
+    img {
+        max-width: 100%;
+        page-break-inside: avoid;
+    }
+}
+
+/* ===============================================
+   Accessibility - Prefers Reduced Motion
+   =============================================== */
+@media (prefers-reduced-motion: reduce) {
+    img {
+        animation: none !important;
+        transition: none !important;
+    }
+    
+    .product-card:hover img {
+        transform: none;
+    }
+}
+
+/* ===============================================
+   Dark Mode Support
+   =============================================== */
+@media (prefers-color-scheme: dark) {
+    img[loading="lazy"] {
+        background: linear-gradient(90deg, #2a2a2a 25%, #3a3a3a 50%, #2a2a2a 75%);
+    }
+    
+    .image-container {
+        background-color: #2a2a2a;
+    }
+}
+
+/* ===============================================
+   Performance: GPU Acceleration
+   =============================================== */
+.product-card img,
+.service-icon img,
+.logo img {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    -webkit-font-smoothing: subpixel-antialiased;
+}
+
+/* ===============================================
+   Image Error Handling
+   =============================================== */
+img::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #f0f0f0;
+}
+
+img::after {
+    content: '\f03e';
+    font-family: 'FontAwesome', sans-serif;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3rem;
+    color: #ccc;
+}
+
+/* Hide fallback when image loads successfully */
+img[src]:not([src=""]) {
+    &::before,
+    &::after {
+        display: none;
+    }
+}

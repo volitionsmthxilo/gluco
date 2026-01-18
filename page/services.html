@@ -1,5 +1,6 @@
+    <script src="../js/image-optimization.js" defer></script>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" prefix="og: http://ogp.me/ns#">
 
 <head>
     <!-- basic -->
@@ -7,16 +8,39 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
     <!-- mobile metas -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    
+    <!-- SEO & Crawling -->
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <meta name="googlebot" content="index, follow">
+    <meta name="revisit-after" content="7 days">
+    <meta name="rating" content="general">
+    
+    <!-- Geographic Targeting -->
+    <meta name="geo.region" content="ZW">
+    <meta name="geo.placename" content="Africa">
+    
+    <!-- Mobile Web App -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="theme-color" content="#667eea">
+    <meta name="msapplication-TileColor" content="#667eea">
 
     <!-- site metas -->
-    <title>Our Services - Solar, IT, Electrical, Robotics | GLUCO Zimbabwe</title>
-    <meta name="keywords" content="solar installation Zimbabwe, network security, Microsoft 365, fintech software, electrical wiring, electronic components, web hosting, domain registration, IT support, forex trading signals, smart agriculture, industrial automation, CCTV systems, data analytics">
-    <meta name="description" content="GLUCO provides comprehensive services: smart solar systems from 3kVA, network security, Microsoft 365, fintech solutions, electrical installations, hosting, domain registration, industrial automation, smart agriculture, and more in Zimbabwe.">
+    <title>Our Services - Solar, IT, Electrical, Robotics | GLUCO Africa</title>
+    <meta name="keywords" content="solar installation Africa, network security, Microsoft 365, fintech software, electrical wiring, electronic components, web hosting, domain registration, IT support, analytics, smart agriculture, industrial automation, CCTV systems">
+    <meta name="description" content="GLUCO provides comprehensive services across Africa: smart solar systems from 3kVA, network security, Microsoft 365, fintech solutions, electrical installations, hosting, domain registration, industrial automation, smart agriculture, and more.">
     <meta name="author" content="GLUCO">
-    <link rel="icon" href="../images/glucoicon.png">
+    <meta name="publisher" content="GLUCO">
+    <meta name="copyright" content="GLUCO © 2026">
+    <link rel="icon" type="image/png" href="../images/glucoicon.png">
+    <link rel="apple-touch-icon" href="../images/glucoicon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../images/glucoicon.png">
     <link rel="canonical" href="https://gluco.co.zw/page/services.html">
+    <link rel="alternate" hreflang="en" href="https://gluco.co.zw/page/services.html">
+    <link rel="alternate" hreflang="x-default" href="https://gluco.co.zw/page/services.html">
+    <link rel="manifest" href="../manifest.json">
     
     <!-- Open Graph -->
     <meta property="og:type" content="website">
@@ -24,14 +48,27 @@
     <meta property="og:title" content="GLUCO Services - Solar, IT, Electrical & Automation Solutions">
     <meta property="og:description" content="Complete technology solutions: solar systems, network security, cloud hosting, fintech, robotics, smart agriculture, and industrial automation services.">
     <meta property="og:image" content="https://gluco.co.zw/images/glucoicon.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="GLUCO Services">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:site_name" content="GLUCO">
     
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:title" content="GLUCO Services - Technology Solutions Zimbabwe">
+    <meta property="twitter:title" content="GLUCO Services - Technology Solutions Across Africa">
     <meta property="twitter:description" content="Solar systems, IT consultancy, electrical services, automation, and more.">
     <meta property="twitter:image" content="https://gluco.co.zw/images/glucoicon.png">
+    <meta property="twitter:creator" content="@gluco">
+    <meta property="twitter:image:alt" content="GLUCO Technology Services">
 
+    <!-- Performance & Resource Hints -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    
     <!-- bootstrap css -->
+    <link rel="preload" href="../css/bootstrap.min.css" as="style">
     <link rel="stylesheet" href="../css/bootstrap.min.css">
 
     <!-- style css -->
@@ -39,11 +76,102 @@
 
     <!-- responsive-->
     <link rel="stylesheet" href="../css/responsive.css">
+    
+    <!-- Image Optimization -->
+    <link rel="stylesheet" href="../css/image-optimization.css">
 
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
-
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->    
+    <!-- Google Analytics -->
+    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script> -->
+    
+    <!-- BreadcrumbList Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [{
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://gluco.co.zw/"
+        },
+        {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Services",
+            "item": "https://gluco.co.zw/page/services.html"
+        }]
+    }
+    </script>
+    
+    <!-- Service Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "serviceType": "Technology Solutions",
+        "provider": {
+            "@type": "Organization",
+            "name": "GLUCO",
+            "url": "https://gluco.co.zw"
+        },
+        "areaServed": "Africa",
+        "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "GLUCO Services",
+            "itemListElement": [
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Solar Systems Installation",
+                        "description": "Smart solar systems from 3kVA upward for homes and businesses"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Network Security Solutions",
+                        "description": "Enterprise firewalls, endpoint protection, and penetration testing"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "IT Consultancy",
+                        "description": "Web development, hosting, Microsoft 365, and digital transformation"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Robotics & IoT Automation",
+                        "description": "Intelligent automation and IoT integration solutions"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Electrical Services",
+                        "description": "Professional electrical installations and maintenance"
+                    }
+                }
+            ]
+        }
+    }
+    </script>
     <style>
         .cart-container {
             position: fixed;
@@ -340,7 +468,7 @@
                     <div class="col-md-3 col-4">
                         <div class="logo d-flex align-items-center">
                             <a href="../index.html" class="d-flex align-items-center">
-                                <img src="../images/glucoicon.png" width="60" height="60" alt="GLUCO Icon">
+                                <img src="../images/glucoicon.png" width="60" height="60" alt="GLUCO Icon" loading="eager" fetchpriority="high" decoding="async">
                                 <big class="ml-2" style="color: #667eea; font-weight: bold; font-size: 32px;">GLUCO</big>
                             </a>
                         </div>
@@ -411,112 +539,112 @@
             <div class="row">
                 <div class="col-lg-3 col-sm-6">
                     <div id="wa_hover" class="wallet_box text_align_center">
-                        <i><img src="../images/smartsolarsystems.png" alt="Smart Solar Systems - Scalable Power Solutions" width="300" height="300" loading="lazy"/></i>
+                        <i><img src="../images/smartsolarsystems.png" alt="Smart Solar Systems - Scalable Power Solutions" width="300" height="300" loading="lazy" decoding="async" style="aspect-ratio: 1; object-fit: contain;"/></i>
                         <h3>SMART SOLAR SYSTEMS</h3>
                         <p>Scalable solar from 3kVA upward—engineered for homes and businesses. Reliable, efficient systems that grow with your energy needs.</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-sm-6">
                     <div id="wa_hover" class="wallet_box text_align_center">
-                        <i><img src="../images/firewall.png" alt="Network Security - Enterprise Firewalls" width="300" height="300" loading="lazy"/></i>
+                        <i><img src="../images/firewall.png" alt="Network Security - Enterprise Firewalls" width="300" height="300" loading="lazy" decoding="async" style="aspect-ratio: 1; object-fit: contain;"/></i>
                         <h3>NETWORK SECURITY</h3>
                         <p>End-to-end protection against cyber threats: enterprise firewalls, advanced endpoint protection, vulnerability assessments, and penetration testing to secure your business.</p>
                         </div>
                 </div>
                 <div class="col-lg-3 col-sm-6">
                     <div id="wa_hover" class="wallet_box text_align_center">
-                        <i><img src="../images/networksupport.png" alt="Network Support - LAN WAN WLAN" width="300" height="300" loading="lazy"/></i>
+                        <i><img src="../images/networksupport.png" alt="Network Support - LAN WAN WLAN" width="300" height="300" loading="lazy" decoding="async" style="aspect-ratio: 1; object-fit: contain;"/></i>
                         <h3>NETWORK SUPPORT</h3>
                         <p>Reliable, scalable network infrastructure—design, deployment, and optimization for LAN, WAN, and Wi‑Fi to keep your teams connected.</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-sm-6">
                     <div id="wa_hover" class="wallet_box text_align_center">
-                        <i><img src="../images/microsoft.png" alt="Microsoft 365 Support Services" width="300" height="300" loading="lazy"/></i>
+                        <i><img src="../images/microsoft.png" alt="Microsoft 365 Support Services" width="300" height="300" loading="lazy" decoding="async" style="aspect-ratio: 1; object-fit: contain;"/></i>
                         <h3>MICROSOFT SUPPORT</h3>
                         <p>Expert Microsoft 365 deployment, licensing, and management—including Teams, Outlook, SharePoint, and OneDrive—to boost productivity with confidence.</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-sm-6">
                     <div id="wa_hover" class="wallet_box text_align_center">
-                        <i><img src="../images/fintech.png" alt="Fintech Solutions - Financial Technology" width="300" height="300" loading="lazy"/></i>
+                        <i><img src="../images/fintech.png" alt="Fintech Solutions - Financial Technology" width="300" height="300" loading="lazy" decoding="async" style="aspect-ratio: 1; object-fit: contain;"/></i>
                         <h3>FINTECH SOLUTIONS</h3>
                         <p>Secure, compliant fintech platforms with real-time analytics, BI dashboards, financial reporting, predictive insights, risk management, and seamless integrations.</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-sm-6">
                     <div id="wa_hover" class="wallet_box text_align_center">
-                        <i><img src="../images/electricals.png" alt="Electrical Services - Installation Maintenance" width="300" height="300" loading="lazy"/></i>
+                        <i><img src="../images/electricals.png" alt="Electrical Services - Installation Maintenance" width="300" height="300" loading="lazy" decoding="async" style="aspect-ratio: 1; object-fit: contain;"/></i>
                         <h3>ELECTRICAL SERVICES</h3>
                         <p>Installations &amp; wiring<br>Preventive maintenance &amp; repairs<br>Lighting design &amp; optimization<br>Safety inspections and testing</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-sm-6">
                     <div id="wa_hover" class="wallet_box text_align_center">
-                        <i><img src="../images/components.png" alt="Electronic Components - Microcontrollers Sensors" width="300" height="300" loading="lazy"/></i>
+                        <i><img src="../images/components.png" alt="Electronic Components - Microcontrollers Sensors" width="300" height="300" loading="lazy" decoding="async" style="aspect-ratio: 1; object-fit: contain;"/></i>
                         <h3>ELECTRONIC COMPONENTS</h3>
                         <p>Microcontrollers<br>Power regulators<br>Sensors &amp; transducers<br>Displays and more</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-sm-6">
                     <div id="wa_hover" class="wallet_box text_align_center">
-                        <i><img src="../images/maintenance.png" alt="Maintenance Services - Solar Panel Inspection" width="300" height="300" loading="lazy"/></i>
+                        <i><img src="../images/maintenance.png" alt="Maintenance Services - Solar Panel Inspection" width="300" height="300" loading="lazy" decoding="async" style="aspect-ratio: 1; object-fit: contain;"/></i>
                         <h3>MAINTENANCE SERVICES</h3>
                         <p>Solar panel inspections<br>Inverter maintenance<br>Monitoring &amp; performance testing<br>Component replacements</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-sm-6">
                     <div id="wa_hover" class="wallet_box text_align_center">
-                        <i><img src="../images/webhosting.png" alt="Hosting Solutions - Cloud VPS Dedicated" width="300" height="300" loading="lazy"/></i>
+                        <i><img src="../images/webhosting.png" alt="Hosting Solutions - Cloud VPS Dedicated" width="300" height="300" loading="lazy" decoding="async" style="aspect-ratio: 1; object-fit: contain;"/></i>
                         <h3>HOSTING SOLUTIONS</h3>
                         <p>Shared hosting<br>Virtual private servers (VPS)<br>Dedicated servers<br>Managed cloud hosting</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-sm-6">
                     <div id="wa_hover" class="wallet_box text_align_center">
-                        <i><img src="../images/domainreg.png" alt="Domain Registration - SSL Certificates" width="300" height="300" loading="lazy"/></i>
+                        <i><img src="../images/domainreg.png" alt="Domain Registration - SSL Certificates" width="300" height="300" loading="lazy" decoding="async" style="aspect-ratio: 1; object-fit: contain;"/></i>
                         <h3>OWN YOUR DOMAIN</h3>
                         <p>Domain registration<br>Domain transfer<br>Domain renewal<br>SSL certificates</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-sm-6">
                     <div id="wa_hover" class="wallet_box text_align_center">
-                        <i><img src="../images/itsupport.png" alt="IT Support - Web Development Technical Support" width="300" height="300" loading="lazy"/></i>
+                        <i><img src="../images/itsupport.png" alt="IT Support - Web Development Technical Support" width="300" height="300" loading="lazy" decoding="async" style="aspect-ratio: 1; object-fit: contain;"/></i>
                         <h3>IT SUPPORT</h3>
                         <p>Web development<br>Windows technical support<br>Remote desktop assistance<br>Network security</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-sm-6">
                     <div id="wa_hover" class="wallet_box text_align_center">
-                        <i><img src="../images/forextrading.png" alt="Forex Trading - Signals Analysis Coaching" width="300" height="300" loading="lazy"/></i>
+                        <i><img src="../images/forextrading.png" alt="Forex Trading - Signals Analysis Coaching" width="300" height="300" loading="lazy" decoding="async" style="aspect-ratio: 1; object-fit: contain;"/></i>
                         <h3>FOREIGN EXCHANGE TRADING</h3>
                         <p>Professional trading signals<br>In-depth market analysis<br>Personalized coaching<br>Structured trading classes</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-sm-6">
                     <div id="wa_hover" class="wallet_box text_align_center">
-                        <i><img src="../images/agritech.png" alt="Smart Agriculture - Automated Irrigation" width="300" height="300" loading="lazy"/></i>
+                        <i><img src="../images/agritech.png" alt="Smart Agriculture - Automated Irrigation" width="300" height="300" loading="lazy" decoding="async" style="aspect-ratio: 1; object-fit: contain;"/></i>
                         <h3>SMART AGRICULTURE</h3>
                         <p>Automated irrigation<br>Climate monitoring &amp; control<br>Farm analytics<br>Nutrient management</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-sm-6">
                     <div id="wa_hover" class="wallet_box text_align_center">
-                        <i><img src="../images/industrialautomation.png" alt="Industrial Automation - PLC IoT" width="300" height="300" loading="lazy"/></i>
+                        <i><img src="../images/industrialautomation.png" alt="Industrial Automation - PLC IoT" width="300" height="300" loading="lazy" decoding="async" style="aspect-ratio: 1; object-fit: contain;"/></i>
                         <h3>INDUSTRIAL AUTOMATION</h3>
                         <p>PLC programming<br>Industrial networking<br>IoT integration<br>Control panel design</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-sm-6">
                     <div id="wa_hover" class="wallet_box text_align_center">
-                        <i><img src="../images/monitoring.png" alt="Monitoring Systems - CCTV Surveillance" width="300" height="300" loading="lazy"/></i>
+                        <i><img src="../images/monitoring.png" alt="Monitoring Systems - CCTV Surveillance" width="300" height="300" loading="lazy" decoding="async" style="aspect-ratio: 1; object-fit: contain;"/></i>
                         <h3>MONITORING SYSTEMS</h3>
                         <p>CCTV surveillance<br>Alarm systems<br>Environmental monitoring<br>Managed video services</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-sm-6">
                     <div id="wa_hover" class="wallet_box text_align_center">
-                        <i><img src="../images/analytics.png" alt="Analytics Hub - AI Data Visualization" width="300" height="300" loading="lazy"/></i>
+                        <i><img src="../images/analytics.png" alt="Analytics Hub - AI Data Visualization" width="300" height="300" loading="lazy" decoding="async" style="aspect-ratio: 1; object-fit: contain;"/></i>
                         <h3>ANALYTICS HUB</h3>
                         <p>AI-powered insights<br>Interactive data visualization<br>Data mining<br>Predictive modeling</p>
                     </div>
