@@ -183,6 +183,9 @@ File Name: responsive.css
         overflow-y: auto !important;
         transition: left 0.3s ease !important;
         box-shadow: none !important;
+        /* Reset Desktop Styles for Full Screen */
+        border: none !important;
+        border-radius: 0 !important;
     }
     .cart-container.active {
         left: 0 !important;

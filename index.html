@@ -138,7 +138,7 @@
     <style>
         /* Cart Styles moved to css/style.css */
 
-        /* Custom Carousel Fade Transitions */
+        /* Custom Carousel Fade Transitions - Disabled for Sliding Effect
         .carousel-fade .carousel-item {
             opacity: 0;
             transition: opacity 2s ease-in-out;
@@ -153,7 +153,45 @@
         .carousel-fade .carousel-item-next,
         .carousel-fade .carousel-item-prev {
             transform: translateX(0);
+        } */
+        
+        /* Slider Navigation Arrows */
+        .slider-nav-arrows {
+            margin-top: 30px;
+            display: flex;
+            align-items: center;
         }
+        
+        .slider-nav-btn {
+            width: 50px;
+            height: 50px;
+            background-color: #ffffff;
+            border: 2px solid #667eea;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #667eea;
+            font-size: 22px;
+            transition: all 0.3s ease;
+            text-decoration: none !important;
+            cursor: pointer;
+            margin-right: 20px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        
+        .slider-nav-btn:last-child {
+            margin-right: 0;
+        }
+        
+        .slider-nav-btn:hover {
+            background-color: #667eea;
+            border-color: #667eea;
+            color: #fff;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+        }
+        
         .carousel-caption {
             animation: fadeInUp 1.5s ease-out 0.5s both;
         }
@@ -505,7 +543,8 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12">
-                    <div id="myCarousel" class="carousel slide carousel-fade" data-ride="carousel" data-interval="3000">
+                    <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="3000">
+                        <ol class="carousel-indicators">
                             <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
                             <li data-target="#myCarousel" data-slide-to="1"></li>
                             <li data-target="#myCarousel" data-slide-to="2"></li>
@@ -528,6 +567,16 @@
                                                         Experience reliable electrical solutions and sustainable solar energy systems designed for your home and business. Our expert engineers deliver efficient, eco-friendly installations with unbeatable quality and competitive pricing. Power your future with GLUCO's trusted expertise.
                                                     </p>
                                                     <a class="read_more" href="page/services.html">Find out more </a><a class="read_more" href="page/contact.html">Get A Quote </a>
+                                                    <div class="slider-nav-arrows">
+                                                        <a class="slider-nav-btn prev-btn" href="#myCarousel" role="button" data-slide="prev">
+                                                            <i class="fa fa-angle-left" aria-hidden="true"></i>
+                                                            <span class="sr-only">Previous</span>
+                                                        </a>
+                                                        <a class="slider-nav-btn next-btn" href="#myCarousel" role="button" data-slide="next">
+                                                            <i class="fa fa-angle-right" aria-hidden="true"></i>
+                                                            <span class="sr-only">Next</span>
+                                                        </a>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -540,16 +589,26 @@
                                         <div class="row d_flex">
                                             <div class="col-md-6">
                                                 <div class="con_img">
-                                                    <figure><img class="img_responsive" src="images/academy.png" alt="GTECH Academy Professional Training Programs" width="600" height="600" loading="lazy" decoding="async" style="aspect-ratio: 1; object-fit: cover; border-radius: 15px;" /></figure>
+                                                    <figure><img class="img_responsive" src="images/academy.png" alt="Business Exchange Professional B2B Solutions" width="600" height="600" loading="lazy" decoding="async" style="aspect-ratio: 1; object-fit: cover; border-radius: 15px;" /></figure>
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="bluid">
-                                                    <h1>GTECH<br>Academy</h1>
+                                                    <h1>Business<br>Exchange</h1>
                                                     <p>
-                                                        Embark on your professional journey with GTECH Academy! Gain expert insights through financial software solutions, professional mentorship, and career development programs. Elevate your skills and secure your future with our professional guidance.
+                                                        Empower your enterprise with GLUCO Business Exchange. A strong fit for tendering, supply, procurement, and strategic collaborations. We deliver reliable B2B solutions tailored for professional environments, ensuring seamless transactions and efficient partnership management.
                                                     </p>
                                                     <a class="read_more" href="page/services.html">Find out more </a><a class="read_more" href="page/contact.html">Get A Quote </a>
+                                                    <div class="slider-nav-arrows">
+                                                        <a class="slider-nav-btn prev-btn" href="#myCarousel" role="button" data-slide="prev">
+                                                            <i class="fa fa-angle-left" aria-hidden="true"></i>
+                                                            <span class="sr-only">Previous</span>
+                                                        </a>
+                                                        <a class="slider-nav-btn next-btn" href="#myCarousel" role="button" data-slide="next">
+                                                            <i class="fa fa-angle-right" aria-hidden="true"></i>
+                                                            <span class="sr-only">Next</span>
+                                                        </a>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -572,6 +631,16 @@
                                                         Empower your business with seamless IT solutions! From custom web development and reliable hosting to software licensing and app creation, we provide expert support tailored to your needs. Experience hassle-free operations and unlock your digital potential with GLUCO's innovative services.
                                                     </p>
                                                     <a class="read_more" href="page/services.html">Find out more </a><a class="read_more" href="page/contact.html">Get A Quote </a>
+                                                    <div class="slider-nav-arrows">
+                                                        <a class="slider-nav-btn prev-btn" href="#myCarousel" role="button" data-slide="prev">
+                                                            <i class="fa fa-angle-left" aria-hidden="true"></i>
+                                                            <span class="sr-only">Previous</span>
+                                                        </a>
+                                                        <a class="slider-nav-btn next-btn" href="#myCarousel" role="button" data-slide="next">
+                                                            <i class="fa fa-angle-right" aria-hidden="true"></i>
+                                                            <span class="sr-only">Next</span>
+                                                        </a>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -594,6 +663,16 @@
                                                         Transform your world with GLUCO's robotics and automation services! Expert solutions for automated greenhouse systems, smart homes, customized alarm systems, and microcontroller supply. Innovate, automate, and optimize with our cutting-edge technology tailored support
                                                     </p>
                                                     <a class="read_more" href="page/services.html">Find out more </a><a class="read_more" href="page/contact.html">Get A Quote </a>
+                                                    <div class="slider-nav-arrows">
+                                                        <a class="slider-nav-btn prev-btn" href="#myCarousel" role="button" data-slide="prev">
+                                                            <i class="fa fa-angle-left" aria-hidden="true"></i>
+                                                            <span class="sr-only">Previous</span>
+                                                        </a>
+                                                        <a class="slider-nav-btn next-btn" href="#myCarousel" role="button" data-slide="next">
+                                                            <i class="fa fa-angle-right" aria-hidden="true"></i>
+                                                            <span class="sr-only">Next</span>
+                                                        </a>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -621,9 +700,9 @@
                 </div>
                 <div class="col-lg-3 col-sm-6">
                     <div id="wa_hover" class="wallet_box text_align_center">
-                        <i><img src="images/gtech.png" alt="GTECH Academy - Professional Training and Development" width="300" height="300" loading="lazy" decoding="async" style="aspect-ratio: 1; object-fit: contain;"/></i>
-                        <h3>GTECH ACADEMY</h3>
-                        <p>Advance your career with fintech training, expert mentorship, and professional development. Build the skills you need for success in today's digital economy.</p>
+                        <i><img src="images/gtech.png" alt="Business Exchange - Procurement and Collaborations" width="300" height="300" loading="lazy" decoding="async" style="aspect-ratio: 1; object-fit: contain;"/></i>
+                        <h3>BUSINESS EXCHANGE</h3>
+                        <p>Your trusted partner for tendering, supply, procurement, and corporate collaborations. Delivering professional transactional solutions for B2B excellence.</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-sm-6">
@@ -651,8 +730,10 @@
       <!-- cart container -->
       <div id="cart-container" class="cart-container">
           <div class="cart-header">
-              <i class="fa fa-shopping-cart"></i>
-              <h2>Shopping Bag</h2>
+              <div class="cart-header-title">
+                  <i class="fa fa-shopping-cart"></i>
+                  <h2>Shopping Bag</h2>
+              </div>
               <button class="close-cart" onclick="toggleCart()">&times;</button>
           </div>
           <div id="cart-list"></div>
