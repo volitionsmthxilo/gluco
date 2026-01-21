@@ -170,38 +170,61 @@ File Name: responsive.css
         display: none !important;
     }
 
-    /* Enhanced Cart - Full Screen Overlay */
+    /* Enhanced Cart - Mobile View with Professional Frame */
     .cart-container {
         position: fixed !important;
         top: 0 !important;
-        left: -100% !important;
+        right: -100% !important; /* Slide from right matching desktop */
+        left: auto !important;
         width: 100% !important;
         height: 100vh !important;
-        background: rgba(255, 255, 255, 0.98) !important;
+        background: #ffffff !important; 
         z-index: 1001 !important;
         padding: 20px !important;
         overflow-y: auto !important;
-        transition: left 0.3s ease !important;
-        box-shadow: none !important;
-        /* Reset Desktop Styles for Full Screen */
-        border: none !important;
-        border-radius: 0 !important;
+        transition: right 0.4s cubic-bezier(0.19, 1, 0.22, 1) !important;
+        box-shadow: -10px 0 20px rgba(15, 19, 45, 0.2) !important;
+
+        /* Theme Frame Design - Mobile Adapted */
+        border-left: 4px solid #667eea !important;
+        border-top: 4px solid #667eea !important;
+        border-bottom: 4px solid #667eea !important;
+        border-right: 4px solid #667eea !important; /* Right border visible */
+
+        border-top-left-radius: 20px !important;
+        border-bottom-left-radius: 20px !important;
+        border-top-right-radius: 20px !important; /* Rounded right corners */
+        border-bottom-right-radius: 20px !important;
+        
+        /* Ensure it looks like a floating card - Increased size for mobile */
+        width: 96% !important; /* Increased from 90% */
+        right: -100% !important;
+        margin: 0 2% !important; /* Reduced margin to center larger card */
+        top: 5px !important; /* Closer to top edge */
+        height: calc(100vh - 10px) !important; /* Fill almost full height */
     }
     .cart-container.active {
-        left: 0 !important;
+        right: 0 !important;
     }
     .cart-header {
         display: flex !important;
         align-items: center !important;
         justify-content: space-between !important;
-        margin-bottom: 25px !important;
+        margin-bottom: 20px !important;
         padding-bottom: 15px !important;
         border-bottom: 2px solid #e9ecef !important;
     }
     .cart-header h2 {
-        font-size: 1.8em !important;
+        font-size: 1.1rem !important; /* Reduced size for single line */
         font-weight: 600 !important;
         margin: 0 !important;
+        white-space: nowrap !important; /* Force single line */
+    }
+    .cart-header-title {
+        gap: 10px !important; /* Tighter gap */
+    }
+    .cart-header-title i {
+        font-size: 1.2rem !important; /* Scale icon with text */
     }
     .cart-header .close-cart {
         background: none !important;
@@ -216,44 +239,76 @@ File Name: responsive.css
     .cart-item {
         display: flex !important;
         align-items: center !important;
-        margin-bottom: 20px !important;
-        padding: 20px !important;
-        background: #f8f9fa !important;
-        border-radius: 12px !important;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.05) !important;
-        transition: transform 0.2s ease !important;
+        margin-bottom: 12px !important;
+        padding: 12px !important;
+        background: #fff !important;
+        border: 1px solid #e9ecef !important;
+        border-radius: 8px !important;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.02) !important;
     }
     .cart-item img {
-        width: 80px !important;
-        height: 80px !important;
-        margin-right: 15px !important;
-        border-radius: 10px !important;
+        width: 60px !important;
+        height: 60px !important;
+        margin-right: 12px !important;
+        border-radius: 6px !important;
         object-fit: cover !important;
+        border: 1px solid #efefef !important;
     }
     .cart-item-details {
         flex: 1 !important;
     }
     .cart-item-details h4 {
-        margin: 0 0 8px 0 !important;
-        font-size: 1.1em !important;
+        margin: 0 0 4px 0 !important;
+        font-size: 0.95rem !important;
         font-weight: 600 !important;
+        color: #0f132d !important;
     }
     .cart-item-details p {
         margin: 0 !important;
-        font-size: 0.9em !important;
+        font-size: 0.85rem !important;
         color: #666 !important;
     }
     .cart-item-controls {
         display: flex !important;
-        flex-direction: column !important;
+        flex-direction: row !important;
         align-items: center !important;
-        gap: 10px !important;
+        gap: 8px !important;
     }
-    .cart-item-controls button {
-        min-width: 44px !important;
-        min-height: 44px !important;
-        font-size: 1.2em !important;
+    .cart-item-controls button:not(.remove-btn) {
+        min-width: 28px !important;
+        min-height: 28px !important;
+        font-size: 1rem !important;
         font-weight: 600 !important;
+        padding: 0 !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        border-radius: 50% !important;
+        background: #f0f0f0 !important;
+    }
+    /* Compact remove button for mobile: Circle with X */
+    .cart-item-controls .remove-btn {
+        font-size: 0 !important; /* Hide text */
+        min-width: 28px !important;
+        min-height: 28px !important;
+        width: 28px !important;
+        height: 28px !important;
+        padding: 0 !important;
+        border-radius: 50% !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        background: #ff4444 !important;
+        margin-left: 0 !important; /* Managed by parent gap */
+        box-shadow: none !important;
+    }
+    .cart-item-controls .remove-btn::after {
+        content: "\00d7"; /* X symbol */
+        font-size: 20px !important;
+        color: #fff !important;
+        line-height: 0.9 !important;
+        font-weight: 700 !important;
+        display: block !important;
     }
     .cart-total {
         background: #f8f9fa !important;

@@ -449,13 +449,15 @@
               <button class="close-cart" onclick="toggleCart()">&times;</button>
           </div>
         <div id="cart-list"></div>
-        <div class="cart-total">
-            <h3 id="total-amount">Total: $0.00</h3>
-        </div>
         <div class="cart-actions">
-            <p style="text-align: center; color: #666; font-size: 0.9em; margin-bottom: 15px;">Currently, we do not accept online payments. Please use Ecocash, USD Cash, or Bank Transfer to complete your transaction.</p>
-            <button class="email-btn" onclick="window.open('mailto:gluco.zw@gmail.com', '_blank')">Contact via Email</button>
-            <button class="whatsapp-btn" onclick="window.open('https://wa.me/263784245082', '_blank')">Contact via WhatsApp</button>
+            <div class="cart-total">
+                <h3 id="total-amount">Total: $0.00</h3>
+            </div>
+            <p style="text-align: center; color: #666; font-size: 0.9em; margin-bottom: 5px;">Online payments are currently unavailable. Please contact us via the options below to complete your order or enquiry.</p>
+            <div class="contact-buttons-row">
+                <button class="email-btn" onclick="window.open('mailto:gluco.zw@gmail.com', '_blank')">Email</button>
+                <button class="whatsapp-btn" onclick="window.open('https://wa.me/263784245082', '_blank')">WhatsApp</button>
+            </div>
             <button class="close-btn" onclick="toggleCart()">Close</button>
         </div>
     </div>
