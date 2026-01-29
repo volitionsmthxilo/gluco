@@ -203,6 +203,42 @@
             flex-wrap: wrap;
             gap: 10px;
         }
+        .catalogue-search {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            flex: 1 1 260px;
+        }
+        .catalogue-search input {
+            flex: 1;
+            border: 1px solid rgba(102, 126, 234, 0.35);
+            border-radius: 30px;
+            padding: 10px 14px;
+            font-size: 0.95em;
+            color: #333;
+            background: #fff;
+            box-shadow: 0 6px 14px rgba(102, 126, 234, 0.12);
+            transition: all 0.3s ease;
+        }
+        .catalogue-search input:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.2);
+        }
+        .catalogue-search-btn {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: #fff;
+            border: none;
+            border-radius: 30px;
+            padding: 10px 18px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        .catalogue-search-btn:hover {
+            background: linear-gradient(135deg, #5a67d8, #6b46c1);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 18px rgba(102, 126, 234, 0.35);
+        }
         .filter-btn {
             background: #f8f9fa;
             border: 2px solid #e9ecef;
@@ -487,7 +523,7 @@
                         <div class="logo d-flex align-items-center">
                             <a href="index.html" class="d-flex align-items-center">
                                 <img src="images/glucoicon.png" width="60" height="60" alt="GLUCO Icon" loading="eager" fetchpriority="high" decoding="async">
-                                <big class="ml-2" style="color: #667eea; font-weight: bold; font-size: 32px;">GLUCO</big>
+                                <big class="ml-2 logo-text">GLUCO</big>
                             </a>
                         </div>
                     </div>
@@ -556,6 +592,10 @@
         <button class="filter-btn" onclick="filterProducts('automation')">Automation</button>
         <button class="filter-btn" onclick="filterProducts('electronics')">Electronics</button>
         <button class="filter-btn" onclick="filterProducts('services')">Services</button>
+        <div class="catalogue-search">
+            <input type="text" id="catalogue-search" placeholder="Search products">
+            <button type="button" id="catalogue-search-btn" class="catalogue-search-btn">Search</button>
+        </div>
     </div>
 
     <!-- products-->
@@ -736,6 +776,8 @@
 
       <script>
           let cart = JSON.parse(localStorage.getItem("cart")) || [];
+          let activeCategory = "all";
+          let productSearchTerm = "";
 
           function addToCart(product, price, image) {
               let existingItem = cart.find(item => item.product === product);
@@ -839,17 +881,40 @@
               return enquiry;
           }
 
-          function filterProducts(category) {
+          function applyProductFilters() {
               const products = document.querySelectorAll('.product');
+              const term = productSearchTerm.toLowerCase();
+              products.forEach(product => {
+                  const matchesCategory = activeCategory === 'all' || product.classList.contains(activeCategory);
+                  const title = product.querySelector('h3')?.textContent || '';
+                  const desc = product.querySelector('p')?.textContent || '';
+                  const matchesSearch = !term || `${title} ${desc}`.toLowerCase().includes(term);
+                  product.style.display = matchesCategory && matchesSearch ? 'block' : 'none';
+              });
+          }
+
+          function filterProducts(category) {
               const buttons = document.querySelectorAll('.filter-btn');
               buttons.forEach(btn => btn.classList.remove('active'));
-              event.target.classList.add('active');
-              products.forEach(product => {
-                  if (category === 'all' || product.classList.contains(category)) {
-                      product.style.display = 'block';
-                  } else {
-                      product.style.display = 'none';
-                  }
+              if (event?.target) {
+                  event.target.classList.add('active');
+              }
+              activeCategory = category;
+              applyProductFilters();
+          }
+
+          const catalogueSearchInput = document.getElementById("catalogue-search");
+          const catalogueSearchBtn = document.getElementById("catalogue-search-btn");
+          if (catalogueSearchInput) {
+              catalogueSearchInput.addEventListener("input", function (e) {
+                  productSearchTerm = e.target.value || "";
+                  applyProductFilters();
+              });
+          }
+          if (catalogueSearchBtn) {
+              catalogueSearchBtn.addEventListener("click", function () {
+                  productSearchTerm = (catalogueSearchInput?.value || "").trim();
+                  applyProductFilters();
               });
           }
 
