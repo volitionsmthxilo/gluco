@@ -311,7 +311,7 @@
                         <div class="logo d-flex align-items-center">
                             <a href="../index.html" class="d-flex align-items-center">
                                 <img src="../images/glucoicon.png" width="60" height="60" alt="GLUCO Icon" loading="eager" fetchpriority="high" decoding="async">
-                                <big class="ml-2" style="color: #667eea; font-weight: bold; font-size: 32px;">GLUCO</big>
+                                <big class="ml-2 logo-text">GLUCO</big>
                             </a>
                         </div>
                     </div>
@@ -413,15 +413,21 @@
                 <div class="col-md-6">
                     <div class="contact_info">
                         <h3>Get in Touch</h3>
+                        <p style="font-size: 0.95em; color: #666; margin-bottom: 15px;">Share your project details for a faster, tailored response.</p>
                         <form action="https://formspree.io/f/xqekwzpq" method="post" id="contact-form">
                             <div class="form-group">
-                                <input class="ente" type="text" id="name" name="name" placeholder="Enter your name" required>
+                                <label class="sr-only" for="name">Full name</label>
+                                <input class="ente" type="text" id="name" name="name" placeholder="Enter your name" autocomplete="name" required>
                             </div>
                             <div class="form-group">
-                                <input class="ente" type="email" id="email" name="email" placeholder="Enter your email" required>
+                                <label class="sr-only" for="email">Email address</label>
+                                <input class="ente" type="email" id="email" name="email" placeholder="Enter your email" autocomplete="email" required>
                             </div>
-                            <div class="form-group" style="display: flex; gap: 10px;">
-                                <select class="ente" id="country_code" name="country_code" required style="flex: 1;" onchange="updatePhonePattern()">
+                            <div class="form-group">
+                                <label class="sr-only" for="country_code">Country code</label>
+                                <label class="sr-only" for="phone">Phone number</label>
+                                <div style="display: flex; gap: 10px;">
+                                    <select class="ente" id="country_code" name="country_code" required style="flex: 1;" onchange="updatePhonePattern()">
                                     <option value="">Country Code</option>
                                     <option value="+263">+263 (Zimbabwe)</option>
                                     <option value="+27">+27 (South Africa)</option>
@@ -616,13 +622,30 @@
                                     <option value="+84">+84 (Vietnam)</option>
                                     <option value="+967">+967 (Yemen)</option>
                                     <option value="+260">+260 (Zambia)</option>
-                                </select>
-                                <input class="ente" type="tel" id="phone" name="phone" placeholder="Phone Number, with no Leading 0" required pattern="[0-9]{7,15}" style="flex: 2;">
+                                    </select>
+                                    <input class="ente" type="tel" id="phone" name="phone" placeholder="Phone Number, with no Leading 0" autocomplete="tel" required pattern="[0-9]{7,15}" style="flex: 2;">
+                                </div>
                             </div>
                             <div id="phone-example" style="font-size: 0.8em; color: #666; margin-top: 5px;"></div>
                             <div class="form-group">
-                                <textarea class="ente textarea" id="message" name="message" placeholder="How can we be service?" required style="height: 150px;"></textarea>
+                                <label class="sr-only" for="message">Project details</label>
+                                <textarea class="ente textarea" id="message" name="message" placeholder="Tell us about your project, location, and timeline." required style="height: 150px;"></textarea>
                             </div>
+                            <div class="form-group">
+                                <label class="sr-only" for="service_category">Service category</label>
+                                <select class="ente" id="service_category" name="service_category" required>
+                                    <option value="" disabled selected>Select service category</option>
+                                    <option value="Solar Systems">Solar Systems</option>
+                                    <option value="Electrical Services">Electrical Services</option>
+                                    <option value="IT Consultancy">IT Consultancy</option>
+                                    <option value="Robotics and IoT">Robotics and IoT</option>
+                                    <option value="Business Exchange">Business Exchange</option>
+                                    <option value="Network Security">Network Security</option>
+                                    <option value="Training and Support">Training and Support</option>
+                                </select>
+                            </div>
+                            <input type="hidden" id="full_phone" name="full_phone">
+                            <p style="font-size: 0.85em; color: #666; margin: 10px 0 15px;">Tip: Include your site location and preferred timeline for a quicker quote.</p>
                             <button style="background-color: rgb(11, 212, 28); color: #000;" class="subs_btn" type="submit" value="Send Email">Send</button>
                         </form>
                         <iframe name="hidden_iframe" style="display:none;"></iframe>
@@ -802,7 +825,17 @@
           document.getElementById('contact-form').addEventListener('submit', function(e) {
               e.preventDefault();
               const form = e.target;
+              const countryCode = (document.getElementById('country_code')?.value || '').trim();
+              const phoneNumber = (document.getElementById('phone')?.value || '').trim().replace(/\s+/g, '');
+              const fullPhone = `${countryCode}${phoneNumber}`;
+              const fullPhoneInput = document.getElementById('full_phone');
+              if (fullPhoneInput) {
+                  fullPhoneInput.value = fullPhone;
+              }
               const formData = new FormData(form);
+              formData.set('full_phone', fullPhone);
+              formData.delete('country_code');
+              formData.delete('phone');
               fetch(form.action, {
                   method: 'POST',
                   body: formData,
