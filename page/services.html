@@ -145,7 +145,7 @@
                     "itemOffered": {
                         "@type": "Service",
                         "name": "Substation & Transformer Maintenance",
-                        "description": "Scheduled maintenance and emergency servicing for HV/LV substations. ZESA and ZETDC compliant."
+                        "description": "Scheduled maintenance and emergency servicing for HV/LV substations, aligned with international electrical standards and best practices."
                     }
                 },
                 {
@@ -311,8 +311,8 @@
         }
 
         /* Service filter buttons */
-        .svc-filter-btn { background:#f8f9fa; border:2px solid #e9ecef; padding:8px 18px; border-radius:20px; cursor:pointer; margin:4px; font-size:0.9em; font-weight:500; transition:all 0.3s; }
-        .svc-filter-btn:hover, .svc-filter-btn.active { background:#667eea; color:#fff; border-color:#667eea; }
+        .svc-filter-btn { background:#fff; border:2px solid #e0e6ed; padding:8px 18px; border-radius:20px; cursor:pointer; margin:4px; font-size:0.9em; font-weight:500; transition:all 0.3s; color:#333; }
+        .svc-filter-btn:hover, .svc-filter-btn.active { background:#0066cc; color:#fff; border-color:#0066cc; }
 
         /* Service quote button */
         .svc-quote-btn { display:inline-block; margin-top:12px; padding:8px 20px; background:#667eea; color:#fff; border-radius:20px; font-size:0.85em; font-weight:600; text-decoration:none; transition:all 0.3s; }
@@ -322,32 +322,33 @@
         .service-card-wrapper.hidden { display:none; }
 
         /* Footer */
-        .footer-main { background:#0f132d; color:#ccc; }
+        .footer-main { background:#0d1b2a; color:#aaaacc; border-top:1px solid #1a2a3a; }
         .footer-top { padding:50px 0 30px; }
         .footer-col { margin-bottom:30px; }
         .footer-logo { display:flex; align-items:center; gap:10px; margin-bottom:12px; }
         .footer-brand { font-size:1.4em; font-weight:700; color:#667eea; }
-        .footer-desc { font-size:0.85em; color:#aaa; line-height:1.7; margin-bottom:15px; }
+        .footer-desc { font-size:0.85em; color:#aaaacc; line-height:1.7; margin-bottom:15px; }
         .footer-social { display:flex; gap:12px; flex-wrap:wrap; }
-        .footer-social a { color:#aaa; transition:color 0.3s; }
+        .footer-social a { color:#aaaacc; transition:color 0.3s; }
         .footer-social a:hover { color:#667eea; }
         .footer-col h4 { color:#fff; font-size:1em; font-weight:700; margin-bottom:15px; padding-bottom:8px; border-bottom:2px solid #667eea; display:inline-block; }
         .footer-links { list-style:none; padding:0; margin:0; }
         .footer-links li { margin-bottom:8px; }
-        .footer-links a { color:#aaa; font-size:0.9em; transition:color 0.3s; }
+        .footer-links a { color:#aaaacc; font-size:0.9em; transition:color 0.3s; }
         .footer-links a:hover { color:#667eea; }
         .footer-contact-list { list-style:none; padding:0; margin:0; }
-        .footer-contact-list li { margin-bottom:10px; color:#aaa; font-size:0.9em; }
-        .footer-contact-list a { color:#aaa; transition:color 0.3s; }
+        .footer-contact-list li { margin-bottom:10px; color:#aaaacc; font-size:0.9em; }
+        .footer-contact-list a { color:#aaaacc; transition:color 0.3s; }
         .footer-contact-list a:hover { color:#667eea; }
         .footer-wa-btn { display:inline-block; padding:10px 18px; background:#25D366; color:#fff; border-radius:20px; font-size:0.9em; text-decoration:none; }
-        .footer-bottom { background:#0a0d1e; padding:15px 0; text-align:center; }
-        .footer-bottom p { color:#888; font-size:0.85em; margin:0; }
+        .footer-bottom { background:#070f1a; padding:15px 0; text-align:center; }
+        .footer-bottom p { color:#aaaacc; font-size:0.85em; margin:0; }
 
         /* Floating WhatsApp */
-        .whatsapp-float { position:fixed; bottom:25px; right:25px; width:60px; height:60px; background:#25D366; border-radius:50%; display:flex; align-items:center; justify-content:center; box-shadow:0 4px 15px rgba(37,211,102,0.4); z-index:9999; text-decoration:none; transition:all 0.3s; }
+        .whatsapp-float { position:fixed; bottom:25px; right:25px; width:56px; height:56px; background:#25D366; border-radius:50%; display:flex; align-items:center; justify-content:center; box-shadow:0 4px 15px rgba(37,211,102,0.4); z-index:9999; text-decoration:none; transition:all 0.3s; }
         .whatsapp-float:hover { background:#1ebe57; transform:scale(1.1); }
-        .wa-tooltip { display:none; position:absolute; right:70px; background:#333; color:#fff; padding:6px 10px; border-radius:6px; font-size:0.8em; white-space:nowrap; }
+        .whatsapp-float svg, .whatsapp-float i { width:28px; height:28px; font-size:28px; color:#fff; }
+        .wa-tooltip { display:none; position:absolute; right:66px; background:#333; color:#fff; padding:6px 10px; border-radius:6px; font-size:0.8em; white-space:nowrap; }
         .whatsapp-float:hover .wa-tooltip { display:block; }
     </style>
 </head>
@@ -418,7 +419,7 @@
     <!-- end mobile navigation -->
 
     <!-- services hero -->
-    <section class="services-hero" style="background: linear-gradient(135deg, rgba(15,19,45,0.80) 0%, rgba(102,126,234,0.50) 100%), url('../images/5.5kvainstallation.jpg') center/cover no-repeat; padding:70px 0 50px; text-align:center; position:relative;">
+    <section class="services-hero section-dark" style="background: linear-gradient(135deg, rgba(15,19,45,0.80) 0%, rgba(102,126,234,0.50) 100%), url('../images/5.5kvainstallation.jpg') center/cover no-repeat; padding:70px 0 50px; text-align:center; position:relative;">
         <div class="container" style="position:relative;z-index:2;">
             <h1 style="color:#fff; font-size:2.4em; font-weight:800; margin-bottom:12px; text-shadow:0 2px 10px rgba(0,0,0,0.5);">Our Engineering &amp; Technology Services</h1>
             <p style="color:rgba(255,255,255,0.82); font-size:1.05em; max-width:600px; margin:0 auto;">Solar, Electrical, IT, IoT and Security solutions delivered across Africa</p>
@@ -426,7 +427,7 @@
     </section>
 
     <!-- service filter tabs -->
-    <section class="service-filters" style="background:#f8f9fa; padding:20px 0; border-bottom:1px solid #e9ecef;">
+    <section class="service-filters section-dark" style="background:#f8f9fa; padding:20px 0; border-bottom:1px solid #e9ecef;">
         <div class="container text-center">
             <button class="svc-filter-btn active" onclick="filterServices('all')">All</button>
             <button class="svc-filter-btn" onclick="filterServices('solar')">Solar &amp; Energy</button>
@@ -439,8 +440,16 @@
     </section>
     <!-- end service filter tabs -->
 
+    <!-- Solar & Electrical Banner -->
+    <section class="section-light" style="background: linear-gradient(135deg, rgba(15,19,45,0.80) 0%, rgba(102,126,234,0.55) 100%), url('../images/commercialsolar.png') center/cover no-repeat; padding:45px 20px; text-align:center; margin-top:-2px;">
+        <div class="container">
+            <h3 style="color:#fff; font-weight:700; font-size:1.4rem; margin-bottom:8px;">Solar, Electrical &amp; Engineering Services</h3>
+            <p style="color:rgba(255,255,255,0.80); font-size:0.95rem; margin:0;">Premium solar installations, transformer maintenance, and electrical contracting across Africa.</p>
+        </div>
+    </section>
+
     <!-- services -->
-    <div class="wallet">
+    <div class="wallet section-dark" style="background: linear-gradient(rgba(15,19,45,0.84), rgba(15,19,45,0.84)), url('../images/securenetwork.png') center/cover no-repeat; padding-top:40px; padding-bottom:40px;">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12">
@@ -464,7 +473,7 @@
                     <div id="wa_hover" class="wallet_box text_align_center">
                         <i><img src="../images/88kvatransformer.jpg" alt="GLUCO substation transformer maintenance Africa" width="300" height="300" loading="lazy" decoding="async" style="aspect-ratio: 1; object-fit: cover; border-radius: 10px;"/></i>
                         <h3>SUBSTATION &amp; TRANSFORMER MAINTENANCE</h3>
-                        <p>Scheduled maintenance, fault diagnosis, and emergency servicing for HV/LV substations and power transformers. Compliant with ZESA and ZETDC standards.</p>
+                        <p>Scheduled maintenance, fault diagnosis, and emergency servicing for HV/LV substations and power transformers. Aligned with international electrical standards and best practices.</p>
                         <a href="contact.html?service=Substation+Transformer+Maintenance" class="svc-quote-btn">Get a Quote</a>
                     </div>
                 </div>
@@ -600,7 +609,7 @@
     <!-- services end -->
 
     <!-- bottom CTA -->
-    <section class="services-bottom-cta" style="background: linear-gradient(135deg, rgba(15,19,45,0.85) 0%, rgba(102,126,234,0.70) 100%), url('../images/rooftopsolar.jpg') center/cover no-repeat; padding:65px 0; text-align:center; margin-top:40px;">
+    <section class="services-bottom-cta section-light" style="background: linear-gradient(135deg, rgba(15,19,45,0.85) 0%, rgba(102,126,234,0.70) 100%), url('../images/rooftopsolar.jpg') center/cover no-repeat; padding:65px 0; text-align:center; margin-top:40px;">
         <div class="container">
             <h2 style="color:#fff; font-size:1.8em; margin-bottom:10px;">Not Sure Which Service You Need?</h2>
             <p style="color:#aaa; margin-bottom:25px;">Talk to our engineers — we will help you find the right solution.</p>
@@ -624,8 +633,8 @@
             <div class="cart-total">
                 <h3 id="total-amount">Total: $0.00</h3>
             </div>
-            <div style="background:#f4f6fb;border-radius:10px;padding:14px 16px;margin-bottom:6px;">
-                <p style="font-weight:700;color:#1a1a2e;font-size:0.88rem;margin-bottom:10px;text-align:left;">💳 Payment Options</p>
+            <div style="background:#1a2040;border-radius:10px;padding:14px 16px;margin-bottom:6px;border:1px solid #2d3564;">
+                <p style="font-weight:700;color:#e8eaf6;font-size:0.88rem;margin-bottom:10px;text-align:left;">💳 Payment Options</p>
                 <div style="display:flex;flex-direction:column;gap:8px;">
                     <button onclick="checkoutEcoCash()" style="background:linear-gradient(135deg,#e63946,#c1121f);color:#fff;border:none;border-radius:8px;padding:10px 14px;font-weight:700;font-size:0.82rem;cursor:pointer;transition:all 0.2s;display:flex;align-items:center;gap:8px;">📱 Pay via EcoCash / Innbucks</button>
                     <button onclick="checkoutBank()" style="background:linear-gradient(135deg,#0f132d,#1e2a6e);color:#fff;border:none;border-radius:8px;padding:10px 14px;font-weight:700;font-size:0.82rem;cursor:pointer;transition:all 0.2s;display:flex;align-items:center;gap:8px;">🏦 Bank Transfer Details</button>
@@ -651,7 +660,7 @@
                             <img src="../images/glucoicon.png" alt="GLUCO Logo" width="50" height="50">
                             <span class="footer-brand">GLUCO</span>
                         </div>
-                        <p class="footer-desc">Engineering a brighter future through solar energy, electrical services, IT consultancy, and IoT automation. Serving clients across Africa since 2022.</p>
+                        <p class="footer-desc">Engineering a brighter future through solar energy, electrical services, IT consultancy, and IoT automation. Established in 2016 and serving clients across Africa.</p>
                         <div class="footer-social">
                             <a href="https://www.facebook.com/glucozimbabwe" target="_blank" aria-label="GLUCO on Facebook">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>

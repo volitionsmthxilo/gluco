@@ -599,65 +599,40 @@ ul.email li i {
 /** banner_main **/
 
 .banner_main {
-     padding-bottom: 30px;
-     padding-top: 30px;
+     padding: 0;
+     overflow: hidden;
 }
 
 .carousel-indicators {
      display: none;
 }
 
-#myCarousel a.carousel-control-next,
-#myCarousel a.carousel-control-prev {
-     background: rgba(255, 255, 255, 0.1);
-     width: 50px;
-     height: 50px;
+#myCarousel .carousel-control-prev,
+#myCarousel .carousel-control-next {
+     width: 54px;
+     height: 54px;
      top: 50%;
      transform: translateY(-50%);
-     opacity: 1;
-     font-size: 25px;
+     opacity: 0.85;
+     background: rgba(255,255,255,0.12);
      border-radius: 50%;
-     border: 1px solid rgba(255, 255, 255, 0.3);
+     border: 1px solid rgba(255,255,255,0.3);
      backdrop-filter: blur(4px);
-     display: flex; /* Center icon */
+     display: flex;
      align-items: center;
      justify-content: center;
      transition: all 0.3s ease;
+     position: absolute;
 }
 
-#myCarousel a.carousel-control-prev {
-    left: 10px !important;
-}
-#myCarousel a.carousel-control-next {
-    right: 10px !important;
-}
+#myCarousel .carousel-control-prev { left: 20px; }
+#myCarousel .carousel-control-next { right: 20px; }
 
-#myCarousel a.carousel-control-next:hover,
-#myCarousel a.carousel-control-prev:hover {
-    background: #face34;
-    border-color: #face34;
-    color: #fff;
-}
-     border: #9197a6 solid 5px;
-     color: #9197a6;
-     z-index: 10;
-     position: relative;
-}
-
-#myCarousel a.carousel-control-prev {
-     left: 44.3%;
-}
-
-#myCarousel a.carousel-control-next {
-     right: 44.3%;
-}
-
-#myCarousel a.carousel-control-next:focus,
-#myCarousel a.carousel-control-next:hover,
-#myCarousel a.carousel-control-prev:focus,
-#myCarousel a.carousel-control-prev:hover {
-     color: #fff;
-     opacity: 1;
+#myCarousel .carousel-control-prev:hover,
+#myCarousel .carousel-control-next:hover {
+    background: rgba(0,102,204,0.8);
+    border-color: #0066cc;
+    opacity: 1;
 }
 
 .relative {
@@ -904,12 +879,16 @@ ul.email li i {
 }
 
 .about_border {
-     background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
-     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+     background: #ffffff;
+     box-shadow: 0 4px 20px rgba(0,0,0,0.08);
      padding: 60px 60px;
      margin-bottom: 0;
      border-radius: 10px;
+     border: 1px solid #e0e6ed;
 }
+
+.about_border .titlepage h2 { color: #0f132d; }
+.about_border .about_text p { color: #444; }
 
 .about .titlepage {
      padding-bottom: 0;
@@ -1022,32 +1001,9 @@ ul.email li i {
     100% { opacity: 1; transform: scale(1) translateY(0); }
 }
 
-.carousel-item .bluid h1, 
-.carousel-item .bluid p, 
-.carousel-item .read_more,
-.carousel-item .con_img img {
-    opacity: 0; /* Hidden by default for animation */
-}
-
-/* Active State Animations */
-.carousel-item.active .bluid h1 {
-    animation: fadeInUp 0.8s ease-out forwards;
-    animation-delay: 0.2s;
-}
-
-.carousel-item.active .bluid p {
-    animation: fadeInUp 0.8s ease-out forwards;
-    animation-delay: 0.4s;
-}
-
-.carousel-item.active .read_more {
-    animation: fadeInUp 0.8s ease-out forwards;
-    animation-delay: 0.6s;
-}
-
-.carousel-item.active .con_img img {
-    animation: popIn 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
-    animation-delay: 0.3s;
+/* Carousel slide content animation */
+.carousel-item.active .carousel-slide-content {
+    animation: fadeInUp 0.9s ease-out forwards;
 }
 
 .img_responsive {
@@ -1704,20 +1660,19 @@ ul.email li i {
     right: -400px;
     width: 400px;
     height: 100vh;
-    background: #ffffff;
-    /* Professional Frame Design */
+    background: #0f132d;
     border-left: 4px solid #667eea;
     border-top: 4px solid #667eea;
     border-bottom: 4px solid #667eea;
     border-top-left-radius: 20px;
     border-bottom-left-radius: 20px;
-    box-shadow: -15px 0 40px rgba(15, 19, 45, 0.25);
+    box-shadow: -15px 0 50px rgba(0, 0, 0, 0.5);
     transition: right 0.4s cubic-bezier(0.19, 1, 0.22, 1);
     z-index: 9999;
     display: flex;
     flex-direction: column;
     font-family: 'Poppins', sans-serif;
-    overflow: hidden; /* Clips children to the rounded corners */
+    overflow: hidden;
 }
 
 .cart-container.active {
@@ -1726,11 +1681,11 @@ ul.email li i {
 
 .cart-header {
     padding: 20px 25px;
-    border-bottom: 1px solid #232741;
+    border-bottom: 1px solid #2d3564;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: #0f132d; /* Theme Dark Blue */
+    background: #080b1c;
     color: #fff;
 }
 
@@ -1755,8 +1710,8 @@ ul.email li i {
 
 .cart-search {
     padding: 12px 25px;
-    background: #f5f6fb;
-    border-bottom: 1px solid #e2e6f3;
+    background: #131736;
+    border-bottom: 1px solid #2d3564;
 }
 
 .cart-search-row {
@@ -1767,17 +1722,17 @@ ul.email li i {
 
 .cart-search input {
     width: 100%;
-    border: 1px solid #d8def3;
+    border: 1px solid #2d3564;
     border-radius: 10px;
     padding: 10px 12px;
     font-size: 0.95rem;
-    color: #0f132d;
-    background: #ffffff;
+    color: #e8eaf6;
+    background: #1a2040;
     transition: all 0.3s ease;
 }
 
 .cart-search input::placeholder {
-    color: #8b92a8;
+    color: #6b7199;
 }
 
 .cart-search input:focus {
@@ -1821,7 +1776,7 @@ ul.email li i {
     flex: 1;
     overflow-y: auto;
     padding: 20px;
-    background-color: #f8f9fa;
+    background-color: #0f132d;
 }
 
 .cart-item {
@@ -1830,17 +1785,17 @@ ul.email li i {
     gap: 12px;
     margin-bottom: 12px;
     padding: 12px;
-    background: #fff;
-    border: 1px solid #e9ecef;
+    background: #1a2040;
+    border: 1px solid #2d3564;
     border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
     transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .cart-item:hover {
     transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-    border-color: #dbe0e6;
+    box-shadow: 0 6px 18px rgba(102,126,234,0.15);
+    border-color: #667eea;
 }
 
 .cart-item img {
@@ -1862,27 +1817,26 @@ ul.email li i {
     flex: 1;
 }
 
-.cart-item-details h4, 
-.cart-item-details span:first-child { 
-    /* Support both h4 and span structure temporarily until unified */
+.cart-item-details h4,
+.cart-item-details span:first-child {
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
     line-height: 1.3;
-    max-height: 2.6em; /* 2 lines max */
+    max-height: 2.6em;
     font-size: 0.95rem;
     font-weight: 600;
     margin-bottom: 4px;
-    color: #0f132d; /* Theme Dark Blue */
+    color: #e8eaf6;
 }
 
 .cart-item-details p,
 .cart-item-details span:nth-child(2) {
     display: block;
     font-size: 0.85rem;
-    color: #666;
+    color: #8b92c8;
     margin: 0;
     font-weight: 500;
 }
@@ -1896,14 +1850,14 @@ ul.email li i {
 
 /* Style the buttons inside controls */
 .cart-item-controls button:not(.remove-btn) {
-    background: #f0f0f0;
+    background: #2d3564;
     border: none;
     width: 26px;
     height: 26px;
     border-radius: 50%;
     cursor: pointer;
     font-weight: bold;
-    color: #333;
+    color: #e8eaf6;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1920,7 +1874,7 @@ ul.email li i {
     font-weight: 600;
     min-width: 15px;
     text-align: center;
-    color: #333;
+    color: #e8eaf6;
 }
 
 .cart-item-controls .remove-btn {
@@ -1960,25 +1914,26 @@ ul.email li i {
     margin: 0;
     font-size: 1.4rem;
     font-weight: 700;
-    color: #0f132d;
-    display: block; /* Center logic handled by parent or text-align */
+    color: #667eea;
+    display: block;
     text-align: center;
 }
 
 .cart-actions {
-    padding: 20px 25px 25px 25px; /* Added top padding */
-    background: #fff;
+    padding: 20px 25px 25px 25px;
+    background: #080b1c;
     display: flex;
     flex-direction: column;
     gap: 15px;
-    border-top: 1px solid #e9ecef; /* Moved border here */
-    box-shadow: 0 -4px 10px rgba(0,0,0,0.03); /* Moved shadow here */
+    border-top: 1px solid #2d3564;
+    box-shadow: 0 -4px 15px rgba(0,0,0,0.4);
 }
 
 #cart-list {
     flex: 1 1 auto;
     overflow-y: auto;
     padding: 10px 20px 0;
+    background-color: #0f132d;
 }
 
 /* Contact Buttons Container for Side-by-Side Layout */
@@ -2019,7 +1974,7 @@ ul.email li i {
 
 .cart-actions p {
     font-size: 0.85rem;
-    color: #888;
+    color: #8b92c8;
     margin-bottom: 15px;
     line-height: 1.5;
     text-align: center;
@@ -2048,13 +2003,14 @@ ul.email li i {
     box-shadow: 0 6px 10px rgba(37, 211, 102, 0.3);
 }
 
-.close-btn { 
-    background-color: #f1f3f5; 
-    color: #0f132d; /* Theme Dark Blue */
+.close-btn {
+    background-color: #1a2040;
+    color: #e8eaf6;
+    border: 1px solid #2d3564;
 }
-.close-btn:hover { 
-    background-color: #e9ecef; 
-    color: #000;
+.close-btn:hover {
+    background-color: #2d3564;
+    color: #fff;
 }
 
 @media (max-width: 575px) {
@@ -2403,6 +2359,800 @@ ul.email li i {
     .quote-cta {
         padding: 50px 0;
     }
+}
+
+/* =====================================================
+   GLUCO DARK THEME REFIX — matches testimonials tokens
+   bg-dark: #0f132d  bg-mid: #131a38  bg-light: #1a2248
+   card-bg: rgba(255,255,255,0.08)
+   card-border: rgba(255,255,255,0.12)
+   heading: #ffffff  body: #cccccc  accent: #0066cc
+   ===================================================== */
+
+/* Base page dark background */
+body.main-layout {
+    background-color: #0f132d;
+    color: #cccccc;
+}
+
+/* Section tiers */
+.section-dark    { background: #0f132d !important; }
+.section-mid     { background: #131a38 !important; }
+.section-light   { background: #1a2248 !important; }
+.section-darkest { background: #080b1c !important; }
+
+/* Global heading defaults on dark bg */
+body.main-layout h1,
+body.main-layout h2,
+body.main-layout h3,
+body.main-layout h4,
+body.main-layout h5,
+body.main-layout h6 {
+    color: #ffffff;
+}
+
+body.main-layout p,
+body.main-layout li,
+body.main-layout label {
+    color: #cccccc;
+}
+
+/* Universal card — matches testimonials cards exactly */
+.gluco-card {
+    background: rgba(255,255,255,0.08) !important;
+    border: 1px solid rgba(255,255,255,0.12) !important;
+    border-radius: 10px !important;
+    color: #ffffff !important;
+    transition: all 0.25s ease;
+    padding: 22px 20px;
+}
+.gluco-card:hover {
+    background: rgba(255,255,255,0.13) !important;
+    border-color: rgba(255,255,255,0.22) !important;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+}
+.gluco-card h3, .gluco-card h4, .gluco-card h5 { color: #ffffff !important; }
+.gluco-card p, .gluco-card span { color: #cccccc !important; }
+.gluco-card .accent { color: #0066cc !important; }
+
+/* Wallet boxes in dark sections */
+.section-dark .wallet_box,
+.section-mid .wallet_box {
+    background: rgba(255,255,255,0.08) !important;
+    border: 1px solid rgba(255,255,255,0.12) !important;
+    border-radius: 10px !important;
+}
+.section-dark .wallet_box h3,
+.section-mid .wallet_box h3 { color: #ffffff !important; }
+.section-dark .wallet_box p,
+.section-mid .wallet_box p  { color: #cccccc !important; }
+
+/* Dark section titlepage override */
+.section-dark .titlepage h2,
+.section-mid .titlepage h2,
+.section-darkest .titlepage h2 {
+    color: #ffffff !important;
+}
+
+/* Form dark inputs */
+.dark-input {
+    background: rgba(255,255,255,0.07) !important;
+    border: 1px solid rgba(255,255,255,0.18) !important;
+    color: #ffffff !important;
+    border-radius: 6px !important;
+}
+.dark-input::placeholder { color: #667788 !important; }
+.dark-input:focus {
+    border-color: rgba(255,255,255,0.4) !important;
+    background: rgba(255,255,255,0.10) !important;
+    box-shadow: none !important;
+    color: #ffffff !important;
+}
+
+/* Blue accent button */
+.btn-accent {
+    background: #0066cc !important;
+    color: #ffffff !important;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    padding: 12px 28px;
+    transition: all 0.3s;
+}
+.btn-accent:hover {
+    background: #0052a3 !important;
+    color: #ffffff !important;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(0,102,204,0.4);
+}
+
+/* Footer unified dark */
+.footer-main {
+    background: #070f1a !important;
+    border-top: 1px solid #1a2a3a !important;
+    color: #667788 !important;
+}
+.footer-main h4, .footer-main h5 { color: #ffffff !important; font-weight: 600 !important; }
+.footer-main a { color: #8899bb !important; }
+.footer-main a:hover { color: #ffffff !important; }
+.footer-main p, .footer-main li, .footer-main span { color: #667788 !important; }
+.footer-main .footer-brand { color: #667eea !important; }
+.footer-bottom {
+    background: #040a12 !important;
+    border-top: 1px solid #1a2a3a !important;
+}
+.footer-bottom p, .footer-bottom span { color: #445566 !important; }
+
+/* Footer link lists */
+.footer-links a, .footer-contact-list a { color: #8899bb !important; }
+.footer-links a:hover, .footer-contact-list a:hover { color: #ffffff !important; }
+.footer-desc, .footer-contact-list li { color: #667788 !important; }
+
+/* Floating WhatsApp (global) */
+.whatsapp-float,
+.whatsapp-float a {
+    position: fixed;
+    bottom: 28px;
+    right: 28px;
+    width: 56px;
+    height: 56px;
+    background: #25d366 !important;
+    border-radius: 50%;
+    box-shadow: 0 4px 20px rgba(37,211,102,0.45);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+.whatsapp-float svg, .whatsapp-float i,
+.whatsapp-float a svg, .whatsapp-float a i {
+    color: #ffffff;
+    fill: #ffffff;
+    width: 28px;
+    height: 28px;
+    font-size: 28px;
+}
+
+/* GLUCO Dark Theme Refix */
+
+/* Remove all white section backgrounds */
+section, .section, [class*="section"],
+.container-fluid > div {
+     background-color: transparent;
+}
+
+/* Base page background - testimonials base navy */
+body {
+     background-color: #0f132d;
+}
+
+/* Alternating section pattern */
+.section-light {
+     background: #1a2248 !important;
+}
+
+.section-dark {
+     background: #0f132d !important;
+}
+
+.section-darkest {
+     background: #080b1c !important;
+}
+
+/* Subtle transparent image overlays so dark sections do not feel flat */
+.section-dark,
+.section-light,
+.section-darkest,
+.wallet,
+.contact-main,
+.services-hero,
+.hero,
+.project-gallery,
+.credentials-section,
+.how-to-order,
+.custom-quote,
+.trust-strip,
+.why-gluco,
+.project-cards,
+.maps-section {
+     position: relative;
+     overflow: hidden;
+}
+
+.section-dark::before,
+.section-light::before,
+.section-darkest::before,
+.wallet::before,
+.contact-main::before,
+.services-hero::before,
+.hero::before,
+.project-gallery::before,
+.credentials-section::before,
+.how-to-order::before,
+.custom-quote::before,
+.trust-strip::before,
+.why-gluco::before,
+.project-cards::before,
+.maps-section::before {
+     content: '';
+     position: absolute;
+     inset: 0;
+     background-image:
+          radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.10), transparent 45%),
+          radial-gradient(circle at 85% 70%, rgba(122, 179, 239, 0.12), transparent 45%),
+          url('../images/electricalelectronics.png');
+     background-size: auto, auto, cover;
+     background-position: center, center, center;
+     background-repeat: no-repeat;
+     opacity: 0.12;
+     z-index: 0;
+     pointer-events: none;
+}
+
+/* Service-diverse overlay mapping */
+.hero::before {
+     background-image:
+          radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.10), transparent 45%),
+          radial-gradient(circle at 85% 70%, rgba(122, 179, 239, 0.12), transparent 45%),
+          url('../images/robotics.png');
+}
+
+.wallet::before {
+     background-image:
+          radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.10), transparent 45%),
+          radial-gradient(circle at 85% 70%, rgba(122, 179, 239, 0.12), transparent 45%),
+          url('../images/electricalsub.png');
+}
+
+.why-gluco::before {
+     background-image:
+          radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.10), transparent 45%),
+          radial-gradient(circle at 85% 70%, rgba(122, 179, 239, 0.12), transparent 45%),
+          url('../images/itsupport.png');
+}
+
+.project-cards::before {
+     background-image:
+          radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.10), transparent 45%),
+          radial-gradient(circle at 85% 70%, rgba(122, 179, 239, 0.12), transparent 45%),
+          url('../images/industrialautomation.png');
+}
+
+.trust-strip::before {
+     background-image:
+          radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.10), transparent 45%),
+          radial-gradient(circle at 85% 70%, rgba(122, 179, 239, 0.12), transparent 45%),
+          url('../images/logistics.png');
+}
+
+.services-hero::before {
+     background-image:
+          radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.10), transparent 45%),
+          radial-gradient(circle at 85% 70%, rgba(122, 179, 239, 0.12), transparent 45%),
+          url('../images/itconsultancy.png');
+}
+
+.contact-main::before {
+     background-image:
+          radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.10), transparent 45%),
+          radial-gradient(circle at 85% 70%, rgba(122, 179, 239, 0.12), transparent 45%),
+          url('../images/securenetwork.png');
+}
+
+.project-gallery::before {
+     background-image:
+          radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.10), transparent 45%),
+          radial-gradient(circle at 85% 70%, rgba(122, 179, 239, 0.12), transparent 45%),
+          url('../images/transformermaintenance.jpg');
+}
+
+.credentials-section::before {
+     background-image:
+          radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.10), transparent 45%),
+          radial-gradient(circle at 85% 70%, rgba(122, 179, 239, 0.12), transparent 45%),
+          url('../images/monitoring.png');
+}
+
+.how-to-order::before {
+     background-image:
+          radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.10), transparent 45%),
+          radial-gradient(circle at 85% 70%, rgba(122, 179, 239, 0.12), transparent 45%),
+          url('../images/components.png');
+}
+
+.custom-quote::before {
+     background-image:
+          radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.10), transparent 45%),
+          radial-gradient(circle at 85% 70%, rgba(122, 179, 239, 0.12), transparent 45%),
+          url('../images/fintech.png');
+}
+
+.maps-section::before {
+     background-image:
+          radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.10), transparent 45%),
+          radial-gradient(circle at 85% 70%, rgba(122, 179, 239, 0.12), transparent 45%),
+          url('../images/gtech.png');
+}
+
+/* Keep section content above decorative overlays */
+.section-dark > *,
+.section-light > *,
+.section-darkest > *,
+.wallet > *,
+.contact-main > *,
+.services-hero > *,
+.hero > *,
+.project-gallery > *,
+.credentials-section > *,
+.how-to-order > *,
+.custom-quote > *,
+.trust-strip > *,
+.why-gluco > *,
+.project-cards > *,
+.maps-section > * {
+     position: relative;
+     z-index: 1;
+}
+
+/* Global text defaults for dark theme */
+h1, h2, h3, h4, h5, h6 {
+     color: #ffffff !important;
+}
+
+p, li, span, label {
+     color: #cccccc;
+}
+
+a {
+     color: #7ab3ef;
+}
+
+a:hover {
+     color: #ffffff;
+}
+
+/* Universal card style matching testimonials cards */
+.card, [class*="card"],
+.service-card, .project-card,
+.product-card, .stat-card,
+.contact-card, .team-card,
+.wallet_box, .product, .info-card, .sidebar-card,
+.form-section, .about_border {
+     background: rgba(255, 255, 255, 0.08) !important;
+     border: 1px solid rgba(255, 255, 255, 0.12) !important;
+     border-radius: 10px !important;
+     color: #ffffff !important;
+     transition: all 0.25s ease;
+}
+
+.card:hover, [class*="card"]:hover,
+.wallet_box:hover, .product:hover {
+     background: rgba(255, 255, 255, 0.10) !important;
+     border-color: rgba(255, 255, 255, 0.22) !important;
+     transform: translateY(-3px);
+}
+
+.card p, [class*="card"] p,
+.card span, [class*="card"] span,
+.wallet_box p, .product p, .info-card p,
+.about_border p, .about_border span {
+     color: #cccccc !important;
+}
+
+.card h3, .card h4, .card h5,
+[class*="card"] h3, [class*="card"] h4,
+.wallet_box h3, .product h3, .about_border h3 {
+     color: #ffffff !important;
+}
+
+/* Keep testimonials untouched visually */
+.testimonials {
+     background: linear-gradient(135deg, rgba(15, 19, 45, 0.92) 0%, rgba(30, 42, 110, 0.90) 100%), url('../images/solarpanelsindustrial.png') center/cover no-repeat;
+}
+
+/* Navbar */
+header,
+header .head-top {
+     background: #0f132d !important;
+}
+
+header .nav-link,
+.mobile-nav a {
+     color: #e0e0e0 !important;
+}
+
+header .nav-item.active .nav-link {
+     background: #0066cc !important;
+     color: #ffffff !important;
+     border-radius: 16px;
+     padding: 6px 12px !important;
+}
+
+header.scrolled {
+     box-shadow: 0 2px 20px rgba(0, 0, 0, 0.5) !important;
+}
+
+.mobile-nav {
+     background: #0f132d !important;
+}
+
+/* Hero carousel */
+#myCarousel {
+     width: 100%;
+     overflow: hidden;
+}
+
+#myCarousel .carousel-item {
+     width: 100%;
+     height: 85vh;
+     min-height: 480px;
+     object-fit: cover;
+     object-position: center;
+     position: relative;
+}
+
+#myCarousel .carousel-item::after {
+     content: '';
+     position: absolute;
+     inset: 0;
+     background: rgba(8, 18, 38, 0.58);
+     z-index: 1;
+}
+
+#myCarousel .carousel-slide-content,
+#myCarousel .carousel-caption {
+     z-index: 2;
+     color: #ffffff !important;
+}
+
+.carousel-btn-primary {
+     background: #0066cc !important;
+     color: #ffffff !important;
+}
+
+.carousel-btn-secondary {
+     background: transparent !important;
+     border: 2px solid #ffffff !important;
+     color: #ffffff !important;
+}
+
+/* Stats */
+.stats-bar {
+     background: #080b1c !important;
+}
+
+.stats-bar .stat-number,
+.stats-bar .stat-label,
+.about-stats div {
+     color: #ffffff !important;
+}
+
+/* Services page tabs/buttons */
+.svc-filter-btn {
+     background: rgba(255, 255, 255, 0.08) !important;
+     color: #cccccc !important;
+     border-color: rgba(255, 255, 255, 0.18) !important;
+}
+
+.services-hero {
+     position: relative;
+}
+
+.services-hero::after {
+     content: '';
+     position: absolute;
+     inset: 0;
+     background: rgba(8, 18, 38, 0.62);
+     z-index: 1;
+}
+
+.services-hero .container {
+     position: relative;
+     z-index: 2;
+}
+
+.svc-filter-btn.active,
+.svc-filter-btn:hover,
+.filter-btn.active,
+.filter-btn:hover {
+     background: #0066cc !important;
+     color: #ffffff !important;
+     border-color: #0066cc !important;
+}
+
+.svc-quote-btn,
+.btn-project,
+.btn-submit {
+     background: #0066cc !important;
+     color: #ffffff !important;
+}
+
+/* Contact page targeted */
+.contact-main {
+     background: #0f132d !important;
+}
+
+.contact-main .form-section {
+     background: #1a2248 !important;
+}
+
+.form-section label,
+.form-section .form-subtitle {
+     color: #cccccc !important;
+}
+
+.form-section .form-control,
+.form-section .ente,
+.form-section select,
+.form-section textarea,
+#contact-form input,
+#contact-form select,
+#contact-form textarea {
+     background: rgba(255, 255, 255, 0.07) !important;
+     border: 1px solid rgba(255, 255, 255, 0.18) !important;
+     color: #ffffff !important;
+     border-radius: 6px !important;
+}
+
+.form-section .form-control::placeholder,
+.form-section .ente::placeholder,
+#contact-form input::placeholder,
+#contact-form textarea::placeholder {
+     color: #667788 !important;
+}
+
+.form-section .form-control:focus,
+.form-section .ente:focus,
+#contact-form input:focus,
+#contact-form select:focus,
+#contact-form textarea:focus {
+     border-color: rgba(255, 255, 255, 0.4) !important;
+     box-shadow: none !important;
+}
+
+.contact-main .info-card .ic-label {
+     color: #888888 !important;
+}
+
+.contact-main .info-card .ic-value,
+.contact-main .info-card .ic-value a {
+     color: #7ab3ef !important;
+}
+
+/* About page visibility fix */
+#about-us,
+#about,
+#vision,
+#mission,
+#expertise {
+     background: #0f132d !important;
+}
+
+#about-us p,
+#about-us span,
+#about p,
+#about span,
+#vision p,
+#vision span,
+#mission p,
+#mission span,
+#expertise p,
+#expertise span {
+     color: #cccccc !important;
+}
+
+#about-us h2,
+#about-us h3,
+#about h2,
+#about h3,
+#vision h2,
+#vision h3,
+#mission h2,
+#mission h3,
+#expertise h2,
+#expertise h3 {
+     color: #ffffff !important;
+}
+
+#about-us [style*="display:none"],
+#about-us [style*="visibility:hidden"] {
+     display: block !important;
+     visibility: visible !important;
+}
+
+/* About page explicit Vision/Mission text fixes */
+#vision .about_text p,
+#mission .about_text p,
+#vision .about_text span,
+#mission .about_text span {
+     color: #cccccc !important;
+}
+
+#vision .titlepage h3,
+#mission .titlepage h3 {
+     color: #ffffff !important;
+}
+
+#vision .read_more,
+#mission .read_more {
+     background: #0066cc !important;
+     color: #ffffff !important;
+     border-color: #0066cc !important;
+}
+
+.contact-main .sidebar-card:first-child {
+     background: #080b1c !important;
+}
+
+.contact-main .sidebar-card:first-child td:first-child {
+     color: #aaaaaa !important;
+}
+
+.contact-main .sidebar-card:first-child td:last-child {
+     color: #ffffff !important;
+     font-weight: 600 !important;
+}
+
+.maps-section {
+     background: #0f132d !important;
+}
+
+.maps-section iframe {
+     border-radius: 4px !important;
+}
+
+@media (max-width: 576px) {
+     .btn-submit {
+          width: 100% !important;
+     }
+}
+
+/* Catalogue page */
+.how-to-order {
+     background: #080b1c !important;
+}
+
+.how-to-order .step-num,
+.step-circle {
+     background: #0066cc !important;
+     color: #ffffff !important;
+}
+
+.filters,
+.service-filters {
+     background: #0f132d !important;
+     padding: 20px 0 !important;
+}
+
+.filter-btn {
+     background: rgba(255, 255, 255, 0.08) !important;
+     color: #cccccc !important;
+     border-radius: 25px !important;
+     border-color: rgba(255, 255, 255, 0.18) !important;
+}
+
+.product img {
+     border-radius: 8px 8px 0 0 !important;
+     width: 100% !important;
+     height: 200px !important;
+     object-fit: cover !important;
+}
+
+.product h3 {
+     color: #ffffff !important;
+     font-weight: 600 !important;
+}
+
+.product p {
+     color: #cccccc !important;
+     font-size: 0.9rem !important;
+}
+
+.price {
+     color: #7ab3ef !important;
+     font-size: 1.25rem !important;
+     font-weight: 700 !important;
+}
+
+.wa-order-btn,
+.button.whatsapp-btn {
+     background: #25d366 !important;
+     color: #ffffff !important;
+     border-radius: 6px !important;
+     padding: 10px 0 !important;
+     width: 100% !important;
+     font-weight: 600 !important;
+}
+
+/* CTA banner */
+.cta-banner {
+     background: #0066cc !important;
+}
+
+.cta-banner h2,
+.cta-banner p {
+     color: #ffffff !important;
+}
+
+.cta-btn-primary {
+     background: #ffffff !important;
+     color: #0066cc !important;
+}
+
+.cta-btn-whatsapp {
+     background: #25d366 !important;
+     color: #ffffff !important;
+}
+
+/* Footer all pages */
+.footer-main {
+     background: #070f1a !important;
+}
+
+.footer-main h4,
+.footer-main h5 {
+     color: #ffffff !important;
+     font-weight: 600 !important;
+}
+
+.footer-main a {
+     color: #8899bb !important;
+}
+
+.footer-main a:hover {
+     color: #ffffff !important;
+}
+
+.footer-main p,
+.footer-main .footer-desc,
+.footer-main li,
+.footer-main .footer-contact-list li {
+     color: #667788 !important;
+}
+
+.footer-main,
+.footer-main .footer-top {
+     border-color: #1a2a3a !important;
+}
+
+.footer-bottom {
+     background: #040a12 !important;
+     border-top: 1px solid #1a2a3a !important;
+}
+
+.footer-bottom,
+.footer-bottom p,
+.footer-bottom span,
+.footer-bottom a {
+     color: #445566 !important;
+}
+
+/* WhatsApp floating button on all pages */
+.whatsapp-float,
+.whatsapp-float a {
+     position: fixed !important;
+     bottom: 28px !important;
+     right: 28px !important;
+     z-index: 9999 !important;
+     background: #25d366 !important;
+     width: 56px !important;
+     height: 56px !important;
+     border-radius: 50% !important;
+     box-shadow: 0 4px 20px rgba(37, 211, 102, 0.45) !important;
+}
+
+.whatsapp-float svg,
+.whatsapp-float i,
+.whatsapp-float a svg,
+.whatsapp-float a i {
+     color: #ffffff !important;
+     fill: #ffffff !important;
+     width: 28px !important;
+     height: 28px !important;
+     font-size: 28px !important;
 }
 
 

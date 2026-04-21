@@ -154,7 +154,7 @@
         }
         .hero {
             background: linear-gradient(135deg, rgba(15,19,45,0.78) 0%, rgba(102,126,234,0.52) 100%),
-                        url('images/industrialrooftopsolar.jpg') center/cover no-repeat;
+                        url('images/commercialsolar.png') center/cover no-repeat;
             color: white;
             padding: 110px 20px 90px;
             text-align: center;
@@ -241,18 +241,19 @@
             box-shadow: 0 8px 18px rgba(102, 126, 234, 0.35);
         }
         .filter-btn {
-            background: #f8f9fa;
-            border: 2px solid #e9ecef;
+            background: #fff;
+            border: 2px solid #e0e6ed;
             padding: 10px 20px;
             border-radius: 25px;
             cursor: pointer;
             transition: all 0.3s ease;
             font-weight: 500;
+            color: #333;
         }
         .filter-btn:hover, .filter-btn.active {
-            background: #667eea;
-            color: white;
-            border-color: #667eea;
+            background: #0066cc;
+            color: #fff;
+            border-color: #0066cc;
         }
         .catalogue {
             display: grid;
@@ -261,10 +262,11 @@
             padding: 20px 0;
         }
         .product {
-            background: rgba(255,255,255,0.8);
+            background: #ffffff;
             padding: 25px;
             border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border: 1px solid #e0e6ed;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.07);
             text-align: center;
             transition: all 0.3s ease;
             position: relative;
@@ -516,7 +518,7 @@
         #notification { position:fixed;top:110px;right:20px;background:linear-gradient(135deg,#667eea,#764ba2);color:#fff;padding:12px 20px;border-radius:10px;box-shadow:0 4px 15px rgba(102,126,234,0.4);opacity:0;transition:opacity 0.4s ease;z-index:10001;font-size:0.9rem;font-weight:600;pointer-events:none; }
         #notification.show { opacity:1; }
         /* How-to-order banner */
-        .how-to-order { background: linear-gradient(rgba(15,19,45,0.88), rgba(15,19,45,0.88)), url('images/88kvatransformer.jpg') center/cover no-repeat; color: #fff; padding: 50px 20px; }
+        .how-to-order { background: linear-gradient(rgba(15,19,45,0.88), rgba(15,19,45,0.88)), url('images/securenetwork.png') center/cover no-repeat; color: #fff; padding: 50px 20px; }
         .how-to-order h2 { text-align: center; margin-bottom: 30px; font-weight: 700; }
         .how-to-order .step { text-align: center; padding: 15px; }
         .how-to-order .step-num { width: 50px; height: 50px; background: #667eea; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; font-weight: 700; margin: 0 auto 12px; }
@@ -532,19 +534,20 @@
         .custom-quote .btn-wa { background: #25D366; color: #fff; padding: 14px 35px; border-radius: 30px; font-weight: 700; text-decoration: none; display: inline-block; transition: all 0.3s; }
         .custom-quote .btn-wa:hover { background: #1ebe57; transform: translateY(-3px); box-shadow: 0 8px 20px rgba(0,0,0,0.2); color: #fff; }
         /* 4-column footer */
-        .footer-main { background: #0f132d; color: #aab; padding: 60px 0 0; }
+        .footer-main { background: #0d1b2a; color: #aaaacc; padding: 60px 0 0; border-top: 1px solid #1a2a3a; }
         .footer-main h5 { color: #fff; font-weight: 700; margin-bottom: 18px; font-size: 1.05rem; }
-        .footer-main p, .footer-main a { color: #aab; font-size: 0.93rem; text-decoration: none; }
+        .footer-main p, .footer-main a { color: #aaaacc; font-size: 0.93rem; text-decoration: none; }
         .footer-main a:hover { color: #667eea; }
         .footer-main ul { list-style: none; padding: 0; margin: 0; }
         .footer-main ul li { margin-bottom: 8px; }
-        .footer-bottom { background: #080a1a; color: #888; font-size: 0.85rem; padding: 14px 0; text-align: center; margin-top: 40px; }
-        .footer-social a { display: inline-block; margin: 0 6px; color: #aab; transition: color 0.2s; }
+        .footer-bottom { background: #070f1a; color: #aaaacc; font-size: 0.85rem; padding: 14px 0; text-align: center; margin-top: 40px; }
+        .footer-social a { display: inline-block; margin: 0 6px; color: #aaaacc; transition: color 0.2s; }
         .footer-social a:hover { color: #667eea; }
         /* WA float button */
         .whatsapp-float { position: fixed; bottom: 25px; right: 25px; z-index: 9999; }
-        .whatsapp-float a { display: flex; align-items: center; justify-content: center; width: 60px; height: 60px; background: #25D366; border-radius: 50%; box-shadow: 0 4px 15px rgba(37,211,102,0.4); transition: transform 0.3s, box-shadow 0.3s; }
+        .whatsapp-float a { display: flex; align-items: center; justify-content: center; width: 56px; height: 56px; background: #25D366; border-radius: 50%; box-shadow: 0 4px 15px rgba(37,211,102,0.4); transition: transform 0.3s, box-shadow 0.3s; }
         .whatsapp-float a:hover { transform: scale(1.1); box-shadow: 0 6px 20px rgba(37,211,102,0.6); }
+        .whatsapp-float svg, .whatsapp-float i { width: 28px; height: 28px; font-size: 28px; color: #fff; }
     </style>
 </head>
 
@@ -614,7 +617,7 @@
     </div>
 
     <!-- hero section -->
-    <section class="hero">
+    <section class="hero section-dark">
         <div class="container">
             <h1>Unleash Innovation with GLUCO's IT, Electrical, and Electronic Engineering Solutions!</h1>
             <p>Transform your world with cutting-edge tech: from advanced IT services and reliable electrical systems to innovative electronic engineering. Empower your future today!</p>
@@ -622,7 +625,7 @@
     </section>
 
     <!-- How to Order Banner -->
-    <div class="how-to-order">
+    <div class="how-to-order section-darkest">
         <div class="container">
             <h2>How to Order — Simple &amp; Fast</h2>
             <div class="row">
@@ -651,7 +654,7 @@
     </div>
 
     <!-- filters -->
-    <div class="filters">
+    <div class="filters section-dark">
         <button class="filter-btn active" onclick="filterProducts('all')">All Products</button>
         <button class="filter-btn" onclick="filterProducts('solar')">Solar Systems</button>
         <button class="filter-btn" onclick="filterProducts('automation')">Automation</button>
@@ -664,7 +667,7 @@
     </div>
 
     <!-- products-->
-    <div id="catalogue" class="catalogue">
+    <div id="catalogue" class="catalogue section-light">
         <!-- SOLAR SYSTEMS -->
         <div class="product solar">
             <img src="images/5kvasystem.png" alt="1.5 kVA Solar System — GLUCO Africa" width="300" height="300" loading="lazy" decoding="async" style="aspect-ratio: 1; object-fit: cover;">
@@ -801,7 +804,7 @@
     <!-- end products-->
 
     <!-- Custom Quote Section -->
-    <div class="custom-quote">
+    <div class="custom-quote section-light">
         <div class="container">
             <h2>Need a Custom Quote?</h2>
             <p>Need a custom solar system size, bulk electronic components, or a tailored service package? Our engineers will build a solution to your exact specifications.</p>
@@ -824,8 +827,8 @@
                 <h3 id="total-amount">Total: $0.00</h3>
             </div>
             <!-- Payment / Checkout Options -->
-            <div style="background:#f4f6fb;border-radius:10px;padding:14px 16px;margin-bottom:6px;">
-                <p style="font-weight:700;color:#1a1a2e;font-size:0.88rem;margin-bottom:10px;text-align:left;">💳 Payment Options</p>
+            <div style="background:#1a2040;border-radius:10px;padding:14px 16px;margin-bottom:6px;border:1px solid #2d3564;">
+                <p style="font-weight:700;color:#e8eaf6;font-size:0.88rem;margin-bottom:10px;text-align:left;">💳 Payment Options</p>
                 <div style="display:flex;flex-direction:column;gap:8px;">
                     <button onclick="checkoutEcoCash()" style="background:linear-gradient(135deg,#e63946,#c1121f);color:#fff;border:none;border-radius:8px;padding:10px 14px;font-weight:700;font-size:0.82rem;cursor:pointer;transition:all 0.2s;display:flex;align-items:center;gap:8px;">📱 Pay via EcoCash / Innbucks</button>
                     <button onclick="checkoutBank()" style="background:linear-gradient(135deg,#0f132d,#1e2a6e);color:#fff;border:none;border-radius:8px;padding:10px 14px;font-weight:700;font-size:0.82rem;cursor:pointer;transition:all 0.2s;display:flex;align-items:center;gap:8px;">🏦 Bank Transfer Details</button>
@@ -854,7 +857,7 @@
                         <img src="images/glucoicon.png" width="48" height="48" alt="GLUCO" loading="lazy">
                         <span style="color:#fff;font-size:1.5rem;font-weight:700;margin-left:10px;">GLUCO</span>
                     </div>
-                    <p>Engineering &amp; Technology solutions serving clients across Africa. Solar, electrical, IT, IoT, and more — since 2022.</p>
+                    <p>Engineering &amp; Technology solutions serving clients across Africa. Established in 2016 for solar, electrical, IT, IoT, and more.</p>
                     <div class="footer-social mt-3">
                         <a href="https://www.facebook.com/profile.php?id=61570785736136" target="_blank" aria-label="Facebook"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
                         <a href="https://www.instagram.com/gluco.zw" target="_blank" aria-label="Instagram"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>

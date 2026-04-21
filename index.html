@@ -139,78 +139,112 @@
     <style>
         /* Cart Styles moved to css/style.css */
 
-        /* Custom Carousel Fade Transitions - Disabled for Sliding Effect
-        .carousel-fade .carousel-item {
+        /* Smooth fade to avoid blank flash between carousel slides */
+        #myCarousel.carousel-fade .carousel-inner,
+        #myCarousel.carousel-fade .carousel-item {
+            background-color: #0f132d;
+        }
+        #myCarousel.carousel-fade .carousel-item {
             opacity: 0;
-            transition: opacity 2s ease-in-out;
+            transition: opacity 0.75s ease-in-out;
+            transform: none;
         }
-        .carousel-fade .carousel-item.active {
+        #myCarousel.carousel-fade .carousel-item.active,
+        #myCarousel.carousel-fade .carousel-item-next.carousel-item-left,
+        #myCarousel.carousel-fade .carousel-item-prev.carousel-item-right,
+        #myCarousel.carousel-fade .carousel-item-next.carousel-item-start,
+        #myCarousel.carousel-fade .carousel-item-prev.carousel-item-end {
             opacity: 1;
         }
-        .carousel-fade .carousel-item-next.carousel-item-start,
-        .carousel-fade .carousel-item-prev.carousel-item-end {
-            opacity: 1;
+        #myCarousel.carousel-fade .active.carousel-item-left,
+        #myCarousel.carousel-fade .active.carousel-item-right,
+        #myCarousel.carousel-fade .active.carousel-item-start,
+        #myCarousel.carousel-fade .active.carousel-item-end {
+            opacity: 0;
         }
-        .carousel-fade .carousel-item-next,
-        .carousel-fade .carousel-item-prev {
-            transform: translateX(0);
-        } */
-
-        /* Slider Navigation Arrows */
-        .slider-nav-arrows {
-            margin-top: 30px;
-            display: flex;
-            align-items: center;
+        #myCarousel.carousel-fade .carousel-item-next,
+        #myCarousel.carousel-fade .carousel-item-prev {
+            transform: none;
         }
 
-        .slider-nav-btn {
-            width: 50px;
-            height: 50px;
-            background-color: #ffffff;
-            border: 2px solid #667eea;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #667eea;
-            font-size: 22px;
-            transition: all 0.3s ease;
-            text-decoration: none !important;
-            cursor: pointer;
-            margin-right: 20px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        /* Full-width Carousel Styles */
+        #myCarousel { height: 85vh; min-height: 480px; overflow: hidden; }
+        #myCarousel .carousel-inner { height: 100%; }
+        #myCarousel .carousel-item {
+            height: 85vh;
+            min-height: 480px;
+            background-size: cover !important;
+            background-position: center !important;
+            background-repeat: no-repeat !important;
+            position: relative;
         }
-
-        .slider-nav-btn:last-child {
-            margin-right: 0;
+        /* Center content via absolute positioning — not flex on carousel-item */
+        #myCarousel .carousel-item > .carousel-slide-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 88%;
+            max-width: 740px;
+            z-index: 2;
         }
-
-        .slider-nav-btn:hover {
-            background-color: #667eea;
-            border-color: #667eea;
+        .carousel-slide-content {
+            text-align: center;
+            padding: 0 24px;
+            animation: fadeInUp 0.9s ease-out 0.2s both;
+        }
+        .carousel-slide-content h1 {
+            font-size: clamp(2rem, 4vw, 3.4rem);
+            font-weight: 700;
             color: #fff;
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+            line-height: 1.2;
+            margin-bottom: 18px;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.6);
         }
-
-        .carousel-caption {
-            animation: fadeInUp 1.5s ease-out 0.5s both;
+        .carousel-slide-content p {
+            font-size: clamp(1rem, 2vw, 1.2rem);
+            color: rgba(255,255,255,0.92);
+            margin-bottom: 30px;
+            line-height: 1.7;
+            text-shadow: 0 1px 6px rgba(0,0,0,0.5);
+        }
+        .carousel-btn-primary {
+            display: inline-block;
+            padding: 14px 32px;
+            background: #0066cc;
+            color: #fff !important;
+            border-radius: 30px;
+            font-weight: 700;
+            margin: 6px 8px;
+            text-decoration: none !important;
+            transition: all 0.3s;
+            border: 2px solid #0066cc;
+        }
+        .carousel-btn-primary:hover {
+            background: #0052a3;
+            border-color: #0052a3;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,102,204,0.4);
+        }
+        .carousel-btn-secondary {
+            display: inline-block;
+            padding: 14px 32px;
+            background: transparent;
+            color: #fff !important;
+            border: 2px solid rgba(255,255,255,0.85);
+            border-radius: 30px;
+            font-weight: 700;
+            margin: 6px 8px;
+            text-decoration: none !important;
+            transition: all 0.3s;
+        }
+        .carousel-btn-secondary:hover {
+            background: rgba(255,255,255,0.15);
+            transform: translateY(-3px);
         }
         @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(50px) scale(0.95);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0) scale(1);
-            }
-        }
-        .carousel-item img {
-            transition: transform 2s ease-in-out;
-        }
-        .carousel-item.active img {
-            transform: scale(1.05);
+            from { opacity: 0; transform: translateY(40px); }
+            to   { opacity: 1; transform: translateY(0); }
         }
         .hamburger {
             background: none;
@@ -293,29 +327,31 @@
         .stat-label { font-size: 0.8em; color: #ccc; margin-top: 4px; }
 
         /* Project Cards */
-        .project-cards { background: #f4f6fb; padding: 60px 0; }
-        .project-cards h2 { color: #1a1a2e; font-weight: 800; }
-        .project-cards > .container > .row:first-child p { color: #666; }
+        .project-cards { background: linear-gradient(135deg, rgba(19,26,56,0.97) 0%, rgba(15,19,45,0.98) 100%), url('images/commercialsolar.png') center/cover no-repeat; padding: 70px 0; }
+        .project-cards h2 { color: #ffffff !important; font-weight: 800; }
+        .project-cards > .container > .row:first-child p { color: #cccccc !important; }
         .project-badge { position:absolute; top:10px; left:10px; padding:4px 10px; border-radius:20px; font-size:0.75em; font-weight:600; color:#fff; z-index:2; }
         .solar-badge { background:#f39c12; }
         .transformer-badge { background:#e74c3c; }
         .iot-badge { background:#27ae60; }
-        .project-card-body { padding: 15px; background: #fff; color: #222; }
-        .project-card-body h3 { color: #1a1a2e; font-size: 1.05rem; font-weight: 700; margin-bottom: 6px; }
-        .project-card-body p { color: #555; font-size: 0.88rem; margin-bottom: 6px; }
-        .project-metric { color: #667eea; font-weight: 600; font-size: 0.9em; }
-        .btn-project { display:inline-block; padding:8px 18px; background:#667eea; color:#fff; border-radius:20px; font-size:0.85em; margin-top:8px; text-decoration:none; transition:all 0.3s; }
-        .btn-project:hover { background:#5a67d8; color:#fff; transform:translateY(-2px); }
+        .project-card { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12); border-radius: 10px; overflow: hidden; transition: all 0.25s ease; }
+        .project-card:hover { background: rgba(255,255,255,0.13); border-color: rgba(255,255,255,0.22); transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,0.35); }
+        .project-card-body { padding: 15px; background: transparent; }
+        .project-card-body h3 { color: #ffffff !important; font-size: 1.05rem; font-weight: 700; margin-bottom: 6px; }
+        .project-card-body p { color: #cccccc !important; font-size: 0.88rem; margin-bottom: 6px; }
+        .project-metric { color: #667eea !important; font-weight: 600; font-size: 0.9em; }
+        .btn-project { display:inline-block; padding:8px 18px; background:#0066cc; color:#fff; border-radius:20px; font-size:0.85em; margin-top:8px; text-decoration:none; transition:all 0.3s; }
+        .btn-project:hover { background:#0052a3; color:#fff; transform:translateY(-2px); }
 
         /* Why GLUCO icons */
         .why-icon { font-size: 1.8em; margin-bottom: 8px; color: #667eea; }
-        .why-card { background: #fff; border-radius: 12px; padding: 22px 18px; box-shadow: 0 2px 12px rgba(0,0,0,0.07); transition: transform 0.3s, box-shadow 0.3s; }
-        .why-card:hover { transform: translateY(-4px); box-shadow: 0 8px 20px rgba(0,0,0,0.15); }
-        .why-gluco { background: linear-gradient(rgba(248,249,251,0.96), rgba(244,246,251,0.96)), url('images/residentialroofsolar.jpg') center/cover no-repeat; padding: 60px 0; }
-        .why-gluco h2 { color: #0f132d !important; font-weight: 700; }
-        .why-gluco > .container > .row > .col-lg-4 > p { color: #333 !important; }
-        .why-card h3 { color: #1a1a2e !important; font-weight: 600; font-size: 1rem; }
-        .why-card p { color: #444 !important; font-size: 0.9rem; }
+        .why-card { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12); border-radius: 12px; padding: 22px 18px; transition: all 0.25s ease; }
+        .why-card:hover { background: rgba(255,255,255,0.13); border-color: rgba(255,255,255,0.22); transform: translateY(-4px); box-shadow: 0 8px 24px rgba(0,0,0,0.35); }
+        .why-gluco { background: linear-gradient(135deg, rgba(15,19,45,0.95) 0%, rgba(19,26,56,0.98) 100%), url('images/residentialroofsolar.jpg') center/cover no-repeat; padding: 70px 0; }
+        .why-gluco h2 { color: #ffffff !important; font-weight: 700; }
+        .why-gluco > .container > .row > .col-lg-4 > p { color: #cccccc !important; }
+        .why-card h3 { color: #ffffff !important; font-weight: 600; font-size: 1rem; }
+        .why-card p { color: #cccccc !important; font-size: 0.9rem; }
 
         /* Testimonials */
         .stars { color: #f39c12; font-size: 1.1em; margin-bottom: 5px; }
@@ -329,52 +365,55 @@
 
         /* Trust logos */
         .logo-card { text-align:center; padding:20px 10px; }
-        .industry-icon { font-size: 2.5em; margin-bottom: 8px; }
-        .trust-strip { background: linear-gradient(rgba(15,19,45,0.87), rgba(15,19,45,0.87)), url('images/288kvasubmaintenance.jpg') center/cover no-repeat; padding: 50px 0; }
-        .trust-strip h2, .trust-strip p { color: #fff !important; }
-        .trust-strip .logo-card { color: #fff; }
+        .industry-icon { font-size: 2.5em; margin-bottom: 8px; color: #667eea; }
+        .trust-strip { background: linear-gradient(135deg, rgba(8,11,28,0.96) 0%, rgba(15,19,45,0.98) 100%), url('images/288kvasubmaintenance.jpg') center/cover no-repeat; padding: 60px 0; }
+        .trust-strip h2 { color: #fff !important; }
+        .trust-strip p { color: #cccccc !important; }
+        .trust-strip .logo-card { color: #cccccc; }
+        .trust-strip .logo-card span { color: #cccccc; }
 
         /* CTA Banner */
-        .cta-banner { background: linear-gradient(135deg, rgba(15,19,45,0.82) 0%, rgba(102,126,234,0.75) 100%), url('images/solarinstall.jpg') center/cover no-repeat; padding: 70px 0; }
-        .cta-banner h2 { color: #fff; font-size: 2em; font-weight: 700; margin-bottom: 10px; }
-        .cta-banner p { color: rgba(255,255,255,0.9); font-size: 1.05em; margin-bottom: 0; }
-        .cta-btn-primary { display:inline-block; padding:14px 28px; background:#fff; color:#667eea; border-radius:30px; font-weight:700; margin:8px 5px; text-decoration:none; transition:all 0.3s; }
-        .cta-btn-primary:hover { background:#f0f0f0; color:#5a67d8; }
-        .cta-btn-whatsapp { display:inline-block; padding:14px 28px; background:#25D366; color:#fff; border-radius:30px; font-weight:700; margin:8px 5px; text-decoration:none; transition:all 0.3s; }
-        .cta-btn-whatsapp:hover { background:#1ebe57; color:#fff; }
+        .cta-banner { background: linear-gradient(135deg, #0052a3 0%, #0066cc 60%, #0047b8 100%); padding: 80px 0; }
+        .cta-banner h2 { color: #fff !important; font-size: 2em; font-weight: 700; margin-bottom: 10px; }
+        .cta-banner p { color: rgba(255,255,255,0.9) !important; font-size: 1.05em; margin-bottom: 0; }
+        .cta-btn-primary { display:inline-block; padding:14px 28px; background:#fff; color:#0066cc !important; border-radius:30px; font-weight:700; margin:8px 5px; text-decoration:none; transition:all 0.3s; }
+        .cta-btn-primary:hover { background:#e8f0fe; color:#0052a3 !important; transform:translateY(-2px); }
+        .cta-btn-whatsapp { display:inline-block; padding:14px 28px; background:#25D366; color:#fff !important; border-radius:30px; font-weight:700; margin:8px 5px; text-decoration:none; transition:all 0.3s; }
+        .cta-btn-whatsapp:hover { background:#1ebe57; color:#fff !important; transform:translateY(-2px); }
 
         /* Learn More link */
         .learn-more-link { display:inline-block; margin-top:10px; color:#667eea; font-weight:600; font-size:0.9em; text-decoration:none; }
         .learn-more-link:hover { color:#5a67d8; }
 
         /* Footer */
-        .footer-main { background: #0f132d; color: #ccc; padding: 0; margin-top: 0; }
+        .footer-main { background: #0d1b2a; color: #aaaacc; padding: 0; margin-top: 0; border-top: 1px solid #1a2a3a; }
         .footer-top { padding: 50px 0 30px; }
         .footer-col { margin-bottom: 30px; }
         .footer-logo { display:flex; align-items:center; gap:10px; margin-bottom:12px; }
         .footer-brand { font-size:1.4em; font-weight:700; color:#667eea; }
-        .footer-desc { font-size:0.85em; color:#aaa; line-height:1.7; margin-bottom:15px; }
+        .footer-desc { font-size:0.85em; color:#aaaacc; line-height:1.7; margin-bottom:15px; }
         .footer-social { display:flex; gap:12px; flex-wrap:wrap; }
-        .footer-social a { color:#aaa; transition:color 0.3s; }
+        .footer-social a { color:#aaaacc; transition:color 0.3s; }
         .footer-social a:hover { color:#667eea; }
         .footer-col h4 { color:#fff; font-size:1em; font-weight:700; margin-bottom:15px; padding-bottom:8px; border-bottom:2px solid #667eea; display:inline-block; }
         .footer-links { list-style:none; padding:0; margin:0; }
         .footer-links li { margin-bottom:8px; }
-        .footer-links a { color:#aaa; font-size:0.9em; transition:color 0.3s; }
+        .footer-links a { color:#aaaacc; font-size:0.9em; transition:color 0.3s; }
         .footer-links a:hover { color:#667eea; }
         .footer-contact-list { list-style:none; padding:0; margin:0; }
-        .footer-contact-list li { margin-bottom:10px; color:#aaa; font-size:0.9em; }
-        .footer-contact-list a { color:#aaa; transition:color 0.3s; }
+        .footer-contact-list li { margin-bottom:10px; color:#aaaacc; font-size:0.9em; }
+        .footer-contact-list a { color:#aaaacc; transition:color 0.3s; }
         .footer-contact-list a:hover { color:#667eea; }
         .footer-wa-btn { display:inline-block; padding:10px 18px; background:#25D366; color:#fff; border-radius:20px; font-size:0.9em; text-decoration:none; transition:all 0.3s; }
         .footer-wa-btn:hover { background:#1ebe57; color:#fff; }
-        .footer-bottom { background:#0a0d1e; padding:15px 0; text-align:center; }
-        .footer-bottom p { color:#888; font-size:0.85em; margin:0; }
+        .footer-bottom { background:#070f1a; padding:15px 0; text-align:center; }
+        .footer-bottom p { color:#aaaacc; font-size:0.85em; margin:0; }
 
         /* Floating WhatsApp */
-        .whatsapp-float { position:fixed; bottom:25px; right:25px; width:60px; height:60px; background:#25D366; border-radius:50%; display:flex; align-items:center; justify-content:center; box-shadow:0 4px 15px rgba(37,211,102,0.4); z-index:9999; text-decoration:none; transition:all 0.3s; }
+        .whatsapp-float { position:fixed; bottom:25px; right:25px; width:56px; height:56px; background:#25D366; border-radius:50%; display:flex; align-items:center; justify-content:center; box-shadow:0 4px 15px rgba(37,211,102,0.4); z-index:9999; text-decoration:none; transition:all 0.3s; }
         .whatsapp-float:hover { background:#1ebe57; transform:scale(1.1); box-shadow:0 6px 20px rgba(37,211,102,0.5); }
-        .wa-tooltip { display:none; position:absolute; right:70px; background:#333; color:#fff; padding:6px 10px; border-radius:6px; font-size:0.8em; white-space:nowrap; }
+        .whatsapp-float svg, .whatsapp-float i { width:28px; height:28px; font-size:28px; color:#fff; }
+        .wa-tooltip { display:none; position:absolute; right:66px; background:#333; color:#fff; padding:6px 10px; border-radius:6px; font-size:0.8em; white-space:nowrap; }
         .whatsapp-float:hover .wa-tooltip { display:block; }
 
         /* Scroll shadow on header */
@@ -454,7 +493,7 @@
             "reviewCount": "127"
         },
         "priceRange": "$$",
-        "foundingDate": "2022",
+        "foundingDate": "2016",
         "slogan": "Engineering Africa's Future",
         "hasOfferCatalog": {
             "@type": "OfferCatalog",
@@ -525,7 +564,7 @@
             "@type": "ImageObject",
             "url": "https://gluco.co.zw/images/solarplant.png"
         },
-        "datePublished": "2022-01-01",
+        "datePublished": "2016-01-01",
         "dateModified": "2025-04-18"
     }
     </script>
@@ -593,7 +632,7 @@
                 "@type": "Service",
                 "name": "Electrical Services",
                 "serviceType": "Electrical installations and maintenance",
-                "description": "HV/LV substation maintenance, transformer servicing, and electrical installations compliant with ZESA and ZETDC standards.",
+                "description": "HV/LV substation maintenance, transformer servicing, and electrical installations aligned with international electrical standards and best practices.",
                 "provider": {
                     "@id": "https://gluco.co.zw/#localbusiness"
                 },
@@ -701,156 +740,71 @@
 
     <main id="main-content">
     <!-- start slider section -->
-    <div id="top_section" class=" banner_main">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-12">
-                    <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="5000">
-                        <ol class="carousel-indicators">
-                            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                            <li data-target="#myCarousel" data-slide-to="1"></li>
-                            <li data-target="#myCarousel" data-slide-to="2"></li>
-                            <li data-target="#myCarousel" data-slide-to="3"></li>
-                        </ol>
-                        <div class="carousel-inner">
-                            <!-- Slide 1 -->
-                            <div class="carousel-item active">
-                                <div class="container-fluid">
-                                    <div class="carousel-caption relative">
-                                        <div class="row d_flex">
-                                            <div class="col-md-6">
-                                                <div class="con_img">
-                                                    <figure><img class="img_responsive" src="images/solarplant.png" alt="GLUCO solar installation residential rooftop system Africa" width="600" height="600" loading="eager" fetchpriority="high" decoding="async" style="aspect-ratio: 1; object-fit: cover; border-radius: 15px;" /></figure>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <div class="bluid">
-                                                    <h1>Solar Systems for Africa</h1>
-                                                    <p>Professional solar design and installation from 1.5kVA to 120kVA. Cut your electricity costs by up to 45% with GLUCO's certified solar engineers.</p>
-                                                    <a class="read_more" href="page/services.html">Our Services </a><a class="read_more" href="page/contact.html">Get A Quote </a>
-                                                    <div class="slider-nav-arrows">
-                                                        <a class="slider-nav-btn prev-btn" href="#myCarousel" role="button" data-slide="prev">
-                                                            <i class="fa fa-angle-left" aria-hidden="true"></i>
-                                                            <span class="sr-only">Previous</span>
-                                                        </a>
-                                                        <a class="slider-nav-btn next-btn" href="#myCarousel" role="button" data-slide="next">
-                                                            <i class="fa fa-angle-right" aria-hidden="true"></i>
-                                                            <span class="sr-only">Next</span>
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Slide 2 -->
-                            <div class="carousel-item">
-                                <div class="container-fluid">
-                                    <div class="carousel-caption relative">
-                                        <div class="row d_flex">
-                                            <div class="col-md-6">
-                                                <div class="con_img">
-                                                    <figure><img class="img_responsive" src="images/88kvatransformer.jpg" alt="GLUCO transformer maintenance substation electrical services Africa" width="600" height="600" loading="lazy" decoding="async" style="aspect-ratio: 1; object-fit: cover; border-radius: 15px;" /></figure>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <div class="bluid">
-                                                    <h1>Electrical Services &amp; Transformer Maintenance</h1>
-                                                    <p>HV/LV substation maintenance, transformer servicing, and electrical installations. Compliant with ZESA and ZETDC standards.</p>
-                                                    <a class="read_more" href="page/services.html">Our Services </a><a class="read_more" href="page/contact.html">Get A Quote </a>
-                                                    <div class="slider-nav-arrows">
-                                                        <a class="slider-nav-btn prev-btn" href="#myCarousel" role="button" data-slide="prev">
-                                                            <i class="fa fa-angle-left" aria-hidden="true"></i>
-                                                            <span class="sr-only">Previous</span>
-                                                        </a>
-                                                        <a class="slider-nav-btn next-btn" href="#myCarousel" role="button" data-slide="next">
-                                                            <i class="fa fa-angle-right" aria-hidden="true"></i>
-                                                            <span class="sr-only">Next</span>
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Slide 3 -->
-                            <div class="carousel-item">
-                                <div class="container-fluid">
-                                    <div class="carousel-caption relative">
-                                        <div class="row d_flex">
-                                            <div class="col-md-6">
-                                                <div class="con_img">
-                                                    <figure><img class="img_responsive" src="images/itconsultancy.png" alt="GLUCO IT consultancy network security Africa" width="600" height="600" loading="lazy" decoding="async" style="aspect-ratio: 1; object-fit: cover; border-radius: 15px;" /></figure>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <div class="bluid">
-                                                    <h1>IT Consultancy &amp; Network Security</h1>
-                                                    <p>Web development, network security, Microsoft 365, and IoT automation solutions. Expert IT support across Africa.</p>
-                                                    <a class="read_more" href="page/services.html">Our Services </a><a class="read_more" href="page/contact.html">Get A Quote </a>
-                                                    <div class="slider-nav-arrows">
-                                                        <a class="slider-nav-btn prev-btn" href="#myCarousel" role="button" data-slide="prev">
-                                                            <i class="fa fa-angle-left" aria-hidden="true"></i>
-                                                            <span class="sr-only">Previous</span>
-                                                        </a>
-                                                        <a class="slider-nav-btn next-btn" href="#myCarousel" role="button" data-slide="next">
-                                                            <i class="fa fa-angle-right" aria-hidden="true"></i>
-                                                            <span class="sr-only">Next</span>
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Slide 4 -->
-                            <div class="carousel-item">
-                                <div class="container-fluid">
-                                    <div class="carousel-caption relative">
-                                        <div class="row d_flex">
-                                            <div class="col-md-6">
-                                                <div class="con_img">
-                                                    <figure><img class="img_responsive" src="images/industrialautomation.png" alt="GLUCO robotics IoT automation industrial Africa" width="600" height="600" loading="lazy" decoding="async" style="aspect-ratio: 1; object-fit: cover; border-radius: 15px;" /></figure>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <div class="bluid">
-                                                    <h1>Robotics &amp; IoT Automation</h1>
-                                                    <p>Smart agriculture, industrial automation, PLC programming, and IoT integration. Transform your operations with intelligent systems.</p>
-                                                    <a class="read_more" href="page/services.html">Our Services </a><a class="read_more" href="page/contact.html">Get A Quote </a>
-                                                    <div class="slider-nav-arrows">
-                                                        <a class="slider-nav-btn prev-btn" href="#myCarousel" role="button" data-slide="prev">
-                                                            <i class="fa fa-angle-left" aria-hidden="true"></i>
-                                                            <span class="sr-only">Previous</span>
-                                                        </a>
-                                                        <a class="slider-nav-btn next-btn" href="#myCarousel" role="button" data-slide="next">
-                                                            <i class="fa fa-angle-right" aria-hidden="true"></i>
-                                                            <span class="sr-only">Next</span>
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+    <div id="top_section" class="banner_main">
+        <div id="myCarousel" class="carousel slide carousel-fade" data-ride="carousel" data-interval="5000">
+            <ol class="carousel-indicators" style="display:flex;">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+                <li data-target="#myCarousel" data-slide-to="3"></li>
+            </ol>
+            <div class="carousel-inner">
+                <!-- Slide 1: Solar -->
+                <div class="carousel-item active" style="background: linear-gradient(rgba(0,0,0,0.52), rgba(0,0,0,0.52)), url('images/solarplant.png') center/cover no-repeat;">
+                    <div class="carousel-slide-content">
+                        <h1>Solar Systems for Africa</h1>
+                        <p>Professional solar design and installation from 1.5kVA to 120kVA. Cut your electricity costs by up to 45% with GLUCO's certified solar engineers.</p>
+                        <a class="carousel-btn-primary" href="page/services.html">Our Services</a>
+                        <a class="carousel-btn-secondary" href="page/contact.html">Get A Quote</a>
+                    </div>
+                </div>
+                <!-- Slide 2: Electrical -->
+                <div class="carousel-item" style="background: linear-gradient(rgba(0,0,0,0.52), rgba(0,0,0,0.52)), url('images/electricalsub.png') center/cover no-repeat;">
+                    <div class="carousel-slide-content">
+                        <h1>Electrical Services &amp; Transformer Maintenance</h1>
+                        <p>HV/LV substation maintenance, transformer servicing, and electrical installations. Aligned with international electrical standards and best practices.</p>
+                        <a class="carousel-btn-primary" href="page/services.html">Our Services</a>
+                        <a class="carousel-btn-secondary" href="page/contact.html">Get A Quote</a>
+                    </div>
+                </div>
+                <!-- Slide 3: IT -->
+                <div class="carousel-item" style="background: linear-gradient(rgba(0,0,0,0.52), rgba(0,0,0,0.52)), url('images/itconsultancyzimbabweimage.png') center/cover no-repeat;">
+                    <div class="carousel-slide-content">
+                        <h1>IT Consultancy &amp; Network Security</h1>
+                        <p>Web development, network security, Microsoft 365, and IoT automation solutions. Expert IT support across Africa.</p>
+                        <a class="carousel-btn-primary" href="page/services.html">Our Services</a>
+                        <a class="carousel-btn-secondary" href="page/contact.html">Get A Quote</a>
+                    </div>
+                </div>
+                <!-- Slide 4: Robotics -->
+                <div class="carousel-item" style="background: linear-gradient(rgba(0,0,0,0.52), rgba(0,0,0,0.52)), url('images/roboticandautomation.jpg') center/cover no-repeat;">
+                    <div class="carousel-slide-content">
+                        <h1>Robotics &amp; IoT Automation</h1>
+                        <p>Smart agriculture, industrial automation, PLC programming, and IoT integration. Transform your operations with intelligent systems.</p>
+                        <a class="carousel-btn-primary" href="page/services.html">Our Services</a>
+                        <a class="carousel-btn-secondary" href="page/contact.html">Get A Quote</a>
                     </div>
                 </div>
             </div>
+            <!-- Controls -->
+            <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
         </div>
     </div>
     <!-- end slider section -->
 
     <!-- stats bar -->
-    <section class="stats-bar">
+    <section class="stats-bar section-darkest">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-6 col-md-3 stat-item">
-                    <div class="stat-number">Est. 2022</div>
+                    <div class="stat-number">Est. 2016</div>
                     <div class="stat-label">Founded</div>
                 </div>
                 <div class="col-6 col-md-3 stat-item">
@@ -858,7 +812,7 @@
                     <div class="stat-label">Serving Africa</div>
                 </div>
                 <div class="col-6 col-md-3 stat-item">
-                    <div class="stat-number">Solar · Elec · IT · IoT</div>
+                    <div class="stat-number">Solar · Electrical · Electronics · IT · IoT</div>
                     <div class="stat-label">Core Service Areas</div>
                 </div>
                 <div class="col-6 col-md-3 stat-item">
@@ -870,7 +824,7 @@
     </section>
 
     <!-- services -->
-    <div class="wallet">
+    <div class="wallet section-light" style="background: linear-gradient(rgba(15,19,45,0.82), rgba(15,19,45,0.82)), url('images/industrialrooftopsolar.jpg') center/cover no-repeat; padding-top:40px; padding-bottom:40px;">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-3 col-sm-6">
@@ -909,7 +863,7 @@
         </div>
     </div>
 
-    <section class="why-gluco">
+    <section class="why-gluco section-dark">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-4">
@@ -992,7 +946,7 @@
         </div>
     </section>
 
-    <section class="trust-strip">
+    <section class="trust-strip section-light">
         <div class="container">
             <div class="row">
                 <div class="col-12 text-center">
@@ -1041,7 +995,7 @@
         </div>
     </section>
 
-    <section class="project-cards">
+    <section class="project-cards section-dark">
         <div class="container">
             <div class="row">
                 <div class="col-12 text-center">
@@ -1125,8 +1079,8 @@
             <div class="cart-total">
                 <h3 id="total-amount">Total: $0.00</h3>
             </div>
-            <div style="background:#f4f6fb;border-radius:10px;padding:14px 16px;margin-bottom:6px;">
-                <p style="font-weight:700;color:#1a1a2e;font-size:0.88rem;margin-bottom:10px;text-align:left;">💳 Payment Options</p>
+            <div style="background:#1a2040;border-radius:10px;padding:14px 16px;margin-bottom:6px;border:1px solid #2d3564;">
+                <p style="font-weight:700;color:#e8eaf6;font-size:0.88rem;margin-bottom:10px;text-align:left;">💳 Payment Options</p>
                 <div style="display:flex;flex-direction:column;gap:8px;">
                     <button onclick="checkoutEcoCash()" style="background:linear-gradient(135deg,#e63946,#c1121f);color:#fff;border:none;border-radius:8px;padding:10px 14px;font-weight:700;font-size:0.82rem;cursor:pointer;transition:all 0.2s;display:flex;align-items:center;gap:8px;">📱 Pay via EcoCash / Innbucks</button>
                     <button onclick="checkoutBank()" style="background:linear-gradient(135deg,#0f132d,#1e2a6e);color:#fff;border:none;border-radius:8px;padding:10px 14px;font-weight:700;font-size:0.82rem;cursor:pointer;transition:all 0.2s;display:flex;align-items:center;gap:8px;">🏦 Bank Transfer Details</button>
@@ -1153,7 +1107,7 @@
                             <img src="images/glucoicon.png" alt="GLUCO Logo" width="50" height="50">
                             <span class="footer-brand">GLUCO</span>
                         </div>
-                        <p class="footer-desc">Engineering a brighter future through solar energy, electrical services, IT consultancy, and IoT automation. Serving clients across Africa since 2022.</p>
+                        <p class="footer-desc">Engineering a brighter future through solar energy, electrical services, IT consultancy, and IoT automation. Established in 2016 and serving clients across Africa.</p>
                         <div class="footer-social">
                             <a href="https://www.facebook.com/glucozimbabwe" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
                             <a href="https://www.instagram.com/gluco.zw" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
