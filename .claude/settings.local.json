@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(grep -n \"span>\\\\${item.quantity}\" page/about.html page/contact.html)"
+    ]
+  }
+}
