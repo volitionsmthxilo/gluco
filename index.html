@@ -191,7 +191,6 @@
         .carousel-slide-content {
             text-align: center;
             padding: 0 24px;
-            animation: fadeInUp 0.9s ease-out 0.2s both;
         }
         .carousel-slide-content h1 {
             font-size: clamp(2rem, 4vw, 3.4rem);
@@ -241,10 +240,6 @@
         .carousel-btn-secondary:hover {
             background: rgba(255,255,255,0.15);
             transform: translateY(-3px);
-        }
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(40px); }
-            to   { opacity: 1; transform: translateY(0); }
         }
         .hamburger {
             background: none;
@@ -752,8 +747,8 @@
                 <!-- Slide 1: Solar -->
                 <div class="carousel-item active" style="background: linear-gradient(rgba(0,0,0,0.52), rgba(0,0,0,0.52)), url('images/solarplant.png') center/cover no-repeat;">
                     <div class="carousel-slide-content">
-                        <h1>Solar Systems for Africa</h1>
-                        <p>Professional solar design and installation from 1.5kVA to 120kVA. Cut your electricity costs by up to 45% with GLUCO's certified solar engineers.</p>
+                        <h1>Solar Systems &amp; Renewable Energy Solutions for Africa</h1>
+                        <p>Professional solar design and installation from 3kVA Systems to Solar Plants. Cut your electricity costs by up to 45% with GLUCO's certified engineers.</p>
                         <a class="carousel-btn-primary" href="page/services.html">Our Services</a>
                         <a class="carousel-btn-secondary" href="page/contact.html">Get A Quote</a>
                     </div>
@@ -761,7 +756,7 @@
                 <!-- Slide 2: Electrical -->
                 <div class="carousel-item" style="background: linear-gradient(rgba(0,0,0,0.52), rgba(0,0,0,0.52)), url('images/electricalsub.png') center/cover no-repeat;">
                     <div class="carousel-slide-content">
-                        <h1>Electrical Services &amp; Transformer Maintenance</h1>
+                        <h1>Electrical Engineering Services &amp; Transformer Maintenance</h1>
                         <p>HV/LV substation maintenance, transformer servicing, and electrical installations. Aligned with international electrical standards and best practices.</p>
                         <a class="carousel-btn-primary" href="page/services.html">Our Services</a>
                         <a class="carousel-btn-secondary" href="page/contact.html">Get A Quote</a>
@@ -771,7 +766,7 @@
                 <div class="carousel-item" style="background: linear-gradient(rgba(0,0,0,0.52), rgba(0,0,0,0.52)), url('images/itconsultancyzimbabweimage.png') center/cover no-repeat;">
                     <div class="carousel-slide-content">
                         <h1>IT Consultancy &amp; Network Security</h1>
-                        <p>Web development, network security, Microsoft 365, and IoT automation solutions. Expert IT support across Africa.</p>
+                        <p>Data Backup and Replication, Disaster Recovery, Web development, Network and Systems Security, Microsoft 365 Administration, and IoT automation solutions. Expert IT support across Africa.</p>
                         <a class="carousel-btn-primary" href="page/services.html">Our Services</a>
                         <a class="carousel-btn-secondary" href="page/contact.html">Get A Quote</a>
                     </div>
@@ -779,7 +774,7 @@
                 <!-- Slide 4: Robotics -->
                 <div class="carousel-item" style="background: linear-gradient(rgba(0,0,0,0.52), rgba(0,0,0,0.52)), url('images/roboticandautomation.jpg') center/cover no-repeat;">
                     <div class="carousel-slide-content">
-                        <h1>Robotics &amp; IoT Automation</h1>
+                        <h1>Robotics, IoT &amp; Industrial Automation</h1>
                         <p>Smart agriculture, industrial automation, PLC programming, and IoT integration. Transform your operations with intelligent systems.</p>
                         <a class="carousel-btn-primary" href="page/services.html">Our Services</a>
                         <a class="carousel-btn-secondary" href="page/contact.html">Get A Quote</a>
@@ -1079,19 +1074,19 @@
             <div class="cart-total">
                 <h3 id="total-amount">Total: $0.00</h3>
             </div>
-            <div style="background:#1a2040;border-radius:10px;padding:14px 16px;margin-bottom:6px;border:1px solid #2d3564;">
-                <p style="font-weight:700;color:#e8eaf6;font-size:0.88rem;margin-bottom:10px;text-align:left;">💳 Payment Options</p>
-                <div style="display:flex;flex-direction:column;gap:8px;">
-                    <button onclick="checkoutEcoCash()" style="background:linear-gradient(135deg,#e63946,#c1121f);color:#fff;border:none;border-radius:8px;padding:10px 14px;font-weight:700;font-size:0.82rem;cursor:pointer;transition:all 0.2s;display:flex;align-items:center;gap:8px;">📱 Pay via EcoCash / Innbucks</button>
-                    <button onclick="checkoutBank()" style="background:linear-gradient(135deg,#0f132d,#1e2a6e);color:#fff;border:none;border-radius:8px;padding:10px 14px;font-weight:700;font-size:0.82rem;cursor:pointer;transition:all 0.2s;display:flex;align-items:center;gap:8px;">🏦 Bank Transfer Details</button>
+            <div style="background:#1a2040;border-radius:10px;padding:12px 14px;margin-bottom:0;border:1px solid #2d3564;">
+                <p style="font-weight:700;color:#e8eaf6;font-size:0.86rem;margin:0 0 10px;text-align:left;">Payment Options</p>
+                <div class="cart-payment-row">
+                    <button class="pay-ecocash" onclick="checkoutEcoCash()" type="button" aria-label="Pay via EcoCash">EcoCash</button>
+                    <button class="pay-innbucks" onclick="checkoutInnbucks()" type="button" aria-label="Pay via InnBucks">InnBucks</button>
+                    <button class="pay-transfer" onclick="checkoutBank()" type="button" aria-label="Bank transfer details">Transfer</button>
+                </div>
+                <div class="cart-icon-row" style="margin-top:10px;">
+                    <button class="icon-email" onclick="sendCartByEmail()" type="button" aria-label="Email order">Email</button>
+                    <button class="icon-whatsapp" onclick="sendCartByWhatsApp()" type="button" aria-label="Send order on WhatsApp">WhatsApp</button>
+                    <button class="icon-close" onclick="toggleCart()" type="button" aria-label="Close shopping bag">Close</button>
                 </div>
             </div>
-            <p style="text-align:center;color:#999;font-size:0.8rem;margin:0 0 8px;">Or send your cart via:</p>
-            <div class="contact-buttons-row">
-                <button class="email-btn" onclick="sendCartByEmail()">📧 Email Order</button>
-                <button class="whatsapp-btn" onclick="sendCartByWhatsApp()">💬 WhatsApp</button>
-            </div>
-            <button class="close-btn" onclick="toggleCart()">✕ Close</button>
         </div>
       </div>
 
@@ -1321,7 +1316,13 @@
 
           function checkoutEcoCash() {
               if (cart.length === 0) { alert('Your cart is empty.'); return; }
-              const msg = encodeURIComponent('Hi GLUCO, I would like to pay via EcoCash / Innbucks for my order:\n\n' + buildCartSummary() + '\n\nPlease send your EcoCash / Innbucks number and confirm the order.');
+              const msg = encodeURIComponent('Hi GLUCO, I would like to pay via EcoCash for my order:\n\n' + buildCartSummary() + '\n\nPlease send your EcoCash number and confirm the order.');
+              window.open('https://wa.me/263784245082?text=' + msg, '_blank');
+          }
+
+          function checkoutInnbucks() {
+              if (cart.length === 0) { alert('Your cart is empty.'); return; }
+              const msg = encodeURIComponent('Hi GLUCO, I would like to pay via InnBucks for my order:\n\n' + buildCartSummary() + '\n\nPlease send your InnBucks number and confirm the order.');
               window.open('https://wa.me/263784245082?text=' + msg, '_blank');
           }
 

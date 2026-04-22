@@ -284,7 +284,9 @@ File Name: responsive.css
         align-items: center !important;
         justify-content: center !important;
         border-radius: 50% !important;
-        background: #f0f0f0 !important;
+        background: #e9eef6 !important;
+        border: 1px solid #d5dcea !important;
+        color: #0f132d !important;
     }
     /* Compact remove button for mobile: Circle with X */
     .cart-item-controls .remove-btn {
@@ -321,6 +323,7 @@ File Name: responsive.css
     .cart-total h3 {
         font-size: 1.5em !important;
         font-weight: 700 !important;
+        color: #0f132d !important;
     }
     .cart-actions {
         margin-top: 25px !important;
@@ -553,13 +556,262 @@ File Name: responsive.css
         font-size: 16px;
         line-height: 1.6;
     }
+    body.main-layout {
+        padding-top: 84px !important;
+    }
+    header {
+        padding: 12px 0px !important;
+    }
+    .logo img {
+        width: 48px !important;
+        height: 48px !important;
+    }
+    .logo-text {
+        font-size: 1.15rem !important;
+    }
+    .cart-icon svg {
+        fill: #ffffff !important;
+    }
+    .hamburger span {
+        background: #ffffff !important;
+    }
+    .mobile-nav {
+        background: linear-gradient(180deg, rgba(15,19,45,0.99) 0%, rgba(8,11,28,0.99) 100%) !important;
+        border-top: 1px solid rgba(255,255,255,0.08);
+    }
+    .mobile-nav a {
+        color: #ffffff !important;
+    }
     .container-fluid {
         padding-left: 15px;
         padding-right: 15px;
     }
+    .banner_main {
+        padding-top: 0 !important;
+        padding-bottom: 8px !important;
+    }
+    #myCarousel {
+        height: calc(100dvh - 84px) !important;
+        min-height: 0 !important;
+    }
+    #myCarousel .carousel-item {
+        height: calc(100dvh - 84px) !important;
+        min-height: 0 !important;
+        background-position: center top !important;
+        align-items: center !important;
+        justify-content: center !important;
+        padding: 18px 0 60px !important;
+        box-sizing: border-box !important;
+    }
+    /* Only show flex layout for the visible/transitioning items (Bootstrap controls display for the rest) */
+    #myCarousel .carousel-item.active,
+    #myCarousel .carousel-item.carousel-item-next,
+    #myCarousel .carousel-item.carousel-item-prev {
+        display: flex !important;
+    }
+    #myCarousel .carousel-item.active {
+        animation: mobileHeroZoom 9s ease-in-out infinite alternate;
+    }
+    #myCarousel .carousel-item > .carousel-slide-content {
+        position: relative !important;
+        top: auto !important;
+        left: auto !important;
+        transform: none !important;
+        width: min(92%, 560px) !important;
+        max-width: none !important;
+    }
+    .carousel-slide-content {
+        background: linear-gradient(180deg, rgba(15,19,45,0.55), rgba(15,19,45,0.82));
+        border: 1px solid rgba(255,255,255,0.12);
+        border-radius: 18px;
+        padding: 16px 14px !important;
+        box-shadow: 0 12px 30px rgba(0,0,0,0.28);
+        backdrop-filter: blur(3px);
+        box-sizing: border-box;
+    }
+    .carousel-slide-content h1 {
+        font-size: clamp(1.45rem, 6vw, 2rem) !important;
+        margin-bottom: 10px !important;
+    }
+    .carousel-slide-content p {
+        font-size: 0.9rem !important;
+        line-height: 1.5 !important;
+        margin-bottom: 14px !important;
+    }
+    .carousel-btn-primary,
+    .carousel-btn-secondary {
+        display: block;
+        width: 100%;
+        margin: 6px 0 !important;
+        padding: 10px 16px !important;
+        font-size: 0.95rem !important;
+    }
+    #myCarousel .carousel-indicators {
+        bottom: 10px !important;
+    }
+    #myCarousel a.carousel-control-prev,
+    #myCarousel a.carousel-control-next {
+        top: auto !important;
+        bottom: 48px !important;
+        width: 40px !important;
+        height: 40px !important;
+    }
+    #myCarousel a.carousel-control-prev {
+        left: 12px !important;
+    }
+    #myCarousel a.carousel-control-next {
+        right: 12px !important;
+    }
+    .carousel-inner,
+    .carousel-item {
+        overflow: hidden !important;
+    }
     .wallet_box {
         margin-bottom: 20px;
         padding: 15px 10px;
+    }
+    .wallet_box,
+    .project-card,
+    .why-card,
+    .info-card,
+    .form-section,
+    .sidebar-card,
+    .about_border,
+    .product {
+        border-radius: 14px !important;
+        padding-left: 16px !important;
+        padding-right: 16px !important;
+    }
+    .stats-bar,
+    .project-cards,
+    .why-gluco,
+    .testimonials,
+    .trust-strip,
+    .cta-banner,
+    .about-stats,
+    .how-to-steps,
+    .services-bottom-cta,
+    .contact-main,
+    .wallet {
+        background-position: center center !important;
+        background-size: cover !important;
+    }
+    .stats-bar .stat-number {
+        font-size: 0.95rem !important;
+        line-height: 1.25 !important;
+    }
+    .stats-bar .stat-label {
+        font-size: 0.7rem !important;
+    }
+    .about-hero {
+        min-height: 0 !important;
+        padding: 70px 16px !important;
+        background-position: center top !important;
+    }
+    .about-hero h1 {
+        font-size: 1.9rem !important;
+        line-height: 1.2 !important;
+    }
+    .about-hero p {
+        font-size: 0.95rem !important;
+    }
+    #about {
+        padding-bottom: 24px !important;
+    }
+    #about .about_img {
+        margin-top: 8px !important;
+    }
+    #about .about_img img {
+        width: 100% !important;
+        height: auto !important;
+    }
+    .contact-hero,
+    .services-hero,
+    .services-bottom-cta,
+    .how-to-steps {
+        padding: 56px 16px !important;
+    }
+    .contact-hero h1,
+    .services-hero h1,
+    .services-bottom-cta h2 {
+        font-size: 1.9rem !important;
+        line-height: 1.15 !important;
+    }
+    .contact-hero p,
+    .services-hero p,
+    .services-bottom-cta p {
+        font-size: 0.95rem !important;
+    }
+    .service-filters .container {
+        display: flex !important;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px;
+    }
+    .svc-filter-btn {
+        margin: 0 !important;
+        padding: 8px 14px !important;
+        font-size: 0.82rem !important;
+    }
+    .wallet .row > [class*="col-"],
+    .col-lg-7.mb-4,
+    .col-lg-5,
+    .info-card {
+        margin-bottom: 18px !important;
+    }
+    .wallet_box h3,
+    .project-card-body h3,
+    .why-card h3,
+    .about_border h3,
+    .form-section h3,
+    .sidebar-card h4 {
+        font-size: 1rem !important;
+    }
+    .wallet_box p,
+    .project-card-body p,
+    .why-card p,
+    .about_border .about_text p,
+    .form-section .form-subtitle,
+    .sidebar-card table,
+    .info-card .ic-value {
+        font-size: 0.92rem !important;
+        line-height: 1.7 !important;
+    }
+    .form-section .form-control,
+    .form-section .ente {
+        font-size: 16px !important;
+        padding: 12px 14px !important;
+    }
+    .form-section .btn-submit,
+    .sidebar-wa,
+    .footer-wa-btn {
+        width: 100%;
+        justify-content: center;
+    }
+    .catalogue {
+        grid-template-columns: 1fr !important;
+        gap: 16px !important;
+    }
+    .product {
+        padding: 18px 14px !important;
+    }
+    .product img,
+    .wallet_box img,
+    .project-card img,
+    .about_img img {
+        width: 100% !important;
+        max-width: 100% !important;
+        aspect-ratio: 4 / 3 !important;
+        object-fit: cover !important;
+    }
+    .filters {
+        padding: 12px !important;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+    .filter-btn {
+        padding: 8px 14px !important;
+        font-size: 0.88rem !important;
     }
     .wallet_box h3 {
         font-size: 18px;
@@ -568,5 +820,116 @@ File Name: responsive.css
     .wallet_box p {
         font-size: 14px;
         line-height: 22px;
+    }
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+    body.main-layout {
+        padding-top: 88px !important;
+    }
+    .logo img {
+        width: 52px !important;
+        height: 52px !important;
+    }
+    .hamburger span {
+        background: #ffffff !important;
+    }
+    .cart-icon svg {
+        fill: #ffffff !important;
+    }
+    .mobile-nav {
+        background: linear-gradient(180deg, rgba(15,19,45,0.99) 0%, rgba(8,11,28,0.99) 100%) !important;
+    }
+    .mobile-nav a {
+        color: #ffffff !important;
+    }
+    #myCarousel {
+        height: calc(100dvh - 88px) !important;
+        min-height: 0 !important;
+    }
+    #myCarousel .carousel-item {
+        height: calc(100dvh - 88px) !important;
+        min-height: 0 !important;
+        align-items: center !important;
+        justify-content: center !important;
+        padding: 20px 0 62px !important;
+        box-sizing: border-box !important;
+        background-position: center top !important;
+    }
+    /* Only show flex layout for the visible/transitioning items (Bootstrap controls display for the rest) */
+    #myCarousel .carousel-item.active,
+    #myCarousel .carousel-item.carousel-item-next,
+    #myCarousel .carousel-item.carousel-item-prev {
+        display: flex !important;
+    }
+    #myCarousel .carousel-item.active {
+        animation: mobileHeroZoom 9s ease-in-out infinite alternate;
+    }
+    #myCarousel .carousel-item > .carousel-slide-content {
+        position: relative !important;
+        top: auto !important;
+        left: auto !important;
+        transform: none !important;
+        width: min(90%, 620px) !important;
+        max-width: none !important;
+    }
+    .carousel-slide-content {
+        background: linear-gradient(180deg, rgba(15,19,45,0.50), rgba(15,19,45,0.80));
+        border: 1px solid rgba(255,255,255,0.12);
+        border-radius: 18px;
+        padding: 18px 18px;
+        box-sizing: border-box;
+    }
+    .carousel-slide-content h1 {
+        font-size: clamp(1.8rem, 4.5vw, 2.5rem) !important;
+        margin-bottom: 10px !important;
+    }
+    .carousel-slide-content p {
+        font-size: 0.96rem !important;
+        margin-bottom: 16px !important;
+    }
+    .carousel-btn-primary,
+    .carousel-btn-secondary {
+        padding: 11px 20px !important;
+        margin: 6px 7px !important;
+    }
+    .about-hero,
+    .contact-hero,
+    .services-hero,
+    .services-bottom-cta,
+    .how-to-steps {
+        padding-left: 24px !important;
+        padding-right: 24px !important;
+    }
+    .service-filters .container {
+        display: flex !important;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px;
+    }
+    .wallet .row > [class*="col-"],
+    .col-md-4.mb-3,
+    .col-lg-7.mb-4,
+    .col-lg-5 {
+        margin-bottom: 18px !important;
+    }
+    .catalogue {
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)) !important;
+        gap: 18px !important;
+    }
+}
+
+@keyframes mobileHeroZoom {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.035);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    #myCarousel .carousel-item.active {
+        animation: none !important;
     }
 }

@@ -675,19 +675,19 @@
         <div class="cart-total">
             <h3 id="total-amount">Total: $0.00</h3>
         </div>
-        <div style="background:#1a2040;border-radius:10px;padding:14px 16px;margin-bottom:6px;border:1px solid #2d3564;">
-            <p style="font-weight:700;color:#e8eaf6;font-size:0.88rem;margin-bottom:10px;text-align:left;">💳 Payment Options</p>
-            <div style="display:flex;flex-direction:column;gap:8px;">
-                <button onclick="checkoutEcoCash()" style="background:linear-gradient(135deg,#e63946,#c1121f);color:#fff;border:none;border-radius:8px;padding:10px 14px;font-weight:700;font-size:0.82rem;cursor:pointer;transition:all 0.2s;display:flex;align-items:center;gap:8px;">📱 Pay via EcoCash / Innbucks</button>
-                <button onclick="checkoutBank()" style="background:linear-gradient(135deg,#0f132d,#1e2a6e);color:#fff;border:none;border-radius:8px;padding:10px 14px;font-weight:700;font-size:0.82rem;cursor:pointer;transition:all 0.2s;display:flex;align-items:center;gap:8px;">🏦 Bank Transfer Details</button>
+        <div style="background:#1a2040;border-radius:10px;padding:12px 14px;margin-bottom:0;border:1px solid #2d3564;">
+            <p style="font-weight:700;color:#e8eaf6;font-size:0.86rem;margin:0 0 10px;text-align:left;">Payment Options</p>
+            <div class="cart-payment-row">
+                <button class="pay-ecocash" onclick="checkoutEcoCash()" type="button" aria-label="Pay via EcoCash">EcoCash</button>
+                <button class="pay-innbucks" onclick="checkoutInnbucks()" type="button" aria-label="Pay via InnBucks">InnBucks</button>
+                <button class="pay-transfer" onclick="checkoutBank()" type="button" aria-label="Bank transfer details">Transfer</button>
+            </div>
+            <div class="cart-icon-row" style="margin-top:10px;">
+                <button class="icon-email" onclick="sendCartByEmail()" type="button" aria-label="Email order">Email</button>
+                <button class="icon-whatsapp" onclick="sendCartByWhatsApp()" type="button" aria-label="Send order on WhatsApp">WhatsApp</button>
+                <button class="icon-close" onclick="toggleCart()" type="button" aria-label="Close shopping bag">Close</button>
             </div>
         </div>
-        <p style="text-align:center;color:#999;font-size:0.8rem;margin:0 0 8px;">Or send your cart via:</p>
-        <div class="contact-buttons-row">
-            <button class="email-btn" onclick="sendCartByEmail()">📧 Email Order</button>
-            <button class="whatsapp-btn" onclick="sendCartByWhatsApp()">💬 WhatsApp</button>
-        </div>
-        <button class="close-btn" onclick="toggleCart()">✕ Close</button>
     </div>
 </div>
 
@@ -879,7 +879,13 @@
 
     function checkoutEcoCash() {
         if (cart.length === 0) { alert('Your cart is empty.'); return; }
-        const msg = encodeURIComponent('Hi GLUCO, I would like to pay via EcoCash / Innbucks for my order:\n\n' + buildCartSummary() + '\n\nPlease send your EcoCash / Innbucks number and confirm the order.');
+        const msg = encodeURIComponent('Hi GLUCO, I would like to pay via EcoCash for my order:\n\n' + buildCartSummary() + '\n\nPlease send your EcoCash number and confirm the order.');
+        window.open('https://wa.me/263784245082?text=' + msg, '_blank');
+    }
+
+    function checkoutInnbucks() {
+        if (cart.length === 0) { alert('Your cart is empty.'); return; }
+        const msg = encodeURIComponent('Hi GLUCO, I would like to pay via InnBucks for my order:\n\n' + buildCartSummary() + '\n\nPlease send your InnBucks number and confirm the order.');
         window.open('https://wa.me/263784245082?text=' + msg, '_blank');
     }
 
