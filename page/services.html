@@ -27,9 +27,9 @@
     <meta name="msapplication-TileColor" content="#667eea">
 
     <!-- site metas -->
-    <title>Engineering Services Africa — Solar, Electrical, IT | GLUCO</title>
-    <meta name="keywords" content="solar installation Africa, substation maintenance Africa, network security, Microsoft 365, fintech software, electrical wiring, electronic components, web hosting, domain registration, IT support, analytics, smart agriculture, industrial automation, CCTV systems, engineering services Africa">
-    <meta name="description" content="GLUCO offers solar installation, electrical services, substation maintenance, IT consultancy &amp; IoT automation across Africa. Request a quote.">
+    <title>Engineering Services Africa: Solar, Electrical, IT | GLUCO</title>
+    <meta name="keywords" content="solar installation Africa, substation maintenance Africa, network security, Microsoft 365, fintech software, electrical wiring, electronic components, web hosting, domain registration, IT support, analytics, smart agriculture, industrial automation, CCTV systems, access control, boom gate installation, Centurion Nova Helix, data backup Africa, disaster recovery, structured cabling, engineering services Africa">
+    <meta name="description" content="GLUCO offers solar installation, electrical services, IT consultancy, data backup, CCTV and access control, boom gate automation, and institutional engineering projects across Africa. Request a quote.">
     <meta name="author" content="GLUCO">
     <meta name="publisher" content="GLUCO">
     <meta name="copyright" content="GLUCO © 2026">
@@ -45,8 +45,8 @@
     <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://gluco.co.zw/page/services.html">
-    <meta property="og:title" content="Engineering Services Africa — Solar, Electrical, IT | GLUCO">
-    <meta property="og:description" content="GLUCO offers solar installation, electrical services, substation maintenance, IT consultancy &amp; IoT automation across Africa. Request a quote.">
+    <meta property="og:title" content="Engineering Services Africa: Solar, Electrical, IT | GLUCO">
+    <meta property="og:description" content="GLUCO offers solar installation, electrical services, IT consultancy, data backup, CCTV and access control, boom gate automation, and institutional engineering projects across Africa. Request a quote.">
     <meta property="og:image" content="https://gluco.co.zw/images/smartsolarsystems.png">
     <meta property="og:image:secure_url" content="https://gluco.co.zw/images/smartsolarsystems.png">
     <meta property="og:image:type" content="image/png">
@@ -59,8 +59,8 @@
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://gluco.co.zw/page/services.html">
-    <meta property="twitter:title" content="Engineering Services Africa — Solar, Electrical, IT | GLUCO">
-    <meta property="twitter:description" content="Solar installation, electrical services, substation maintenance, IT consultancy &amp; IoT automation across Africa.">
+    <meta property="twitter:title" content="Engineering Services Africa: Solar, Electrical, IT | GLUCO">
+    <meta property="twitter:description" content="Solar installation, electrical, IT, data backup, CCTV, access control, and boom gate automation across Africa.">
     <meta property="twitter:image" content="https://gluco.co.zw/images/smartsolarsystems.png">
     <meta property="twitter:creator" content="@glucozw">
     <meta property="twitter:image:alt" content="GLUCO Engineering Services Africa">
@@ -178,6 +178,38 @@
                         "@type": "Service",
                         "name": "Electrical Services",
                         "description": "Professional electrical installations and maintenance"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Data Backup & Replication",
+                        "description": "Backup infrastructure design, offsite/replicated backup, and disaster recovery planning for business servers and home setups"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Electronic Security & Monitoring",
+                        "description": "CCTV design and installation, access control systems, and monitoring system setup"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Boom Gates & Automated Access",
+                        "description": "Boom gate installation, receiver/controller configuration, and gate automation"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Institutional & Industrial Projects",
+                        "description": "Multi-service deployments combining solar, electrical, IT, and security for institutions, factories, and commercial sites"
                     }
                 }
             ]
@@ -385,7 +417,7 @@
                                 <a class="nav-link" href="contact.html" style="color: #333; font-weight: bold; text-decoration: none;">CONTACT</a>
                             </li>
                             <li class="nav-item" style="display: inline-block; margin: 0 15px;">
-                                <a class="nav-link" href="../cata.html" style="color: #333; font-weight: bold; text-decoration: none;">SHOPPING</a>
+                                <a class="nav-link" href="shop.html" style="color: #333; font-weight: bold; text-decoration: none;">SHOPPING</a>
                             </li>
                         </ul>
                     </div>
@@ -413,7 +445,7 @@
             <li><a href="services.html">SERVICES</a></li>
             <li><a href="about.html">ABOUT</a></li>
             <li><a href="contact.html">CONTACT</a></li>
-            <li><a href="../cata.html">SHOPPING</a></li>
+            <li><a href="shop.html">SHOPPING</a></li>
         </ul>
     </div>
     <!-- end mobile navigation -->
@@ -433,15 +465,17 @@
             <button class="svc-filter-btn" onclick="filterServices('solar')">Solar &amp; Energy</button>
             <button class="svc-filter-btn" onclick="filterServices('electrical')">Electrical</button>
             <button class="svc-filter-btn" onclick="filterServices('it')">IT &amp; Networks</button>
+            <button class="svc-filter-btn" onclick="filterServices('backup')">Data &amp; Backup</button>
             <button class="svc-filter-btn" onclick="filterServices('automation')">Automation &amp; IoT</button>
-            <button class="svc-filter-btn" onclick="filterServices('security')">Security</button>
+            <button class="svc-filter-btn" onclick="filterServices('security')">Security &amp; Access</button>
+            <button class="svc-filter-btn" onclick="filterServices('industrial')">Institutional Projects</button>
             <button class="svc-filter-btn" onclick="filterServices('components')">Components</button>
         </div>
     </section>
     <!-- end service filter tabs -->
 
     <!-- Solar & Electrical Banner -->
-    <section class="section-light" style="background: linear-gradient(135deg, rgba(15,19,45,0.80) 0%, rgba(102,126,234,0.55) 100%), url('../images/commercialsolar.png') center/cover no-repeat; padding:45px 20px; text-align:center; margin-top:-2px;">
+    <section class="section-light" style="background: linear-gradient(135deg, rgba(15,19,45,0.80) 0%, rgba(102,126,234,0.55) 100%), url('../images/commercialsolar.jpg') center/cover no-repeat; padding:45px 20px; text-align:center; margin-top:-2px;">
         <div class="container">
             <h3 style="color:#fff; font-weight:700; font-size:1.4rem; margin-bottom:8px;">Solar, Electrical &amp; Engineering Services</h3>
             <p style="color:rgba(255,255,255,0.80); font-size:0.95rem; margin:0;">Premium solar installations, transformer maintenance, and electrical contracting across Africa.</p>
@@ -449,7 +483,7 @@
     </section>
 
     <!-- services -->
-    <div class="wallet section-dark" style="background: linear-gradient(rgba(15,19,45,0.84), rgba(15,19,45,0.84)), url('../images/securenetwork.png') center/cover no-repeat; padding-top:40px; padding-bottom:40px;">
+    <div class="wallet section-dark svc-grid-wrap" style="background: linear-gradient(rgba(15,19,45,0.84), rgba(15,19,45,0.84)), url('../images/securenetwork.jpg') center/cover no-repeat; padding-top:40px; padding-bottom:40px;">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12">
@@ -461,7 +495,7 @@
             <div class="row">
                 <!-- Solar & Energy -->
                 <div class="col-lg-3 col-sm-6 service-card-wrapper" data-category="solar">
-                    <div id="wa_hover" class="wallet_box text_align_center">
+                    <div id="wa_hover" class="wallet_box text_align_center svc-card">
                         <i><img src="../images/solarplant.png" alt="GLUCO smart solar systems residential commercial Africa" width="300" height="300" loading="lazy" decoding="async" style="aspect-ratio: 1; object-fit: cover; border-radius: 10px;"/></i>
                         <h3>SMART SOLAR SYSTEMS</h3>
                         <p>Scalable solar installations from 1.5kVA to 120kVA for homes and businesses. Certified engineers, real-time monitoring, and full maintenance support.</p>
@@ -470,7 +504,7 @@
                 </div>
                 <!-- Electrical: Substation -->
                 <div class="col-lg-3 col-sm-6 service-card-wrapper" data-category="electrical">
-                    <div id="wa_hover" class="wallet_box text_align_center">
+                    <div id="wa_hover" class="wallet_box text_align_center svc-card">
                         <i><img src="../images/88kvatransformer.jpg" alt="GLUCO substation transformer maintenance Africa" width="300" height="300" loading="lazy" decoding="async" style="aspect-ratio: 1; object-fit: cover; border-radius: 10px;"/></i>
                         <h3>SUBSTATION &amp; TRANSFORMER MAINTENANCE</h3>
                         <p>Scheduled maintenance, fault diagnosis, and emergency servicing for HV/LV substations and power transformers. Aligned with international electrical standards and best practices.</p>
@@ -479,34 +513,61 @@
                 </div>
                 <!-- Electrical Services -->
                 <div class="col-lg-3 col-sm-6 service-card-wrapper" data-category="electrical">
-                    <div id="wa_hover" class="wallet_box text_align_center">
+                    <div id="wa_hover" class="wallet_box text_align_center svc-card">
+                        <div class="svc-meta-row"><span class="svc-tag">Electrical</span></div>
                         <i><img src="../images/electricalsub.png" alt="GLUCO electrical installations wiring maintenance Africa" width="300" height="300" loading="lazy" decoding="async" style="aspect-ratio: 1; object-fit: cover; border-radius: 10px;"/></i>
-                        <h3>ELECTRICAL SERVICES</h3>
-                        <p>Professional electrical installations, wiring, and preventive maintenance for residential and commercial properties. Safety inspections and lighting design included.</p>
+                        <h3>ELECTRICAL INSTALLATIONS &amp; WIRING</h3>
+                        <p>Full house and office wiring, distribution boards, and lighting design for residential clients, plus industrial and commercial electrical installations, motor control, and factory wiring for business sites. Safety inspections and certificates of compliance included.</p>
                         <a href="contact.html?service=Electrical+Services" class="svc-quote-btn">Get a Quote</a>
                     </div>
                 </div>
                 <!-- Maintenance Services -->
                 <div class="col-lg-3 col-sm-6 service-card-wrapper" data-category="solar">
-                    <div id="wa_hover" class="wallet_box text_align_center">
-                        <i><img src="../images/5kvasystem.png" alt="GLUCO solar maintenance inverter servicing Africa" width="300" height="300" loading="lazy" decoding="async" style="aspect-ratio: 1; object-fit: cover; border-radius: 10px;"/></i>
+                    <div id="wa_hover" class="wallet_box text_align_center svc-card">
+                        <i><img src="../images/5kvasystem.jpg" alt="GLUCO solar maintenance inverter servicing Africa" width="300" height="300" loading="lazy" decoding="async" style="aspect-ratio: 1; object-fit: cover; border-radius: 10px;"/></i>
                         <h3>MAINTENANCE SERVICES</h3>
                         <p>Solar panel inspections, inverter maintenance, and performance testing to keep your system running at peak efficiency. Component replacements available.</p>
                         <a href="contact.html?service=Maintenance+Services" class="svc-quote-btn">Get a Quote</a>
                     </div>
                 </div>
+                <!-- Data Backup & Replication -->
+                <div class="col-lg-3 col-sm-6 service-card-wrapper" data-category="backup">
+                    <div id="wa_hover" class="wallet_box text_align_center svc-card">
+                        <div class="svc-meta-row">
+                            <span class="svc-icon-sm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="9.5" cy="5" rx="6" ry="2.2"/><path d="M3.5 5v6c0 1.2 2.7 2.2 6 2.2s6-1 6-2.2V5"/><path d="M3.5 11v6c0 1.2 2.7 2.2 6 2.2 1.1 0 2.1-.1 3-.3"/><path d="M18.5 13.3a3.8 3.8 0 0 0-6.4-2.6M20.3 10.6v3h-3"/></svg></span>
+                            <span class="svc-tag">Data &amp; Backup</span>
+                        </div>
+                        <i><img src="../images/monitor.png" alt="GLUCO data backup replication disaster recovery Africa" width="300" height="300" loading="lazy" decoding="async" style="aspect-ratio: 1; object-fit: cover; border-radius: 10px;"/></i>
+                        <h3>DATA BACKUP &amp; REPLICATION</h3>
+                        <p>Backup infrastructure design and offsite/replicated backup for business server environments, with disaster recovery planning built around your recovery time targets. For home users, we set up automated backup for PCs, NAS drives, and personal files so nothing is lost to a crash or theft.</p>
+                        <a href="contact.html?service=Data+Backup+Replication" class="svc-quote-btn">Get a Quote</a>
+                    </div>
+                </div>
                 <!-- Network Security -->
                 <div class="col-lg-3 col-sm-6 service-card-wrapper" data-category="security">
-                    <div id="wa_hover" class="wallet_box text_align_center">
+                    <div id="wa_hover" class="wallet_box text_align_center svc-card">
                         <i><img src="../images/firewall.png" alt="GLUCO network security firewall endpoint protection Africa" width="300" height="300" loading="lazy" decoding="async" style="aspect-ratio: 1; object-fit: cover; border-radius: 10px;"/></i>
                         <h3>NETWORK SECURITY</h3>
                         <p>Enterprise firewalls, endpoint protection, vulnerability assessments, and penetration testing to secure your business against cyber threats. Starting at $500.</p>
                         <a href="contact.html?service=Network+Security" class="svc-quote-btn">Get a Quote</a>
                     </div>
                 </div>
+                <!-- IT Consultancy & Structured Cabling -->
+                <div class="col-lg-3 col-sm-6 service-card-wrapper" data-category="it">
+                    <div id="wa_hover" class="wallet_box text_align_center svc-card">
+                        <div class="svc-meta-row">
+                            <span class="svc-icon-sm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="4.5" r="2"/><circle cx="5" cy="19" r="2"/><circle cx="19" cy="19" r="2"/><path d="M12 6.5V12M12 12l-5.6 5.6M12 12l5.6 5.6"/></svg></span>
+                            <span class="svc-tag">IT &amp; Networks</span>
+                        </div>
+                        <i><img src="../images/itconsultancy.jpg" alt="GLUCO IT consultancy structured cabling network setup Africa" width="300" height="300" loading="lazy" decoding="async" style="aspect-ratio: 1; object-fit: cover; border-radius: 10px;"/></i>
+                        <h3>IT CONSULTANCY &amp; STRUCTURED CABLING</h3>
+                        <p>Independent IT consultancy covering network design, setup, and security reviews, plus structured cabling for offices, warehouses, and homes: Cat6 runs, patch panels, server rack setup, and clean, labelled cable management.</p>
+                        <a href="contact.html?service=IT+Consultancy" class="svc-quote-btn">Get a Quote</a>
+                    </div>
+                </div>
                 <!-- Network Support -->
                 <div class="col-lg-3 col-sm-6 service-card-wrapper" data-category="it">
-                    <div id="wa_hover" class="wallet_box text_align_center">
+                    <div id="wa_hover" class="wallet_box text_align_center svc-card">
                         <i><img src="../images/networksupport.png" alt="GLUCO network support LAN WAN WLAN infrastructure Africa" width="300" height="300" loading="lazy" decoding="async" style="aspect-ratio: 1; object-fit: cover; border-radius: 10px;"/></i>
                         <h3>NETWORK SUPPORT</h3>
                         <p>Reliable network infrastructure design, deployment, and optimisation for LAN, WAN, and Wi-Fi. Keep your teams connected with minimal downtime.</p>
@@ -515,7 +576,7 @@
                 </div>
                 <!-- Microsoft Support -->
                 <div class="col-lg-3 col-sm-6 service-card-wrapper" data-category="it">
-                    <div id="wa_hover" class="wallet_box text_align_center">
+                    <div id="wa_hover" class="wallet_box text_align_center svc-card">
                         <i><img src="../images/microsoft.png" alt="GLUCO Microsoft 365 support Teams SharePoint Africa" width="300" height="300" loading="lazy" decoding="async" style="aspect-ratio: 1; object-fit: cover; border-radius: 10px;"/></i>
                         <h3>MICROSOFT SUPPORT</h3>
                         <p>Microsoft 365 deployment, licensing, and management including Teams, Outlook, SharePoint, and OneDrive. Boost productivity with expert configuration.</p>
@@ -524,7 +585,7 @@
                 </div>
                 <!-- Fintech Solutions -->
                 <div class="col-lg-3 col-sm-6 service-card-wrapper" data-category="it">
-                    <div id="wa_hover" class="wallet_box text_align_center">
+                    <div id="wa_hover" class="wallet_box text_align_center svc-card">
                         <i><img src="../images/fintech.png" alt="GLUCO fintech solutions financial technology Africa" width="300" height="300" loading="lazy" decoding="async" style="aspect-ratio: 1; object-fit: cover; border-radius: 10px;"/></i>
                         <h3>FINTECH SOLUTIONS</h3>
                         <p>Secure, compliant fintech platforms with real-time analytics, BI dashboards, financial reporting, and seamless payment integrations.</p>
@@ -533,7 +594,7 @@
                 </div>
                 <!-- Electronic Components -->
                 <div class="col-lg-3 col-sm-6 service-card-wrapper" data-category="components">
-                    <div id="wa_hover" class="wallet_box text_align_center">
+                    <div id="wa_hover" class="wallet_box text_align_center svc-card">
                         <i><img src="../images/components.png" alt="GLUCO electronic components microcontrollers sensors Africa" width="300" height="300" loading="lazy" decoding="async" style="aspect-ratio: 1; object-fit: cover; border-radius: 10px;"/></i>
                         <h3>ELECTRONIC COMPONENTS</h3>
                         <p>Quality supply of microcontrollers, power regulators, sensors, transducers, and displays. Sourced for prototyping and production projects.</p>
@@ -542,8 +603,8 @@
                 </div>
                 <!-- Hosting Solutions -->
                 <div class="col-lg-3 col-sm-6 service-card-wrapper" data-category="it">
-                    <div id="wa_hover" class="wallet_box text_align_center">
-                        <i><img src="../images/webhosting.png" alt="GLUCO hosting solutions VPS cloud server Africa" width="300" height="300" loading="lazy" decoding="async" style="aspect-ratio: 1; object-fit: cover; border-radius: 10px;"/></i>
+                    <div id="wa_hover" class="wallet_box text_align_center svc-card">
+                        <i><img src="../images/webhosting.jpg" alt="GLUCO hosting solutions VPS cloud server Africa" width="300" height="300" loading="lazy" decoding="async" style="aspect-ratio: 1; object-fit: cover; border-radius: 10px;"/></i>
                         <h3>HOSTING SOLUTIONS</h3>
                         <p>Shared hosting, VPS, dedicated servers, and managed cloud hosting for businesses of all sizes. Reliable uptime with local support.</p>
                         <a href="contact.html?service=Hosting+Solutions" class="svc-quote-btn">Get a Quote</a>
@@ -551,7 +612,7 @@
                 </div>
                 <!-- Domain Registration -->
                 <div class="col-lg-3 col-sm-6 service-card-wrapper" data-category="it">
-                    <div id="wa_hover" class="wallet_box text_align_center">
+                    <div id="wa_hover" class="wallet_box text_align_center svc-card">
                         <i><img src="../images/domainreg.png" alt="GLUCO domain registration SSL certificates Africa" width="300" height="300" loading="lazy" decoding="async" style="aspect-ratio: 1; object-fit: cover; border-radius: 10px;"/></i>
                         <h3>OWN YOUR DOMAIN</h3>
                         <p>Domain registration, transfer, and renewal with SSL certificates. Secure your online identity with professional domain management.</p>
@@ -560,7 +621,7 @@
                 </div>
                 <!-- IT Support -->
                 <div class="col-lg-3 col-sm-6 service-card-wrapper" data-category="it">
-                    <div id="wa_hover" class="wallet_box text_align_center">
+                    <div id="wa_hover" class="wallet_box text_align_center svc-card">
                         <i><img src="../images/itsupport.png" alt="GLUCO IT support web development remote desktop Africa" width="300" height="300" loading="lazy" decoding="async" style="aspect-ratio: 1; object-fit: cover; border-radius: 10px;"/></i>
                         <h3>IT SUPPORT</h3>
                         <p>Web development, Windows technical support, and remote desktop assistance. Responsive IT support to keep your business running smoothly.</p>
@@ -569,7 +630,7 @@
                 </div>
                 <!-- Smart Agriculture -->
                 <div class="col-lg-3 col-sm-6 service-card-wrapper" data-category="automation">
-                    <div id="wa_hover" class="wallet_box text_align_center">
+                    <div id="wa_hover" class="wallet_box text_align_center svc-card">
                         <i><img src="../images/agritech.png" alt="GLUCO smart agriculture IoT irrigation Africa" width="300" height="300" loading="lazy" decoding="async" style="aspect-ratio: 1; object-fit: cover; border-radius: 10px;"/></i>
                         <h3>SMART AGRICULTURE</h3>
                         <p>Automated irrigation, climate monitoring and control, farm analytics, and nutrient management. Increase yield with precision agriculture technology.</p>
@@ -578,29 +639,72 @@
                 </div>
                 <!-- Industrial Automation -->
                 <div class="col-lg-3 col-sm-6 service-card-wrapper" data-category="automation">
-                    <div id="wa_hover" class="wallet_box text_align_center">
-                        <i><img src="../images/industrialautomation.png" alt="GLUCO industrial automation PLC IoT Africa" width="300" height="300" loading="lazy" decoding="async" style="aspect-ratio: 1; object-fit: cover; border-radius: 10px;"/></i>
+                    <div id="wa_hover" class="wallet_box text_align_center svc-card">
+                        <i><img src="../images/industrialautomation.jpg" alt="GLUCO industrial automation PLC IoT Africa" width="300" height="300" loading="lazy" decoding="async" style="aspect-ratio: 1; object-fit: cover; border-radius: 10px;"/></i>
                         <h3>INDUSTRIAL AUTOMATION</h3>
                         <p>PLC programming, industrial networking, IoT integration, and control panel design. Optimise your manufacturing and industrial operations.</p>
                         <a href="contact.html?service=Industrial+Automation" class="svc-quote-btn">Get a Quote</a>
                     </div>
                 </div>
-                <!-- CCTV/Surveillance -->
+                <!-- CCTV & Electronic Security -->
                 <div class="col-lg-3 col-sm-6 service-card-wrapper" data-category="security">
-                    <div id="wa_hover" class="wallet_box text_align_center">
+                    <div id="wa_hover" class="wallet_box text_align_center svc-card">
+                        <div class="svc-meta-row">
+                            <span class="svc-icon-sm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10a9 9 0 0 1 18 0"/><rect x="3" y="10" width="18" height="3" rx="1.2"/><circle cx="12" cy="11.5" r="1.1" fill="currentColor" stroke="none"/><path d="M9 13v3l-2 4h10l-2-4v-3"/></svg></span>
+                            <span class="svc-tag">Security</span>
+                        </div>
                         <i><img src="../images/monitoring.png" alt="GLUCO CCTV surveillance security systems Africa" width="300" height="300" loading="lazy" decoding="async" style="aspect-ratio: 1; object-fit: cover; border-radius: 10px;"/></i>
-                        <h3>CCTV &amp; SURVEILLANCE</h3>
-                        <p>CCTV installation, alarm systems, environmental monitoring, and managed video services. Protect your property with professional security solutions.</p>
-                        <a href="contact.html?service=CCTV+Surveillance" class="svc-quote-btn">Get a Quote</a>
+                        <h3>CCTV &amp; ELECTRONIC SECURITY</h3>
+                        <p>CCTV design and installation, alarm systems, environmental monitoring, and remote-managed video for homes and businesses. Systems configured for reliable local recording and remote viewing.</p>
+                        <a href="contact.html?service=CCTV+Electronic+Security" class="svc-quote-btn">Get a Quote</a>
+                    </div>
+                </div>
+                <!-- Access Control -->
+                <div class="col-lg-3 col-sm-6 service-card-wrapper" data-category="security">
+                    <div id="wa_hover" class="wallet_box text_align_center svc-card">
+                        <div class="svc-meta-row">
+                            <span class="svc-icon-sm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="10" width="14" height="10" rx="1.5"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/><circle cx="12" cy="14.5" r="1.3" fill="currentColor" stroke="none"/><path d="M12 15.8v1.7"/></svg></span>
+                            <span class="svc-tag">Security</span>
+                        </div>
+                        <i><img src="../images/securenetwork.jpg" alt="GLUCO access control systems keypad biometric Africa" width="300" height="300" loading="lazy" decoding="async" style="aspect-ratio: 1; object-fit: cover; border-radius: 10px;"/></i>
+                        <h3>ACCESS CONTROL SYSTEMS</h3>
+                        <p>Keypad, card, and biometric access control for offices, gates, and secure rooms, with visitor logging and multi-door setups for larger sites. Sized to fit a single office door or a full multi-entrance facility.</p>
+                        <a href="contact.html?service=Access+Control" class="svc-quote-btn">Get a Quote</a>
+                    </div>
+                </div>
+                <!-- Boom Gates & Automated Access -->
+                <div class="col-lg-3 col-sm-6 service-card-wrapper" data-category="security">
+                    <div id="wa_hover" class="wallet_box text_align_center svc-card">
+                        <div class="svc-meta-row">
+                            <span class="svc-icon-sm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="20" x2="21" y2="20"/><rect x="4" y="9" width="2.1" height="11" rx="0.4" fill="currentColor" stroke="none"/><line x1="6.2" y1="10.4" x2="19.5" y2="6.2"/><line x1="9" y1="9.9" x2="9.9" y2="7.1"/><line x1="12.6" y1="8.8" x2="13.5" y2="6"/><line x1="16.2" y1="7.7" x2="17.1" y2="4.9"/></svg></span>
+                            <span class="svc-tag">Security</span>
+                        </div>
+                        <i><img src="../images/powersystems.jpg" alt="GLUCO boom gate installation automated access control Africa" width="300" height="300" loading="lazy" decoding="async" style="aspect-ratio: 1; object-fit: cover; border-radius: 10px;"/></i>
+                        <h3>BOOM GATES &amp; AUTOMATED ACCESS</h3>
+                        <p>Boom gate installation and receiver/controller configuration, including Centurion Nova Helix systems, plus general gate automation for driveways, staff car parks, and estate entrances.</p>
+                        <a href="contact.html?service=Boom+Gates" class="svc-quote-btn">Get a Quote</a>
                     </div>
                 </div>
                 <!-- Analytics Hub -->
                 <div class="col-lg-3 col-sm-6 service-card-wrapper" data-category="it">
-                    <div id="wa_hover" class="wallet_box text_align_center">
-                        <i><img src="../images/analytics.png" alt="GLUCO analytics AI data visualization Africa" width="300" height="300" loading="lazy" decoding="async" style="aspect-ratio: 1; object-fit: cover; border-radius: 10px;"/></i>
+                    <div id="wa_hover" class="wallet_box text_align_center svc-card">
+                        <i><img src="../images/analytics.jpg" alt="GLUCO analytics AI data visualization Africa" width="300" height="300" loading="lazy" decoding="async" style="aspect-ratio: 1; object-fit: cover; border-radius: 10px;"/></i>
                         <h3>ANALYTICS HUB</h3>
                         <p>AI-powered insights, interactive data visualisation, data mining, and predictive modelling. Turn your data into actionable business intelligence.</p>
                         <a href="contact.html?service=Analytics" class="svc-quote-btn">Get a Quote</a>
+                    </div>
+                </div>
+                <!-- Institutional & Industrial Projects -->
+                <div class="col-lg-3 col-sm-6 service-card-wrapper" data-category="industrial">
+                    <div id="wa_hover" class="wallet_box text_align_center svc-card">
+                        <div class="svc-meta-row">
+                            <span class="svc-icon-sm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21V10.5l4.5 3V10.5l4.5 3V10.5l4.5 3V10.5L21 8v13H3z"/><line x1="3" y1="21" x2="21" y2="21"/><line x1="7.5" y1="15" x2="7.5" y2="17.5"/><line x1="12" y1="15" x2="12" y2="17.5"/><line x1="16.5" y1="15" x2="16.5" y2="17.5"/></svg></span>
+                            <span class="svc-tag">Institutional</span>
+                        </div>
+                        <i><img src="../images/288kvasubmaintenance.jpg" alt="GLUCO institutional industrial multi-service projects Africa" width="300" height="300" loading="lazy" decoding="async" style="aspect-ratio: 1; object-fit: cover; border-radius: 10px;"/></i>
+                        <h3>INSTITUTIONAL &amp; INDUSTRIAL PROJECTS</h3>
+                        <p>Larger, multi-service deployments for institutions, factories, and commercial sites: solar, electrical, IT, security, and access control delivered together as one coordinated project, with a single point of contact from design through to handover.</p>
+                        <a href="contact.html?service=Institutional+Projects" class="svc-quote-btn">Get a Quote</a>
                     </div>
                 </div>
             </div>
@@ -612,7 +716,7 @@
     <section class="services-bottom-cta section-light" style="background: linear-gradient(135deg, rgba(15,19,45,0.85) 0%, rgba(102,126,234,0.70) 100%), url('../images/rooftopsolar.jpg') center/cover no-repeat; padding:65px 0; text-align:center; margin-top:40px;">
         <div class="container">
             <h2 style="color:#fff; font-size:1.8em; margin-bottom:10px;">Not Sure Which Service You Need?</h2>
-            <p style="color:#aaa; margin-bottom:25px;">Talk to our engineers — we will help you find the right solution.</p>
+            <p style="color:#aaa; margin-bottom:25px;">Talk to our engineers. We will help you find the right solution.</p>
             <a href="https://wa.me/263784245082?text=Hi+GLUCO%2C+I+need+help+choosing+a+service" target="_blank" style="display:inline-block; padding:14px 28px; background:#25D366; color:#fff; border-radius:30px; font-weight:700; margin:5px 8px; text-decoration:none;">💬 WhatsApp Our Engineers</a>
             <a href="tel:+263784245082" style="display:inline-block; padding:14px 28px; background:#667eea; color:#fff; border-radius:30px; font-weight:700; margin:5px 8px; text-decoration:none;">📞 Call +263 784 245 082</a>
         </div>
@@ -683,7 +787,7 @@
                             <li><a href="services.html">Services</a></li>
                             <li><a href="about.html">About</a></li>
                             <li><a href="contact.html">Contact</a></li>
-                            <li><a href="../cata.html">Shopping</a></li>
+                            <li><a href="shop.html">Shopping</a></li>
                             <li><a href="contact.html">Get a Quote</a></li>
                         </ul>
                     </div>
@@ -695,8 +799,10 @@
                             <li><a href="services.html">IT Consultancy</a></li>
                             <li><a href="services.html">Robotics &amp; IoT</a></li>
                             <li><a href="services.html">Network Security</a></li>
-                            <li><a href="services.html">Electronic Components</a></li>
-                            <li><a href="services.html">CCTV &amp; Surveillance</a></li>
+                            <li><a href="services.html">Data Backup &amp; Replication</a></li>
+                            <li><a href="services.html">CCTV &amp; Electronic Security</a></li>
+                            <li><a href="services.html">Access Control &amp; Boom Gates</a></li>
+                            <li><a href="services.html">Institutional Projects</a></li>
                             <li><a href="services.html">Smart Agriculture</a></li>
                         </ul>
                     </div>
